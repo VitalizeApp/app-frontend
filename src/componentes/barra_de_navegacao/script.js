@@ -8,3 +8,4 @@ function linkAtivo(){
 
 list.forEach((item) =>
 item.addEventListener('click', linkAtivo));
+//
