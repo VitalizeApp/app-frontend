@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="termos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Vitalize - Tour</title>
+</head>
+<body>
+  <div class="background"></div>
+
+  <p class="frase-topo">Sua privacidade importa!</p>
+
+  <div class="checkbox-container">
+    <label class="custom-checkbox">
+      <input type="checkbox" class="termo-checkbox" />
+      <span class="checkmark"></span>
+      Você afirma ter mais de 18 anos e possuir a capacidade legal para aceitar estes termos.
+    </label>
+  
+    <label class="custom-checkbox">
+      <input type="checkbox" class="termo-checkbox" />
+      <span class="checkmark"></span>
+      Você autoriza o aplicativo a coletar e utilizar seus dados pessoais relacionados à saúde, como histórico médico, condições de saúde e resultados de exames.
+    </label>
+  
+    <label class="custom-checkbox">
+      <input type="checkbox" class="termo-checkbox" />
+      <span class="checkmark"></span>
+      Você concede permissão para que instituições privadas de saúde insiram e compartilhem dados relacionados à sua saúde neste aplicativo, a fim de oferecer uma experiência mais personalizada e relevante.
+    </label>
+  </div>
+  
+  <button id="btn-iniciar" class="btn-iniciar" disabled>Iniciar</button>    
+
+
+  <script>
+    const checkboxes = document.querySelectorAll('.termo-checkbox');
+    const botao = document.getElementById('btn-iniciar');
+  
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        const todosMarcados = Array.from(checkboxes).every(cb => cb.checked);
+        botao.disabled = !todosMarcados;
+      });
+    });
+
+    document.getElementById("btn-iniciar").addEventListener("click", function () {
+    window.location.href = "mudar-o-nome-depois.html"; // Substitua pelo nome real da próxima página
+  });
+
+  </script>
+
+</body>
+</html>
