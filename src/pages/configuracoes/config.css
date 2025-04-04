@@ -3,23 +3,21 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    
+    box-sizing: border-box;
 }
 
 main{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
-    width: 400px;
-    max-width: 100%;
     height: 100vh;
-    padding: 5px;
+    padding: 10px;
 }
 
 #titulo{
-    margin-top: 15px;
+    margin-top: 5px;
     text-align: center;
 }
 
@@ -28,10 +26,11 @@ section{
     flex-direction: column;
     justify-content: center;
     padding: 8px;
+    font-size: 0.8em;
 }
 
 
-.icons{
+.iconsC{
     display: flex;
     align-items: center;
     border: 1px solid;
@@ -45,9 +44,9 @@ section{
     cursor: pointer;
 }
 
-body {
+.body_config{
     color: #364C5B;
-    background: url(../imgsApp/backgroundClaro.png) no-repeat;
+    background: url(../imgsApp/backgroundClarof.png) no-repeat;
     transition:  0.3s, color 0.3s;
 }
 
@@ -55,6 +54,8 @@ body {
     background: url(../imgsApp/backgroundEscuro.png);
     color: #fff;
 }
-.dark-mode img{
+.dark-mode .imgsC{
     filter: invert(1);
 }
+
+
