@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/app-frontend/src/pages/Login/img/fundo.png);
+    background-size: cover;
+    font-family: 'Poppins';
+    text-align: center;
+    width: 100vw;
+    height: 100vw;
+}
+
+#titulo{
+    margin: 160px 0 50px 0;
+    font-weight: 650;
+    font-size: 30px;
+    color: rgba(57, 90, 113, 1);
+}
+
+#containerLogin{
+    background-color: aliceblue;
+    border-radius: 40px;
+    margin: 0 10px 0 10px;
+    padding: 10px 5px 10px 5px;
+    background-color: rgba(42, 62, 86, 1);
+    height: 370px;
+}
+
+#containerLogin h1{
+    color: rgba(255, 255, 255, 0.83);
+    font-weight: 700;
+    font-size: 30px;
+    margin: 5px 0 20px 0;
+}
+
+.campoLogin input{
+    background-color: none; 
+}
