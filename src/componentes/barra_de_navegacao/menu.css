@@ -103,7 +103,7 @@ footer ul li.active a .texto {
     transform: translateY(10px);
 }
 
-.selecionado {
+/*.selecionado {
     position: absolute;
     top: -50%;
     width: 50px;
@@ -139,6 +139,8 @@ footer ul li.active a .texto {
     background: transparent;
 
 }
+Não estão sendo utilizados para nada na barra de navegação, olha o que está errado ai.
+*/
 
 footer ul li:nth-child(1).active ~.selecionado{
     transform: translateX(calc(-60px * 2));
