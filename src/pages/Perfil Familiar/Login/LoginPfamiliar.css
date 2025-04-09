@@ -16,7 +16,7 @@ body {
 }
 
 #titulo{
-    margin: 160px 0 50px 0;
+    margin: 160px 0 40px 0;
     font-weight: 650;
     font-size: 30px;
     color: rgba(57, 90, 113, 1);
@@ -29,15 +29,75 @@ body {
     padding: 10px 5px 10px 5px;
     background-color: rgba(42, 62, 86, 1);
     height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #containerLogin h1{
     color: rgba(255, 255, 255, 0.83);
     font-weight: 700;
     font-size: 30px;
-    margin: 5px 0 20px 0;
+    margin: 5px 0 0px 0;
 }
 
 .campoLogin input{
     background-color: none; 
+}
+
+.size{
+height: 30px;
+width: auto;
+}
+.size2{
+    height: 80px;
+}
+#recuperar{
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+.criar{
+    background-color: rgb(55, 165, 255);
+    border-radius: 5px;
+    width: 100px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 70, 131);
+}
+#rec{
+    margin-right: 20px;
+}
+#caixacpf{
+display: flex;
+background-color: aliceblue;
+height: 20px;
+border-radius: 5px;
+}
+#caixasenha{
+background-color: aliceblue;
+height: 20px;
+border-radius: 5px;
+}
+#password{
+    display: flex;
+    margin: 10px 0px 10px 0px;
+}
+input{
+background: transparent;
+border: none;
+}
+button{
+    background: transparent;
+    border: none;
+    background-color: rgb(136, 199, 255);
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+    color: rgb(0, 70, 131);
+    font-weight: bold;
+}
+
+.footerlogin{
+margin-top: 15%;
 }

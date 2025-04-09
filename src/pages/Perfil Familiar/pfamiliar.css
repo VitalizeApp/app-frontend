@@ -19,7 +19,7 @@
 }
 
 #semdep{
-    width: 300px;
+    width: auto;
     height: 300px;
     align-self: center;
     border-radius: 20px;

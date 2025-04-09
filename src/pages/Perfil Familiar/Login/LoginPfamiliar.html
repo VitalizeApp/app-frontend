@@ -8,27 +8,25 @@
   </head>
 
   <body>
-    <h1 id="titulo">Bem-vindo</h1>
+    <h1 id="titulo">Dependentes</h1>
     <div id="containerLogin">
       <h1>Login</h1>
 
       <div class="campoLogin">
-        <img src="#" alt="user" />
-        <input type="text" class="campoLogin" placeholder="Digite seu CPF" />
+        <img class="size2" src="imgsLoginPfamiliar/UserPlaceholder.png" alt="user" />
+        <input id="caixacpf" type="text" class="campoLogin" placeholder="Digite o CPF" />
       </div>
-
-      <div class="campoLogin">
-        <img src="#" alt="cadeado" />
-        <input type="text" class="campoLogin" placeholder="Digite sua senha" />
-        <img src="#" alt="esconder" />
+      
+      <div class="campoLogin" id="password">
+        <img class="size" src="imgsLoginPfamiliar/CadeadoPlaceholder.png" alt="cadeado" />
+        <input type="text" id="caixasenha" class="campoLogin" placeholder="Digite a senha" />
+        <img class="size" src="imgsLoginPfamiliar/EscondidoPlaceholder.png" alt="esconder" />
       </div>
 
       <button>Entrar</button>
-      <div class="footerLogin">
-        <h5>Recuper sua conta!</h5>
-        <h5>É novo por aqui?</h5>
-        <a href="#">Esqueci a senha</a>
-        <a href="#">Criar conta</a>
+      <div class="footerlogin">
+        <a href="#" class="criar" id="rec">Esqueci a senha</a>
+        <a href="#" class="criar" id="sen">Criar conta</a>
       </div>
     </div>
   </body>
