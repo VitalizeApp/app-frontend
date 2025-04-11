@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Vitalize - Login</title>
+  </head>
+  <body>
+    <h1 id="titulo">Bem-vindo!</h1>
+    <div id="containerLogin">
+      <h1>Login</h1>
+      <div class="campoLogin">
+        <img src="/src/pages/Login/img/user.svg" alt="Ícone de usuário" />
+        <input
+          id="cpf"
+          type="text"
+          placeholder="Digite seu CPF"
+          maxlength="14"
+        />
+      </div>
+      <div class="campoLogin">
+        <img src="/src/pages/Login/img/key.svg" alt="Ícone de senha" />
+        <input id="senha" type="password" placeholder="Digite sua senha" />
+        <img
+          id="toggleSenha"
+          src="/src/pages/Login/img/visibility_on.svg"
+          alt="Mostrar senha"
+        />
+      </div>
+      <button>Entrar</button>
+      <div class="footerLogin">
+        <div class="footer-group">
+          <span>Recupere sua conta!</span>
+          <a href="#">Esqueci a senha</a>
+        </div>
+        <div class="footer-group">
+          <span>É novo por aqui?</span>
+          <a href="#">Criar conta</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

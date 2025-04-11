@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(/src/pages/Login/img/fundo.png) center center/cover;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    text-align: center;
+}
+
+#titulo{
+    margin: 150px 0 50px;
+    font-weight: 650;
+    font-size: 30px;
+    color: rgba(57, 90, 113, 1);
+}
+
+#containerLogin{
+    border-radius: 40px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: rgba(42, 62, 86, 1);
+    height: 370px;
+}
+
+#containerLogin h1{
+    color: rgba(255, 255, 255, 0.83);
+    font-weight: 700;
+    font-size: 30px;
+    margin: 5px 0 20px;
+}
+
+.campoLogin{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.83);
+    margin: 10px 5px;
+    padding: 0 10px;
+    border-radius: 5px;
+    height: 40px;
+    gap: 8px;
+}
+
+.campoLogin img{
+    width: 25px;
+    height: 25px;
+}
+
+.campoLogin input{
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    outline: none;
+    color: rgba(54, 76, 91, 0.76);
+    font-family: 'Segoe UI';
+}
+
+.campoLogin input:focus{
+    color: rgb(33, 63, 83);
+}
+
+button{
+    color: brown;
+}
+
+#toggleSenha {
+    cursor: pointer;
+  }
+  
+  .footerLogin {
+    margin-top: 20px;
+  }
+  
+  .footer-group {
+    margin: 5px 0;
+  }
+  
+  .footer-group span {
+    color: white;
+    font-size: 14px;
+  }
+  
+  .footer-group a {
+    color: rgba(255, 255, 255, 0.83);
+    text-decoration: none;
+    font-weight: 600;
+  }
