@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/telasDeIncializacao/telas/abertura/abertura.css">
-    <link rel="stylesheet" href="abertura.js">
+    <link rel="stylesheet" href="abertura.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet">
     <title>Vitalize - Tela de Abertura</title>
 </head>
@@ -14,12 +13,11 @@
     <div class="slide-up"></div>
 
 
-
     <script>
         setTimeout(() => {
             document.querySelector(".slide-up").classList.add("active");
             setTimeout(() => {
-                window.location.href = "/public/telasDeIncializacao/telas/bemvindo/bemvindo.html"; // Substitua pelo nome correto
+                window.location.href = "../bemvindo/bemvindo.html"; // Substitua pelo nome correto
             }, 1000);
         }, 4000);
     </script>
