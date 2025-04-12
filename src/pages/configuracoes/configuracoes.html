@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/pages/configuracoes/config.css">
+    <script src="configuracoes.js"></script>
     <title>tela de configurações</title>
 </head>
 <body class="body_config">
@@ -46,19 +47,34 @@
         <section class="outros">
             <h3>Outros</h3>
             <div class="iconsC feedback">
-                <img class="imgsC"  src="/src/pages/imgsApp/feedbackPreto.svg" alt="">
+                <img class="imgsC" src="/src/pages/imgsApp/feedbackPreto.svg" alt="">
                 <p>Avalie-nos</p>
             </div>
             <div class="iconsC sair">
-                <img class="imgsC"  src="/src/pages/imgsApp/sairPreto.svg" alt="">
+                <img class="imgsC" src="/src/pages/imgsApp/sairPreto.svg" alt="">
                 <p>Sair </p>
             </div>
         </section>
     </main>
-    <footer id="barraDeNavegacao">
-
-    </footer>
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
       
-    <script src="/src/pages/configuracoes/configuracoes.js"></script>
+            // Agora sim, carrega o JS do menu após inserir o HTML
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+              // Inicializa quando o script estiver carregado
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
 </body>
 </html>

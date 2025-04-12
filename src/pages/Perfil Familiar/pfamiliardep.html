@@ -1,77 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="pfamiliardep.css">
-    <link rel="stylesheet" href="../../componentes/barra_de_navegacao/menu.css">
-</head>
-<body>
+    <link rel="stylesheet" href="pfamiliardep.css" />
+    <link
+      rel="stylesheet"
+      href="../../componentes/barra_de_navegacao/menu.css"
+    />
+  </head>
+  <body>
     <div class="tela">
-        <a id="voltar" href="pfamiliar.html"><img class="icon" src="imgsPfamiliar/voltar.png" alt="voltar"></a> 
-        <h2 class="fonte">Perfil Familiar</h2>
-        <section id="depsection">
+      <a id="voltar" href="pfamiliar.html"
+        ><img class="icon" src="imgsPfamiliar/voltar.png" alt="voltar"
+      /></a>
+      <h2 class="fonte">Perfil Familiar</h2>
+      <section id="depsection"></section>
+      <div id="dep"></div>
+      <button type="submit" id="criar">
+        <img class="icon" src="imgsPfamiliar/add.png" alt="criar" />
+      </button>
+      <script src="dependentes.js"></script>
+    </div>
+    <footer id="barra"></footer>
+    <script>
+      fetch("/src/componentes/barra_de_navegacao/index.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("barra").innerHTML = data;
 
-        </section>
-        <div id="dep">
-
-        </div>
-        <button type="submit" id="criar"><img class="icon" src="imgsPfamiliar/add.png" alt="criar"></button>
-        <script src="dependentes.js"></script>
-
-        <footer>
-            <ul class="navegacao">
-                <li class="list" id="lembretes">
-                    <a href="#">
-                        <span class="icons">
-                            <img src="../../componentes/barra_de_navegacao/imgs/lembretes.png">
-                        </span>
-                        <p class="texto">Lembretes</p>
-                        <span class="circulo"></span>
-                    </a>
-                </li>
-                <li class="list" id="pfamiliar">
-                    <a href="#">
-                        <span class="icons">
-                            <img src="../../componentes/barra_de_navegacao/imgs/pfamiliar.png">
-                        </span>
-                        <p class="texto">Perfil familiar</p>
-                        <span class="circulo"></span>
-                    </a>
-                </li>
-                <li class="list active" id="home">
-                    <a href="#">
-                        <span class="icons">
-                            <img src="../../componentes/barra_de_navegacao/imgs/home.png">
-                        </span>
-                        <p class="texto">Home</p>
-                        <span class="circulo"></span>
-                    </a>
-                </li>
-                <li class="list" id="historico">
-                    <a href="../Histórico/historico.html">
-                        <span class="icons">
-                            <img src="../../componentes/barra_de_navegacao/imgs/historico.png">
-                        </span>
-                        <p class="texto">Histórico</p>
-                        <span class="circulo"></span>
-                    </a>
-                </li>
-                <li class="list" id="perfil">
-                    <a href="../configuracoes/configuracoes.html">
-                        <span class="icons">
-                            <img src="../../componentes/barra_de_navegacao/imgs/perfil.png">
-                        </span>
-                        <p class="texto">Configurações</p>
-                        <span class="circulo"></span>
-                    </a>
-                </li>
-                <div class="selecionado"></div>
-            </ul>
-        </footer>
-    <script src="../../componentes/barra_de_navegacao/script.js"></script>
-        </div>
-</body>
+          // Agora sim, carrega o JS do menu após inserir o HTML
+          const script = document.createElement("script");
+          script.src = "/src/componentes/barra_de_navegacao/script.js";
+          script.onload = () => {
+            // Inicializa quando o script estiver carregado
+            if (typeof inicializarMenu === "function") {
+              inicializarMenu();
+            }
+          };
+          document.body.appendChild(script);
+        })
+        .catch((err) => console.error("Erro ao carregar o menu:", err));
+    </script>
+  </body>
 </html>

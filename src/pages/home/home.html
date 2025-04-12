@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
+    <title>Home</title>
+</head>
+<body>
+    <main class="telaPrincipal">
+        <header>
+            <a href="#" class="perfil">
+                <img src="imgsHome/perfil.jpg" alt="">
+            </a>
+            <div class="texto">
+                <p>Olá,</p>
+                <h4 class="nome_cache">Carla Melo</h4>
+            </div>
+        </header>
+        <section class="ed">
+            <h3>Educação diária</h3>
+            <article class="banner">
+            </article>
+        </section>
+        <section class="recomendacoes">
+            <h3>Recomendações</h3>
+
+            <div class="mapa">
+                <div class="mapa-quadro">
+                </div>
+                <div class="texto-mapa">
+                    <h4>Hospital de Todos</h4>
+                    <h5>Exame com cardiologista</h5>
+                    <p class="tempo">Faltam dois dias</p>
+                </div>
+            </div>
+        </section>
+        <section class="doc">
+            <h3>Docs mais acessados</h3>
+            <div class="recentes">
+                <div class="doc1 icon">
+                    <div class="img">
+                        <img src="/src/pages/home/imgsHome/doc.png" alt="Imagem de carteira">                     
+                    </div>
+                    <p>Carteira de vacinação</p>
+                </div>
+                <div class="doc2 icon">
+                    <div class="img">
+                        <img src="/src/pages/home/imgsHome/doc.png" alt="Imagem de carteira">                     
+                    </div>
+                    <p>Atestado</p>
+                </div>
+                <div class="doc3 icon">
+                    <div class="img">
+                        <img src="/src/pages/home/imgsHome/doc.png" alt="Imagem de carteira">                     
+                    </div>
+                    <p>Exame de sangue</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
+      
+            // Agora sim, carrega o JS do menu após inserir o HTML
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+              // Inicializa quando o script estiver carregado
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
+</body>
+</html>
