@@ -1,5 +1,5 @@
 
-## 📱 Aplicativo de Saúde – Naturezas
+## 📱 Aplicativo de Saúde - Vitalize 
 
 **Objetivo:**  
 Auxiliar usuários no armazenamento e administração de informações pessoais de saúde, promovendo o autocuidado, organização médica e acesso facilitado a serviços de saúde.
