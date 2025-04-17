@@ -141,19 +141,3 @@ footer ul li.active a .texto {
 }
 Não estão sendo utilizados para nada na barra de navegação, olha o que está errado ai.
 */
-
-footer ul li:nth-child(1).active ~.selecionado{
-    transform: translateX(calc(-60px * 2));
-}
-footer ul li:nth-child(2).active ~.selecionado{
-    transform: translateX(calc(-100% * 1));
-}
-footer ul li:nth-child(3).active ~.selecionado{
-    transform: translateX(calc(87.5% * 0));
-}
-footer ul li:nth-child(4).active ~.selecionado{
-    transform: translateX(calc(87.5% * 1));
-}
-footer ul li:nth-child(5).active ~.selecionado{
-    transform: translateX(calc(90% * 2));
-}

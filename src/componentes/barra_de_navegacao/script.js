@@ -1,7 +1,7 @@
 // menu.js
 function inicializarMenu() {
   const list = document.querySelectorAll('.list');
-  const indicador = document.querySelectorAll('.circulo');
+  const indicador = document.getElementsByClassName('.circulo');
 
   function linkAtivo() {
     list.forEach((item) => item.classList.remove('active'));
@@ -28,7 +28,7 @@ function inicializarMenu() {
   const urlAtual = window.location.pathname;
   list.forEach((item) => {
     const destino = item.getAttribute('data-link');
-    if (urlAtual.includes(destino)) {
+    if (urlAtual.endsWith(destino)) {
       item.classList.add('active');
 
       // posicionar o círculo na inicialização
@@ -37,3 +37,6 @@ function inicializarMenu() {
     }
   });
 }
+
+console.log('Indicador (círculo):', document.querySelector('.circulo'));
+console.log('Lista de itens:', document.querySelectorAll('.list'));
