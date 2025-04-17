@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="historico.css">
+    <link rel="stylesheet" href="historico.js">
+    <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
+    <title>Histórico</title>
+</head>
+<body class="body_config">
+    <div class="container">
+        <h3>Histórico</h3>
+        <main class="main">
+            <div class="nav">
+                <a href="" class="tudo-img">
+                    <img src="imgsHistorico/tudo.png" alt="imagem de estetoscópio">
+                    <div class="text">Tudo</div>
+                </a>
+                <a href="/src/pages/historico/privado.html" class="privado">
+                    <img src="imgsHistorico/privado.png" alt="Imgaem de casinha com cadeado">
+                    <div class="text">Privado</div>
+                </a>
+                <a href="/src/pages/historico/publico.html" class="publico">
+                    <img src="imgsHistorico/publico.png" alt="Imagem de casinha com cadeado aberto">
+                    <div class="text">Público</div>
+                </a>
+            </div>
+
+            <section class="tudo">
+                <div class="procedimentos">
+                    <h4>Hospital Roberto Santos</h4>
+                    <p>Data: 10/02/204</p>
+                    <p>Prescrição: Antitérmico</p>
+                </div>
+                <div class="procedimentos">
+                    <h4>Hospital Roberto Santos</h4>
+                    <p>Data: 10/02/204</p>
+                    <p>Prescrição: Antitérmico</p>
+                </div>
+                <div class="procedimentos">
+                    <h4>Hospital Roberto Santos</h4>
+                    <p>Data: 10/02/204</p>
+                    <p>Prescrição: Antitérmico</p>
+                </div>
+                <div class="documento">
+                    <img src="imgsHistorico/doc.png" alt="imagem de um arquvo">
+                    <div class="text">Documentos</div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
+      
+            // Agora sim, carrega o JS do menu após inserir o HTML
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+              // Inicializa quando o script estiver carregado
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
+</body>
+</html>
