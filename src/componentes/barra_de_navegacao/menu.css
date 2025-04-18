@@ -69,8 +69,8 @@ footer ul li a .circulo {
 }
 
 footer ul li.active a .circulo {
-    transition: .5s;
-    transition-delay: .5s;
+    transition: .3s;
+    transition-delay: .4s;
     transform: translateY(-35px) scale(1);
     background: linear-gradient(45deg, rgb(0, 108, 180), #4180AB, #8AB3CF);
 }
