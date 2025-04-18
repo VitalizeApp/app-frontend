@@ -72,6 +72,7 @@ footer ul li.active a .circulo {
     transition: .5s;
     transition-delay: .5s;
     transform: translateY(-35px) scale(1);
+    background: linear-gradient(45deg, rgb(0, 108, 180), #4180AB, #8AB3CF);
 }
 
 footer ul li a .icons {

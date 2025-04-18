@@ -13,6 +13,14 @@
     height: 100vh;
     background: url(../imgsApp/caminhos.png);
 }
+
+.conteiner img{
+    width: 30px;
+    background-color: #233947;
+    padding: 6px;
+    border-radius: 50%;
+}
+
 h3{
     text-align: center;
 }
