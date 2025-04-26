@@ -5,18 +5,25 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
+    
 }
 body{
     background-color: #69A6D0;
+    
 }
 main{
+    color: #fbfdff;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #voltar img{
     width: 30px;
     height: 30px;
 }
 .container{
+    color: #233947;
     width: 100%;
     height: 90dvh;
     background-color: #E8E8E8;
