@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="artigo.css">
+    <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
+    <title>Tela de artigos</title>
+</head>
+<body>
+    <h2>Biblioteca</h2>
+    <img src="" alt="">
+    <div class="container">
+        <h3>Populares</h3>
+        <section class="populares">
+            <div class="artigo aOne">
+                <div class="imgArtigo">
+                </div>
+                <div class="text">
+                    <p>Artigo 1</p>
+                </div>
+            </div>
+            <div class="artigo aDois">
+                <div class="imgArtigo">
+                </div>
+                <div class="text">
+                    <p>Artigo 2</p>
+                </div>
+            </div>
+            <div class="artigo aTres">
+                <div class="imgArtigo">
+                </div>
+                <div class="text">
+                    <p>Artigo 3</p>
+                </div>
+            </div>
+        </section>
+        <h3>Leituras</h3>
+        <section class="leituras">
+            <div class="leituraRecente">
+
+            </div>
+        </section>
+    </div>
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
+      
+            // Agora sim, carrega o JS do menu após inserir o HTML
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+              // Inicializa quando o script estiver carregado
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
+</body>
+</html>

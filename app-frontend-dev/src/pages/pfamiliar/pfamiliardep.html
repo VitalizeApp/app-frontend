@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="pfamiliardep.css" />
+    <link
+      rel="stylesheet"
+      href="../../componentes/barra_de_navegacao/menu.css"
+    />
+  </head>
+  <body>
+    <div class="tela">
+      <a id="voltar" href="pfamiliar.html"
+        ><img class="icon" src="imgsPfamiliar/voltar.png" alt="voltar"
+      /></a>
+      <h2 class="fonte">Perfil Familiar</h2>
+      <section id="depsection"></section>
+      <div id="dep"></div>
+      <button type="submit" id="criar">
+        <img class="icon" src="imgsPfamiliar/add.png" alt="criar" />
+      </button>
+      <script src="dependentes.js"></script>
+    </div>
+    <footer id="barra"></footer>
+    <script>
+      fetch("/src/componentes/barra_de_navegacao/index.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("barra").innerHTML = data;
+
+          // Agora sim, carrega o JS do menu após inserir o HTML
+          const script = document.createElement("script");
+          script.src = "/src/componentes/barra_de_navegacao/script.js";
+          script.onload = () => {
+            // Inicializa quando o script estiver carregado
+            if (typeof inicializarMenu === "function") {
+              inicializarMenu();
+            }
+          };
+          document.body.appendChild(script);
+        })
+        .catch((err) => console.error("Erro ao carregar o menu:", err));
+    </script>
+  </body>
+</html>
