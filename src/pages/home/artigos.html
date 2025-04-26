@@ -1,47 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="artigo.css">
+    <link rel="stylesheet" href="/src/pages/home/artigo.css">
     <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
     <title>Tela de artigos</title>
 </head>
 <body>
-    <h2>Biblioteca</h2>
-    <img src="" alt="">
-    <div class="container">
-        <h3>Populares</h3>
-        <section class="populares">
-            <div class="artigo aOne">
-                <div class="imgArtigo">
+    <main>
+        <div class="voltar">
+            <a id="voltar" href="/src/pages/home/home.html"
+              ><img class="icon" src="/src/pages/pfamiliar/imgsPfamiliar/voltar.png" alt="voltar"
+            /></a>
+        </div>
+        <h2>Biblioteca</h2>
+        
+        <div class="container">
+            <h3>Populares</h3>
+            <section class="populares">
+                <div class="artigo aOne">
+                    <div class="imgArtigo">
+                    </div>
+                    <div class="text">
+                        <p>Artigo 1</p>
+                    </div>
                 </div>
-                <div class="text">
-                    <p>Artigo 1</p>
+                <div class="artigo aDois">
+                    <div class="imgArtigo">
+                    </div>
+                    <div class="text">
+                        <p>Artigo 2</p>
+                    </div>
                 </div>
-            </div>
-            <div class="artigo aDois">
-                <div class="imgArtigo">
+                
+            </section>
+            <h3>Leituras Recentes</h3>
+            <section class="leituras">
+                <div class="leituraRecente">
+    
                 </div>
-                <div class="text">
-                    <p>Artigo 2</p>
-                </div>
-            </div>
-            <div class="artigo aTres">
-                <div class="imgArtigo">
-                </div>
-                <div class="text">
-                    <p>Artigo 3</p>
-                </div>
-            </div>
-        </section>
-        <h3>Leituras</h3>
-        <section class="leituras">
-            <div class="leituraRecente">
-
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
+    </main>
+   
     <footer id="barra"></footer>
     <script>
         fetch('/src/componentes/barra_de_navegacao/index.html')

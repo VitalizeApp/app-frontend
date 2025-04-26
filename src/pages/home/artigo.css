@@ -8,7 +8,13 @@
 }
 body{
     background-color: #69A6D0;
-    
+}
+main{
+    padding: 10px;
+}
+#voltar img{
+    width: 30px;
+    height: 30px;
 }
 .container{
     width: 100%;
@@ -16,17 +22,19 @@ body{
     background-color: #E8E8E8;
     border-radius: 5px;
     padding: 10px;
+    margin: 5px;
 }
 
 .populares, .leituras{
     display: flex;
+    flex-wrap: wrap;
     padding: 10px;
     align-items: center;
     gap: 10px;
 }
 .artigo, .leituraRecente{
-    width: 117px;
-    height: 154px;
+    width: 100px;
+    height: 144px;
     flex-shrink: 0;
     border: 3px solid #ffffff;
     border-radius: 5px;
