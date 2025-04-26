@@ -7,31 +7,40 @@
 }
 
 body {
-  background: url(/src/pages/Login/img/fundo.png) center center/cover;
+  background: url(/src/pages/Login/img/fundo.png) center center/cover no-repeat;
   font-family: "Poppins", "Segoe UI", sans-serif;
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#titulo {
-  margin: 150px 0 50px;
+.titulo {
+  margin: 30px;
   font-weight: 650;
   font-size: 30px;
   color: rgba(57, 90, 113, 1);
 }
 
 #containerLogin {
-  border-radius: 40px;
-  margin: 0 10px;
-  padding: 10px;
+  border-radius: 30px;
+  margin: 0 5px;
+  padding: 15px;
   background-color: rgba(42, 62, 86, 1);
-  height: 370px;
+  height: 340px;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #containerLogin h1 {
   color: rgba(255, 255, 255, 0.83);
   font-weight: 700;
   font-size: 30px;
-  margin: 5px 0 20px;
+  margin: 5px 0 10px;
 }
 
 .campoLogin {
@@ -43,6 +52,7 @@ body {
   border-radius: 5px;
   height: 40px;
   gap: 8px;
+  width: 100%;
 }
 
 .campoLogin img {
@@ -56,6 +66,7 @@ body {
   background: transparent;
   font-size: 15px;
   font-weight: 600;
+  width: 10px;
   outline: none;
   color: rgba(54, 76, 91, 0.76);
   font-family: "Segoe UI";
@@ -66,7 +77,19 @@ body {
 }
 
 button {
-  color: brown;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: brown;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkred;
 }
 
 #toggleSenha {
@@ -90,4 +113,44 @@ button {
   color: rgba(255, 255, 255, 0.83);
   text-decoration: none;
   font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  #titulo {
+    margin: 100px 0 30px;
+    font-size: 26px;
+  }
+
+  #containerLogin {
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .campoLogin {
+    height: 40px;
+    margin: 8px 0;
+  }
+
+  .campoLogin img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .campoLogin input {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footer-group span, .footer-group a {
+    font-size: 13px;
+  }
 }
