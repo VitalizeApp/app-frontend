@@ -41,16 +41,18 @@ body {
     margin: 5px 0 0px 0;
 }
 
-.campoLogin input{
-    background-color: none; 
-}
-
 .size{
-height: 30px;
+height: 20px;
 width: auto;
+align-self: center;
 }
 .size2{
-    height: 80px;
+    height: 50px;
+}
+.size3{
+    height: 15px;
+    align-self: center;
+    padding-left: 3px;
 }
 #recuperar{
     background-color: white;
@@ -68,26 +70,43 @@ width: auto;
 #rec{
     margin-right: 20px;
 }
-#caixacpf{
+.caixacpf{
 display: flex;
-background-color: aliceblue;
+background-color: none;
 height: 20px;
 border-radius: 5px;
 }
-#caixasenha{
+#cpf{
 background-color: aliceblue;
-height: 20px;
+width: 180px;
+font-size: 15px;
 border-radius: 5px;
+height: 30px;
+padding: 5px;
+}
+
+#caixasenha{
+background-color: none;
+width: 133px;
+font-size: 15px;
+margin: 5px;
 }
 #password{
     display: flex;
     margin: 10px 0px 10px 0px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    height: 30px;
 }
 input{
 background: transparent;
 border: none;
 }
-button{
+input:focus {
+    outline: none;
+    border: none;
+}
+#entrar{
     background: transparent;
     border: none;
     background-color: rgb(136, 199, 255);
@@ -98,6 +117,24 @@ button{
     font-weight: bold;
 }
 
-.footerlogin{
+.footerLogin{
 margin-top: 15%;
+margin-top: 30px;
+color: aliceblue;
+}
+a{
+    color: inherit;
+    font-weight: Bold;
+}
+button:hover{
+    cursor: pointer;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+#user{
+    filter: invert(1) brightness(2);
 }
