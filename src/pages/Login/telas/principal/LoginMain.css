@@ -76,16 +76,33 @@ body {
   color: rgb(33, 63, 83);
 }
 
-button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background-color: brown;
-  color: white;
-  font-weight: 600;
-  font-size: 15px;
+.campoBotao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 175px;
+  height: 35px;
   cursor: pointer;
+  background-color: rgba(217, 217, 217, 0.4);
+  border-radius: 20px;
+  border: solid 2px rgba(235, 235, 235, 1);
+  text-align: center;
+}
+
+.campoBotao a {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  background-image: linear-gradient(93.4deg, #D9EFFF 31.51%, #B1CCDE 93.37%, #89A8BD 118.93%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.campoBotao:hover{
+  transition: 400ms;
+  background-color: #4c5d68;
 }
 
 button:hover {
