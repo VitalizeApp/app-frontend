@@ -4,40 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="LoginPfamiliar.css" />
+    <script src="LoginPfamiliar.js"></script>
     <title>Vitalize - Login</title>
   </head>
-
   <body>
-    <div id="voltar"></div>
-    <h1 id="titulo">Dependentes</h1>
+    <div class="titulo">
+      <h1 id="titulo">Bem-vindo!</h1>
+    </div>
     <div id="containerLogin">
       <h1>Login</h1>
-
-      <div>
-        <img class="size2" id="user" src="/src/pages/Login/img/user.svg" alt="usuário" />
-        <input class="caixacpf" id="cpf" type="text" maxlength="11" placeholder="Digite o CPF" />
+      <div class="campoLogin">
+        <img src="/src/pages/Login/img/user.svg" alt="Ícone de usuário" />
+        <input
+          id="cpf"
+          type="text"
+          placeholder="Digite seu CPF"
+          maxlength="14"
+        />
       </div>
-      
-      <div id="password">
-        <img class="size3" src="/src/pages/Login/img/key.svg" alt="cadeado" />
-        <input type="password" id="caixasenha" placeholder="Digite a senha" />
-        <button type="button" id="ciclo">
-          <img class="size" id="olho" src="/src/pages/Login/img/visibility_off.svg" alt="Esconder"/>
-        </button>
-    
-        <script src="LoginPfamiliar.js"></script>
-
+      <div class="campoLogin">
+        <img src="/src/pages/Login/img/key.svg" alt="Ícone de senha" />
+        <input id="senha" type="password" placeholder="Digite sua senha" />
+        <img
+          id="toggleSenha"
+          src="/src/pages/Login/img/visibility_on.svg"
+          alt="Mostrar senha"
+        />
       </div>
-
-      <button id="entrar">Entrar</button>
+      <div class="campoBotao">
+        <a>Entrar</a>
+      </div>
       <div class="footerLogin">
-        <div class="footer-group">
+        <div class="senha-group">
           <span>Recupere sua conta!</span>
-          <a href="#">Esqueci a senha</a>
+          <a href="/src/pages/Login/telas/senha/cpf/senha1.html"
+            >Esqueci a senha</a
+          >
         </div>
-        <div class="footer-group">
+        <div class="cadastro-group">
           <span>É novo por aqui?</span>
-          <a href="#">Criar conta</a>
+          <a href="/src/pages/Login/telas/cadastro/cpf/cadastro1.html"
+            >Criar conta</a
+          >
         </div>
       </div>
     </div>
