@@ -56,25 +56,6 @@
         </div>
     </main>
    
-    <footer id="barra"></footer>
-    <script>
-        fetch('/src/componentes/barra_de_navegacao/index.html')
-          .then(response => response.text())
-          .then(data => {
-            document.getElementById('barra').innerHTML = data;
-      
-            // Agora sim, carrega o JS do menu após inserir o HTML
-            const script = document.createElement('script');
-            script.src = '/src/componentes/barra_de_navegacao/script.js';
-            script.onload = () => {
-              // Inicializa quando o script estiver carregado
-              if (typeof inicializarMenu === 'function') {
-                inicializarMenu();
-              }
-            };
-            document.body.appendChild(script);
-          })
-          .catch(err => console.error('Erro ao carregar o menu:', err));
-      </script>
+    
 </body>
 </html>

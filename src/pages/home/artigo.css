@@ -21,7 +21,6 @@ main{
 }
 
 .voltar{
-    
     width: 60px;
     height: 60px;
     text-align: center;
@@ -34,10 +33,6 @@ main{
     width: 100%;
 }
 
-#voltar img{
-    width: 30px;
-    height: 30px;
-}
 .container{
     color: #233947;
     background-color: #E8E8E8;
@@ -56,7 +51,7 @@ main{
 }
 .artigo, .leituraRecente{
     width: 80px;
-    height: 110px;
+    height: 90px;
     flex-shrink: 0;
     border: 3px solid #ffffff;
     border-radius: 5px;
