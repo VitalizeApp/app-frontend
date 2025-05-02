@@ -9,17 +9,33 @@
 }
 
 .conteiner{
-    padding: 15px;
-    height: 100vh;
+    padding: 10px;
     background: url(../imgsApp/caminhos.png);
 }
 
-.conteiner img{
-    width: 30px;
-    background-color: #233947;
-    padding: 6px;
-    border-radius: 50%;
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    margin: 10px;
 }
+
+
+.voltar{
+    
+    width: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voltar img{
+    width: 100%;
+}
+
+
 
 h3{
     text-align: center;

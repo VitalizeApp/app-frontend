@@ -94,19 +94,20 @@ body {
   font-weight: 700;
   font-size: 22px;
   line-height: 1;
-  background-image: linear-gradient(93.4deg, #D9EFFF 31.51%, #B1CCDE 93.37%, #89A8BD 118.93%);
+  background-image: linear-gradient(
+    93.4deg,
+    #d9efff 31.51%,
+    #b1ccde 93.37%,
+    #89a8bd 118.93%
+  );
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
-.campoBotao:hover{
-  transition: 400ms;
+.campoBotao:hover {
+  transition: 300ms;
   background-color: #4c5d68;
-}
-
-button:hover {
-  background-color: darkred;
 }
 
 #toggleSenha {
@@ -114,22 +115,33 @@ button:hover {
 }
 
 .footerLogin {
-  margin-top: 20px;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.71);
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.02em;
 }
 
-.footer-group {
-  margin: 5px 0;
-}
-
-.footer-group span {
+.footerLogin a {
   color: white;
   font-size: 14px;
+  font-weight: 500;
 }
 
-.footer-group a {
-  color: rgba(255, 255, 255, 0.83);
-  text-decoration: none;
-  font-weight: 600;
+.footerLogin a:hover {
+  color: #a9c9df;
+  transition: 200ms;
+}
+
+.senha-group {
+  text-align: left;
+}
+
+.cadastro-group {
+  text-align: right;
 }
 
 @media (max-width: 480px) {
@@ -167,7 +179,8 @@ button:hover {
     font-size: 14px;
   }
 
-  .footer-group span, .footer-group a {
+  .footer-group span,
+  .footer-group a {
     font-size: 13px;
   }
 }

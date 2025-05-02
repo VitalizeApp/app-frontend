@@ -1,6 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const senhaInput = document.getElementById("senha");
-  const toggle = document.getElementById("toggleSenha");
   const cpfInput = document.getElementById("cpf");
 
   toggle.addEventListener("click", () => {
@@ -21,13 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (v.length >= 7) formatado += "." + v.slice(6, 9);
     if (v.length >= 10) formatado += "-" + v.slice(9, 11);
     cpfInput.value = formatado;
-  });
-
-  cpfInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      senhaInput.focus();
-    }
   });
 
   document.querySelector(".campoBotao").addEventListener("click", () => {
