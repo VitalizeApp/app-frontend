@@ -101,12 +101,8 @@ body {
 }
 
 .campoBotao:hover{
-  transition: 400ms;
+  transition: 300ms;
   background-color: #4c5d68;
-}
-
-button:hover {
-  background-color: darkred;
 }
 
 #toggleSenha {
@@ -114,29 +110,40 @@ button:hover {
 }
 
 .footerLogin {
-  margin-top: 20px;
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.71);
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.02em;
 }
 
-.footer-group {
-  margin: 5px 0;
-}
-
-.footer-group span {
+.footerLogin a{
   color: white;
   font-size: 14px;
+  font-weight: 500;
 }
 
-.footer-group a {
-  color: rgba(255, 255, 255, 0.83);
-  text-decoration: none;
-  font-weight: 600;
+.footerLogin a:hover{
+  color: #a9c9df;
+  transition: 200ms;
+}
+
+.senha-group{
+  text-align: left;
+}
+
+.cadastro-group{
+  text-align: right;
 }
 
 @media (max-width: 480px) {
   body {
     padding: 20px;
   }
-
+  
   #titulo {
     margin: 100px 0 30px;
     font-size: 26px;
