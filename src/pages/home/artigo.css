@@ -1,61 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
-    color: #233947;
-    
-}
-body{
-    background-color: #69A6D0;
-    
-}
-main{
-    color: #fbfdff;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.voltar{
-    width: 60px;
-    height: 60px;
-    text-align: center;
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  background-color: #69A6D0;
+  padding: 1em;
+  color: white;
+}
+
+.topo-header {
+  display: flex;
+  margin: 6px;
+  gap: 1em;
+}
+
+.voltar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voltar img {
+  width: 100%;
+  height: auto;
+}
+
+.atual {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.lendo {
+  width: 90%;
+  max-width: 300px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 0.5em auto;
+}
+
+/* Conteúdo */
+.container {
+  padding: 1em;
+  background-color: #E8E8E8;
+  height: 100%;
+
+}
+
+h3 {
+  margin: 1em 0 0.5em;
+  color: #233947;
+}
+
+/* Carrossel base */
+.carrossel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1em;
+  padding-bottom: 1em;
+  scrollbar-width: none; /* Firefox */
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Artigos e Leituras */
+.artigo, .leituraRecente {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 70%;
+  max-width: 200px;
+ 
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.artigo {
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: 70%;
+    max-width: 100px;
+    height: 150px;
+    border: 2px solid white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.voltar img{
-    width: 100%;
-}
-
-.container{
+    justify-content: center;
+    font-weight: 500;
     color: #233947;
-    background-color: #E8E8E8;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-}
-
-.populares, .leituras{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 10px;
-    align-items: center;
-    gap: 10px;
-
-}
-.artigo, .leituraRecente{
-    width: 80px;
-    height: 90px;
-    flex-shrink: 0;
-    border: 3px solid #ffffff;
-    border-radius: 5px;
-    display: grid;
-    grid-template-rows: 3fr 1f;
     text-align: center;
+  }
+  
+
+.imgArtigo {
+  height: 100px;
+  background-color: #ccc;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.text {
+  padding: 0.5em;
+}
+
+.leituraRecente {
+  height: 100px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+  .artigo, .leituraRecente {
+    width: 150px;
+  }
 }

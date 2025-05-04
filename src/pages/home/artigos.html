@@ -1,61 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/pages/home/artigo.css">
-    <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
-    <title>Tela de artigos</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tela de Artigos</title>
+  <link rel="stylesheet" href="/src/pages/home/artigo.css" />
+  <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css" />
 </head>
 <body>
-    <main>
-        
+  <main>
+    <header>
+      <div class="topo-header">
         <a class="voltar" href="/src/pages/home/home.html">
-            <img src="/src/pages/historico/imgsHistorico/voltar.png" alt="img de voltar">
-         </a>
+          <img src="/src/pages/historico/imgsHistorico/voltar.png" alt="Voltar" />
+        </a>
         <h2>Biblioteca</h2>
-        
-        <div class="container">
-            <h3>Populares</h3>
-            <section class="populares">
-                <div class="artigo aOne">
-                    <div class="imgArtigo">
-                    </div>
-                    <div class="text">
-                        <p>Artigo 1</p>
-                    </div>
-                </div>
-                <div class="artigo aDois">
-                    <div class="imgArtigo">
-                    </div>
-                    <div class="text">
-                        <p>Artigo 2</p>
-                    </div>
-                </div>
-                <div class="artigo aTres">
-                    <div class="imgArtigo">
-                    </div>
-                    <div class="text">
-                        <p>Artigo 3</p>
-                    </div>
-                </div>
-                
-            </section>
-            <h3>Leituras Recentes</h3>
-            <section class="leituras">
-                <div class="leituraRecente r1">
-    
-                </div>
-                <div class="leituraRecente r2">
-    
-                </div>
-                <div class="leituraRecente r3">
-    
-                </div>
-            </section>
-        </div>
-    </main>
-   
-    
+      </div>
+      <section class="atual">
+        <p>Artigo mais recente</p>
+        <div class="lendo"></div>
+      </section>
+    </header>
+
+    <div class="container">
+      <h3>Populares</h3>
+      <section class="carrossel">
+        <section class="carrossel">
+            <div class="artigo">Artigo 1</div>
+            <div class="artigo">Artigo 2</div>
+            <div class="artigo">Artigo 3</div>
+            <div class="artigo">Artigo 4</div>
+            <div class="artigo">Artigo 5</div>
+          </section>
+      </section>
+
+      <h3>Leituras Recentes</h3>
+      <section class="carrossel">
+        <section class="carrossel">
+            <div class="artigo">Artigo 1</div>
+            <div class="artigo">Artigo 2</div>
+            <div class="artigo">Artigo 3</div>
+            <div class="artigo">Artigo 4</div>
+            <div class="artigo">Artigo 5</div>
+          </section>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

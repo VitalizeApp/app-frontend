@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background-color: #69a6d0;
+}
+
+main{
+  height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  flex-direction: column;
+  color: antiquewhite;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #69a6d0;
+}
+
+#titulo{
+  font-weight: 400;
+}
+
+.search-container {
+  
+  flex: 1;
+  display: flex;               /* flex container */
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;            /* esconde bordas internas */
+  margin-top: 10px;
+}
+
+.search-container input {
+  flex: 1;                     /* ocupa todo o espaço disponível */
+  border: none;
+  padding: 8px;
+  font-size: 10px;
+}
+
+.search-container button {
+  background: none;
+  border: none;
+  padding: 0 7px;             /* espaçamento interno */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.search-container button img {
+  width: 20px;
+  height: 20px;
+}
+
+
+.voltar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.voltar img {
+  width: 100%;
+  height: auto;
+}
+
+.agendamento{
+  padding: 9px;
+  background-color: #E8E8E8;
+  border-radius: 40px 40px 0 0;
+  height: 100%;
+}
+
+.agendamentoOn{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 300px;
+  gap: 10px;
+  padding: 7px;
+  color: #233947;
+}
+.bola{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #1B4663;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.agendamento h3{
+  margin: 4px;
+}
+.dentroCrd{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.exame{
+  width: 100%;
+  padding: 10px;
+  min-height: 60px;
+  background-color: #FFFFFF;
+  display: flex;
+  border-radius: 17px;
+  box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.25);
+  gap: 1em;
+}
+
+.textExame{
+  font-size: 1em;
+  width: 120px;
+  height: 48px;
+}
+
+#agendar{
+  width: 100px;
+  align-self: flex-end;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid #8AB3CF;
+  text-decoration: none;
+  color: #FFF;
+  background: #1B4663;
+  text-align: center;
+  padding: 2px;
+  border: none;
+}
+
+#agendar:hover{
+  background-color: #395A71;
+}
+
+/* Carousel de Especialidades */
+.especialidades {
+  display: flex;                   /* itens em linha */
+  overflow-x: auto;                /* rolagem horizontal */
+  scroll-snap-type: x mandatory;   /* snap por item */
+  gap: 16px;                       /* espaço entre cards */
+  padding: 1em;                    /* preenchimento interno */
+  -webkit-overflow-scrolling: touch; /* rolagem suave no iOS */
+}
+
+.especialidades::-webkit-scrollbar {
+  display: none;                   /* esconde scrollbar no Chrome/Safari */
+}
+
+/* Card de cada especialidade */
+.processo {
+  flex: 0 0 auto;                  /* não encolhe, largura fixa */
+  min-width: 140px;                 /* largura mínima */
+  height: 140px;                     /* altura fixa */
+  background: #fff;                 /* cor de fundo */
+  border-radius: 8px;               /* cantos arredondados */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;        /* snap no início de cada card */
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #233947;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.processo:hover {
+  transform: translateY(-4px);     /* efeito sutil ao passar o mouse */
+}
+/* Ajuste para que o <article> interno seja o verdadeiro container flex */
+.especialidades article.carrosel {
+  display: flex;                   /* itens em linha */
+  overflow-x: auto;                /* rolagem horizontal */
+  scroll-snap-type: x mandatory;   /* snap por item */
+  gap: 16px;                       /* espaço entre cards */
+  padding: 1em 0;                  /* vertical: 1em; sem horizontal */
+  -webkit-overflow-scrolling: touch; /* rolagem suave no iOS */
+}
+
+/* Esconde a barra de rolagem no Chrome/Safari */
+.especialidades article.carrosel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reaplica snap-align aos cards, caso não esteja herdando */
+.especialidades article.carrosel .processo {
+  scroll-snap-align: start;
+}
+
+/* (Opcional) Limita altura para evitar wrap */
+.especialidades article.carrosel {
+  max-height: 190px;  /* ou o suficiente para seus .processo */
+}
+
+
+/* Responsividade: mantém tudo inline em telas pequenas */
+@media (max-width: 480px) {
+  #titulo{
+    font-size: 1em;
+  }
+ 
+  .agendamento{
+    padding: 10px;
+  }
+  .especialidades article.carrosel {
+    gap: 12px;
+    padding: 0.5em 0;
+  }
+  .especialidades article.carrosel .processo {
+    min-width: 80px;
+    height: 130px;
+    font-size: 0.9em;
+  }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .processo {
+    min-width: 100px;
+    height: 70px;
+    font-size: 0.9em;
+  }
+
+  .especialidades {
+    gap: 12px;
+    padding: 0.5em;
+  }
+}

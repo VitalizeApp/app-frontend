@@ -11,7 +11,7 @@ body{
     font-family: "Poppins", sans-serif;
     color: #395A71;
     overflow: hidden;
-    width: 100vw;
+    width: 100vdw;
     height: 100vh;
     background: url(imgsHome/backgroundHome.png);
 }
@@ -59,14 +59,15 @@ section h3{
 .mapa{
     display: flex;
     gap: 12px;
+    
 }
 
 .mapa-quadro{
     width: 140px;
     height: 130px;
     border-radius: 10px;
-    background-color: rgb(125, 141, 163);
     font-size: 1.1em;
+    background: url(imgsHome/mapa.png) center;
 }
 
 p{

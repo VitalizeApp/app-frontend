@@ -9,10 +9,11 @@
 }
 body{
     background: url(/src/pages/historico/imgsHistorico/backgroundDocumentos.png);
-    padding: 20px;
+
 }
 
 main{
+    width: 100vdw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,12 +53,10 @@ article{
     border-radius: 6px;
     justify-content: center;
     align-items: center;
-    margin: 10px;
-    
-    width: 230px;
+    margin: 4px;
+    padding: 4px;
 }
 
 article img{
     width: 60px;
-    
 }
