@@ -1,0 +1,52 @@
+.tela{
+    background: url(background/PfamiliarBackground.jpeg) center/cover;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.fonte{
+    margin-left: 20px;
+    color: white;
+    font-size: 25px;
+}
+#voltar{
+    height: 6vh;
+    width: 5.5vh;
+    margin: 2vh; 
+}
+#depsection{
+width: 40vh;
+height: 50vh;
+margin: 2vh;
+align-self: center;
+background-color: transparent;
+overflow: auto;
+display: flex;
+flex-direction: column-reverse;
+}
+#depsection::-webkit-scrollbar{
+display: none;
+}
+#dep{
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    align-self: center;
+}
+#dep::-webkit-scrollbar{
+    display: none;
+}
+#criar{
+    height: 12vh;
+    background-color: aliceblue;
+    align-self: center;
+    border-radius: 50%;
+    align-self: center;
+    margin-bottom: 100px;
+}
+.icon{
+    width: 100%;
+    height: 100%;
+}
