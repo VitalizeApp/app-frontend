@@ -1,62 +1,496 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-*{
+/* Estilos Globais e Reset Básico */
+* {
     margin: 0;
     padding: 0;
-    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
-    color: #233947;
-}
-body{
-    background: url(/src/pages/historico/imgsHistorico/backgroundDocumentos.png);
-
 }
 
-main{
-    width: 100vdw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    padding: 30px;
-    
+html {
+    font-size: 16px; /* Base para unidades rem */
 }
 
-.voltar{
-    
-    width: 60px;
-    height: 60px;
-    text-align: center;
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e9eff7;
+    color: #333;
+    line-height: 1.6;
     display: flex;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Adiciona padding na parte inferior para não sobrepor a barra de navegação */
+    /* Ajuste este valor para a altura real da sua barra de navegação + um pequeno respiro */
+    padding-bottom: 80px; /* Exemplo: 60px da barra + 20px de respiro */
 }
 
-.principal{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    
-}
-
-.voltar img{
+.container-principal {
     width: 100%;
+    max-width: 420px;
+    background: url(../home/imgsHome/backgroundHome.png);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    /* O min-height aqui deve considerar o padding-bottom do body se a barra estiver fora do container */
+    /* Se a barra estiver DENTRO do body mas FORA do container, o padding do body é o correto. */
+    min-height: calc(100vh - 20px - 80px); /* (altura da tela - padding superior/inferior do body - padding inferior para barra) */
+    overflow: hidden;
+    margin-bottom: 0; /* Garante que não haja margem extra abaixo do container se o padding do body já cuida do espaço */
 }
 
-.principal h2{
+/* Cabeçalho */
+.cabecalho-app {
+    padding: 18px 15px;
+    text-align: center;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dde4ee;
+    display: flex; /* Adicionado para alinhar o botão de voltar, se presente */
+    align-items: center; /* Adicionado para alinhar o botão de voltar */
+    position: relative; /* Para posicionamento absoluto do botão de voltar, se usado */
+}
+
+
+.cabecalho-app h1 {
+    font-size: 1.6em;
+    font-weight: 600;
+    color: #2c3e50;
+    flex-grow: 1; /* Faz o título ocupar o espaço restante se o botão de voltar estiver presente e não absoluto */
+    text-align: center; /* Garante centralização se o botão de voltar não for absoluto */
+}
+
+
+/* Navegação por Abas */
+.navegacao-abas {
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin: 0 12px;
+    border-radius: 10px;
+    position: relative;
+    top: -8px;
+    z-index: 10;
+}
+
+.botao-aba {
+    background-color: #f0f4f8;
+    border: none;
+    color: #7f8c9a;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-grow: 1;
+    margin: 0 4px;
     text-align: center;
 }
-article{
+
+.botao-aba .fundo-icone-aba {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
     display: flex;
-    background-color: #F4F4F4;
-    border-radius: 6px;
     justify-content: center;
     align-items: center;
-    margin: 4px;
+    margin-bottom: 4px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.botao-aba i {
+    font-size: 1.3em;
+}
+
+.botao-aba .rotulo-aba {
+    font-size: 0.7em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.botao-aba.ativo {
+    color: #007bff;
+}
+
+.botao-aba.ativo .fundo-icone-aba i {
+     color: #007bff;
+}
+
+
+/* Conteúdo das Abas */
+.area-conteudo-abas {
+    flex-grow: 1;
+    padding: 15px 12px;
+    position: relative;
+    overflow-y: auto;
+    /* Garante que haja espaço para o botão flutuante não sobrepor o último item */
+    /* O padding-bottom do body já deve cuidar do espaço para a barra de navegação */
+}
+
+.conteudo-aba {
+    display: none;
+    animation: animacaoFadeIn 0.5s ease-in-out;
+}
+
+.conteudo-aba.conteudo-ativo {
+    display: block;
+}
+
+@keyframes animacaoFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cards de Histórico */
+.item-historico {
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.item-historico:hover {
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+.item-historico .icone-item {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e0eaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+.item-historico .detalhes-item h3 {
+    font-size: 1em;
+    font-weight: 600;
+    color: #34495e;
+    margin-bottom: 2px;
+}
+
+.item-historico .detalhes-item p {
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 1px;
+    line-height: 1.4;
+}
+.item-historico .detalhes-item .texto-pequeno {
+    font-size: 0.75em;
+    color: #777;
+}
+
+
+/* Botão de Upload Flutuante (FAB) */
+.botao-flutuante-upload {
+    position: fixed;
+    /* Ajusta o 'bottom' para ficar acima da barra de navegação */
+    /* (altura da barra de navegação + margem desejada) */
+    bottom: 85px; /* Exemplo: 60px da barra + 25px de margem */
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    font-size: 1.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, bottom 0.3s ease; /* Adiciona transição para 'bottom' */
+    z-index: 1000;
+}
+
+.botao-flutuante-upload:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 16px rgba(0, 123, 255, 0.5);
+}
+
+/* Modal Geral */
+.modal-fundo {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.modal-fundo.mostrar {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: animacaoSurgirModal 0.4s ease-out;
+}
+
+@media (min-width: 450px) {
+    .modal-conteudo {
+        max-width: 450px;
+    }
+    .modal-conteudo.modal-grande {
+        max-width: 500px;
+    }
+}
+
+
+@keyframes animacaoSurgirModal {
+    from { opacity: 0; transform: translateY(-20px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-cabecalho h2 {
+    font-size: 1.25em;
+    color: #2c3e50;
+}
+
+.botao-fechar-modal {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.botao-fechar-modal:hover {
+    color: #333;
+}
+
+/* Formulário no Modal */
+#formularioUpload div, #modalDetalheExame .modal-corpo div {
+    margin-bottom: 12px;
+}
+#formularioUpload label, #modalDetalheExame .modal-corpo label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    color: #495057;
+    font-size: 0.85em;
+}
+
+#formularioUpload input[type="file"],
+#formularioUpload select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 0.9em;
+    background-color: #f8f9fa;
+    transition: border-color 0.2s ease;
+}
+
+#formularioUpload input[type="file"] {
     padding: 4px;
 }
 
-article img{
-    width: 60px;
+#formularioUpload input[type="file"]::file-selector-button {
+    padding: 7px 10px;
+    margin-right: 8px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 0.85em;
+}
+#formularioUpload input[type="file"]::file-selector-button:hover {
+    background-color: #0056b3;
+}
+
+#formularioUpload select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 14px 10px;
+}
+
+#formularioUpload input:focus,
+#formularioUpload select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.15rem rgba(0,123,255,.25);
+}
+
+.grupo-radio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.grupo-radio input[type="radio"] {
+    margin-right: 3px;
+    transform: scale(0.9);
+}
+.grupo-radio label {
+    font-weight: normal;
+    font-size: 0.85em;
+    margin-bottom: 0;
+}
+
+
+.modal-acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.modal-acoes button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.modal-acoes button:active {
+    transform: scale(0.98);
+}
+
+.botao-cancelar {
+    background-color: #f0f0f0;
+    color: #555;
+}
+.botao-cancelar:hover {
+    background-color: #e0e0e0;
+}
+
+.botao-enviar {
+    background-color: #007bff;
+    color: white;
+}
+.botao-enviar:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para Modal de Detalhes do Exame */
+.modal-corpo p {
+    margin-bottom: 6px;
+    font-size: 0.9em;
+    color: #454545;
+}
+.modal-corpo p strong {
+    color: #2c3e50;
+}
+
+.divisor-modal {
+    margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.area-conteudo-arquivo {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 12px;
+    min-height: 80px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #333;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+/* Mensagem de nenhum registro */
+.sem-registros {
+    text-align: center;
+    color: #777;
+    margin-top: 25px;
+    font-size: 0.95em;
+}
+
+/* Ajustes finos para telas muito pequenas (ex: iPhone 5/SE com 320px de largura) */
+@media (max-width: 360px) {
+    html {
+        font-size: 15px;
+    }
+    body {
+        /* Ajustar padding para barra de navegação em telas menores se necessário */
+        padding-bottom: 75px; /* Exemplo: 55px da barra + 20px de respiro */
+    }
+    .container-principal {
+        min-height: calc(100vh - 20px - 75px);
+    }
+    .botao-flutuante-upload {
+        bottom: 80px; /* Exemplo: 55px da barra + 25px de margem */
+        width: 48px;
+        height: 48px;
+        font-size: 1.2em;
+    }
+    .cabecalho-app h1 {
+        font-size: 1.5em;
+    }
+    .botao-aba .rotulo-aba {
+        font-size: 0.65em;
+    }
+    .botao-aba i {
+        font-size: 1.2em;
+    }
+     .botao-aba .fundo-icone-aba {
+        width: 32px;
+        height: 32px;
+    }
+    .item-historico .detalhes-item h3 {
+        font-size: 0.95em;
+    }
+    .item-historico .detalhes-item p {
+        font-size: 0.8em;
+    }
+    .modal-cabecalho h2 {
+        font-size: 1.15em;
+    }
+    .modal-acoes button {
+        padding: 7px 12px;
+        font-size: 0.85em;
+    }
 }
