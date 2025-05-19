@@ -1,50 +1,151 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico do Paciente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/src/pages/historico/doc.css">
-    <title>Tela de documentos</title>
 </head>
 <body>
-    <main>
-         <a class="voltar" href="/src/pages/home/home.html">
-            <img src="/src/pages/historico/imgsHistorico/voltar.png" alt="Img de voltar">
-         </a>
-        <div class="principal">
-            <h2>Documentos</h2>
-        <article class="carteiraGov">
-            <img src="/src/pages/historico/imgsHistorico/carteiraGov.png" alt="Img de instituição">
-            <div class="text">
-                <h4>Carteira Gov</h4>
-                <p>Acesse documentos disponíveis na sua conta do Gov.br</p>
+    <div class="container-principal">
+        <header class="cabecalho-app">
+            <h1>Histórico</h1>
+        </header>
+
+        <nav class="navegacao-abas">
+            <button class="botao-aba ativo" data-aba="tudo">
+                <div class="fundo-icone-aba">
+                    <i class="fas fa-notes-medical"></i>
+                </div>
+                <span class="rotulo-aba">Tudo</span>
+            </button>
+            <button class="botao-aba" data-aba="privado">
+                <div class="fundo-icone-aba">
+                    <i class="fas fa-hospital-user"></i>
+                </div>
+                <span class="rotulo-aba">Privado</span>
+            </button>
+            <button class="botao-aba" data-aba="publico">
+                <div class="fundo-icone-aba">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <span class="rotulo-aba">Público</span>
+            </button>
+        </nav>
+
+        <main class="area-conteudo-abas">
+            <div id="tudo" class="conteudo-aba conteudo-ativo">
+                </div>
+            <div id="privado" class="conteudo-aba">
+                </div>
+            <div id="publico" class="conteudo-aba">
+                </div>
+        </main>
+
+        <button id="abrirModalUpload" class="botao-flutuante-upload">
+            <i class="fas fa-upload"></i>
+        </button>
+    </div> <div id="modalUpload" class="modal-fundo">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h2>Enviar Documento</h2>
+                <button id="fecharModalUpload" class="botao-fechar-modal">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-        </article>
-        <article class="vacinacoes">
-            <img src="/src/pages/historico/imgsHistorico/69.png" alt="">
-            <div class="text">
-                <h4>Vacinações</h4>
-                <p>Veja as vacinas que você tomou adicionadas pelo hospital</p>
-            </div>
-        </article>
-        <article class="atestados">
-            <img src="/src/pages/historico/imgsHistorico/70.png" alt="">
-            <div class="text">
-                <h4>Atestados</h4>
-                <p>Disponível e armazenado pelo hospital</p>
-            </div>
-        </article>
-        <article class="exames">
-            <img src="/src/pages/historico/imgsHistorico/71.png" alt="">
-            <div class="text">
-                <h4>Exames</h4>
-                <p>Veja quais exames voce realizou 
-                    adicionadas pelo hospital </p>
-            </div>
-        </article>
+            <form id="formularioUpload">
+                <div>
+                    <label for="campoArquivo">Arquivo:</label>
+                    <input type="file" id="campoArquivo" name="campoArquivo" required>
+                </div>
+                <div>
+                    <label for="tipoProcedimento">Tipo de Procedimento:</label>
+                    <select id="tipoProcedimento" name="tipoProcedimento" required>
+                        <option value="" disabled selected>Selecione o tipo</option>
+                        <option value="Exame Laboratorial">Exame Laboratorial</option>
+                        <option value="Imagem (Raio-X, RM, TC)">Imagem (Raio-X, RM, TC)</option>
+                        <option value="Receita Médica">Receita Médica</option>
+                        <option value="Atestado Médico">Atestado Médico</option>
+                        <option value="Relatório de Consulta">Relatório de Consulta</option>
+                        <option value="Laudo Médico">Laudo Médico</option>
+                        <option value="Cartão de Vacina">Cartão de Vacina</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Visibilidade:</label>
+                    <div class="grupo-radio">
+                        <input type="radio" id="visibilidadePrivado" name="visibilidade" value="privado" checked>
+                        <label for="visibilidadePrivado">Privado</label>
+                        <input type="radio" id="visibilidadePublico" name="visibilidade" value="publico">
+                        <label for="visibilidadePublico">Público</label>
+                    </div>
+                </div>
+                <div class="modal-acoes">
+                    <button type="button" id="botaoCancelarUpload" class="botao-cancelar">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="botao-enviar">
+                        Enviar
+                    </button>
+                </div>
+            </form>
         </div>
-       
-        
-    </main>
+    </div>
+
+    <div id="modalDetalheExame" class="modal-fundo">
+        <div class="modal-conteudo modal-grande">
+            <div class="modal-cabecalho">
+                <h2 id="tituloDetalheExame">Detalhes do Exame</h2>
+                <button id="fecharModalDetalhe" class="botao-fechar-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-corpo" id="corpoModalDetalhe">
+                <div id="infoExameDetalhado">
+                    <p><strong>Hospital:</strong> <span id="detalheHospital"></span></p>
+                    <p><strong>Data:</strong> <span id="detalheData"></span></p>
+                    <p><strong>Prescrição/Tipo:</strong> <span id="detalhePrescricao"></span></p>
+                    <p><strong>Visibilidade:</strong> <span id="detalheVisibilidade"></span></p>
+                </div>
+                <hr class="divisor-modal">
+                <h3>Conteúdo do Arquivo (Simulado):</h3>
+                <div id="conteudoArquivoFormatado" class="area-conteudo-arquivo">
+                    </div>
+            </div>
+            <div class="modal-acoes">
+                <button id="botaoBaixarExame" class="botao-enviar">
+                    <i class="fas fa-download"></i> Baixar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/pages/historico/doc.js"></script>
+
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
+      
+
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+             
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
 </body>
 </html>
