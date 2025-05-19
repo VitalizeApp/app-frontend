@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.voltar{
+height: 6vh;
+width: 5.5vh;
+align-self: flex-start;
+}
+.icon{
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: url(/src/pages/Login/img/fundo.png) center center/cover no-repeat;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo {
+  margin: 30px;
+  font-weight: 650;
+  font-size: 30px;
+  color: rgba(57, 90, 113, 1);
+}
+
+#containerLogin {
+  border-radius: 30px;
+  margin: 0 5px;
+  padding: 15px;
+  background-color: rgba(42, 62, 86, 1);
+  height: 340px;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#containerLogin h1 {
+  color: rgba(255, 255, 255, 0.83);
+  font-weight: 700;
+  font-size: 30px;
+  margin: 5px 0 10px;
+}
+
+.campoLogin {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.83);
+  margin: 10px 5px;
+  padding: 0 10px;
+  border-radius: 5px;
+  height: 40px;
+  gap: 8px;
+  width: 100%;
+}
+
+.campoLogin img {
+  width: 25px;
+  height: 25px;
+}
+
+.campoLogin input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  width: 10px;
+  outline: none;
+  color: rgba(54, 76, 91, 0.76);
+  font-family: "Segoe UI";
+}
+
+.campoLogin input:focus {
+  color: rgb(33, 63, 83);
+}
+
+.campoBotao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 175px;
+  height: 35px;
+  cursor: pointer;
+  background-color: rgba(217, 217, 217, 0.4);
+  border-radius: 20px;
+  border: solid 2px rgba(235, 235, 235, 1);
+  text-align: center;
+  text-decoration: none;
+}
+
+.campoBotao p {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  background-image: linear-gradient(
+    93.4deg,
+    #d9efff 31.51%,
+    #b1ccde 93.37%,
+    #89a8bd 118.93%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.campoBotao:hover {
+  transition: 300ms;
+  background-color: #4c5d68;
+}
+
+#toggleSenha {
+  cursor: pointer;
+}
+
+.footerLogin {
+  display: flex;
+  margin-top: 60px;
+  margin-bottom: 5px;
+  color: rgba(255, 255, 255, 0.71);
+  font-family: "Segoe UI";
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+.footerLogin a {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.footerLogin a:hover {
+  color: #a9c9df;
+  transition: 200ms;
+}
+
+.senha-group {
+  text-align: left;
+}
+
+.cadastro-group {
+  text-align: right;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  #titulo {
+    margin: 100px 0 30px;
+    font-size: 26px;
+  }
+
+  #containerLogin {
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .campoLogin {
+    height: 40px;
+    margin: 8px 0;
+  }
+
+  .campoLogin img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .campoLogin input {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .footer-group span,
+  .footer-group a {
+    font-size: 13px;
+  }
+}
