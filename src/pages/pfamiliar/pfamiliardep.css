@@ -1,11 +1,9 @@
 .tela{
-    background-image: url("background/PfamiliarBackground.jpeg");
-    width: 298px;
-    height: 635px;
-    border-radius: 20px;
+    background: url(background/PfamiliarBackground.jpeg) center/cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 .fonte{
     margin-left: 20px;
@@ -13,18 +11,22 @@
     font-size: 25px;
 }
 #voltar{
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(45deg, rgb(142, 210, 255), #4180AB, #37afff);
-    margin: 20px;
-    border-radius: 25px;
+    height: 6vh;
+    width: 5.5vh;
+    margin: 2vh; 
 }
 #depsection{
-width: 360px;
-height: 200px;
+width: 40vh;
+height: 50vh;
+margin: 2vh;
 align-self: center;
-border-radius: 25px;
+background-color: transparent;
+overflow: auto;
 display: flex;
+flex-direction: column-reverse;
+}
+#depsection::-webkit-scrollbar{
+display: none;
 }
 #dep{
     flex-direction: column;
@@ -36,11 +38,10 @@ display: flex;
     display: none;
 }
 #criar{
-    width: 75px;
-    height: 80px;
+    height: 12vh;
     background-color: aliceblue;
     align-self: center;
-    border-radius: 50px;
+    border-radius: 50%;
     align-self: center;
     margin-bottom: 100px;
 }

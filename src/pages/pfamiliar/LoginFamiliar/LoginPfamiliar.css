@@ -8,17 +8,10 @@
 
 
 .voltar{
-  width: 20%;
-  overflow: hidden;
-  align-self: baseline;
-  position: absolute;
+height: 6vh;
+width: 5.5vh;
+align-self: flex-start;
 }
-
-.voltar img{
-  height: 40px;
-  object-fit: cover; 
-}
-
 .icon{
   height: 100%;
   width: 100%;

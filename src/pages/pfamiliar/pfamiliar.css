@@ -1,9 +1,9 @@
 .tela{
-    background-image: url("background/PfamiliarBackground2.jpeg");
-    border-radius: 20px;
+    background: url(background/PfamiliarBackground2.jpeg) center/cover;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 .fonte{
     margin-left: 20px;
@@ -11,29 +11,20 @@
     font-size: 25px;
 }
 .voltar{
-    width: 20%;
-    height: auto;
-    overflow: hidden;
-
-}
-.voltar img {
-    height: 50px;
-    margin-top: 20px;
-    object-fit: cover;    
+    height: 6vh;
+    margin: 2vh 2vh;
 }
 
 #semdep{
     width: auto;
-    height: 300px;
+    height: 50vh;
     align-self: center;
-    border-radius: 20px;
 }
 #criar{
-    width: 75px;
-    height: 80px;
+    height: 12vh;
     background-color: aliceblue;
     align-self: center;
-    border-radius: 50px;
+    border-radius: 50%;
     align-self: center;
     margin-bottom: 50px;
 }
