@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="lembretes.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
+    <title>Document</title>
+</head>
+<body class="tela">
+
+    <h1>Lembretes</h1>
+
+    <section class="container">
+
+        <div id="remedios" class="caixa">
+            <p>Remédios</p>
+        </div>
+
+        <div id="consultas" class="caixa">
+            <p>Consultas</p>
+        </div>
+
+    </section>
+
+    <a href="#" id="criar">
+        <img id="editar" src="imgsLembrete/editar.svg" alt="editar">
+    </a>
+
+
+
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
+      
+            // Agora sim, carrega o JS do menu após inserir o HTML
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+              // Inicializa quando o script estiver carregado
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
+</body>
+</html>
