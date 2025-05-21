@@ -21,28 +21,41 @@ body{
 }
 .caixa{
     background-color: rgb(226, 226, 226);
-    height: 25vh;
     width: 90%;
     border-radius: 3vh;
     box-shadow: 0vh 1vh 2vh rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
 }
 #criar{
+    position: fixed;
+    bottom: 12vh;
+    right: 0vh;
+
     background-color: rgb(135, 187, 222);
     height: 10vh;
     width: 10vh;
-    align-self: flex-end;
-    margin-top: 5vh;
     border-radius: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-right: 2vh;
+    box-shadow: 0vh 0.5vh 1vh rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    cursor: pointer;
 }
 #editar{
 height: 7vh;
 filter: invert(1);
 }
-
+.texto{
+    height: 12vh;
+}
+#addrem,#addcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 h1{
     font-weight: bold;
@@ -54,4 +67,8 @@ h1{
 p{
     font-weight: bold;
     padding: 2vh;
+}
+
+button{
+    border: none;
 }

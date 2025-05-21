@@ -15,18 +15,26 @@
 
         <div id="remedios" class="caixa">
             <p>Remédios</p>
+            <div class="texto">
+
+            </div>
+            <div id="addrem"></div>
         </div>
 
         <div id="consultas" class="caixa">
             <p>Consultas</p>
+            <div class="texto">
+
+            </div>
+            <div id="addcon"></div>
         </div>
 
     </section>
-
-    <a href="#" id="criar">
+    
+    <button onclick="ativar()" id="criar">
         <img id="editar" src="imgsLembrete/editar.svg" alt="editar">
-    </a>
-
+        <script src="lembretes.js"></script>
+    </button>
 
 
     <footer id="barra"></footer>
@@ -49,5 +57,7 @@
           })
           .catch(err => console.error('Erro ao carregar o menu:', err));
       </script>
+
+      
 </body>
 </html>
