@@ -39,6 +39,7 @@ display: none;
 }
 #criar{
     height: 12vh;
+    width: 12vh;
     background-color: aliceblue;
     align-self: center;
     border-radius: 50%;

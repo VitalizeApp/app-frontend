@@ -11,8 +11,8 @@
 <body>
     <main class="telaPrincipal">
         <header>
-            <a href="#" class="perfil">
-                <img src="/src/pages/home/imgsHome/perfilC.png" alt="">
+            <a href="/src/pages/configuracoes/configuracoes.html" class="perfil">
+                <img src="/src/pages/home/imgsHome/perfilC.png" alt="Img de user">
             </a>
             <div class="texto">
                 <p>Olá,</p>
@@ -26,7 +26,7 @@
             </a>
         </section>
         <section class="recomendacoes">
-            <h3>Recomendações</h3>
+            <h3>Consultas</h3>
 
             <div class="mapa">
                 <a class="mapa-quadro" href="mapa.html">
@@ -34,7 +34,6 @@
                 <div class="texto-mapa">
                     <h4>Hospital de Todos</h4>
                     <h5>Exame com cardiologista</h5>
-                    <p class="tempo">Faltam dois dias</p>
                 </div>
             </div>
         </section>
@@ -69,11 +68,11 @@
           .then(data => {
             document.getElementById('barra').innerHTML = data;
       
-            // Agora sim, carrega o JS do menu após inserir o HTML
+
             const script = document.createElement('script');
             script.src = '/src/componentes/barra_de_navegacao/script.js';
             script.onload = () => {
-              // Inicializa quando o script estiver carregado
+              
               if (typeof inicializarMenu === 'function') {
                 inicializarMenu();
               }
