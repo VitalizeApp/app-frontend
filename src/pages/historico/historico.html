@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histórico do Paciente</title>
+    <title>Histórico de Saúde</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -13,49 +13,50 @@
 <body>
     <div class="container-principal">
         <header class="cabecalho-app">
-            <h1>Histórico</h1>
+            <a href="#" id="botaoVoltarPrincipal" class="botao-voltar" aria-label="Voltar" style="display: none;"> <i class="fas fa-chevron-left"></i>
+            </a>
+            <h1 id="tituloPrincipalHistorico">Histórico</h1>
         </header>
 
-        <nav class="navegacao-abas">
+        <nav class="navegacao-abas" id="navegacaoPrincipalAbas">
             <button class="botao-aba ativo" data-aba="tudo">
-                <div class="fundo-icone-aba">
-                    <i class="fas fa-notes-medical"></i>
-                </div>
+                <div class="fundo-icone-aba"> <i class="fas fa-notes-medical"></i> </div>
                 <span class="rotulo-aba">Tudo</span>
             </button>
             <button class="botao-aba" data-aba="privado">
-                <div class="fundo-icone-aba">
-                    <i class="fas fa-hospital-user"></i>
-                </div>
+                <div class="fundo-icone-aba"> <i class="fas fa-hospital-user"></i> </div>
                 <span class="rotulo-aba">Privado</span>
             </button>
             <button class="botao-aba" data-aba="publico">
-                <div class="fundo-icone-aba">
-                    <i class="fas fa-hospital"></i>
-                </div>
+                <div class="fundo-icone-aba"> <i class="fas fa-hospital"></i> </div>
                 <span class="rotulo-aba">Público</span>
             </button>
         </nav>
 
-        <main class="area-conteudo-abas">
-            <div id="tudo" class="conteudo-aba conteudo-ativo">
-                </div>
-            <div id="privado" class="conteudo-aba">
-                </div>
-            <div id="publico" class="conteudo-aba">
-                </div>
+        <main class="area-conteudo-abas" id="containerListaGeral">
+            <div id="tudo" class="conteudo-aba conteudo-ativo"></div>
+            <div id="privado" class="conteudo-aba"></div>
+            <div id="publico" class="conteudo-aba"></div>
         </main>
+
+        <div class="container-visao-procedimento" id="containerVisaoEspecifica">
+            <div class="cabecalho-visao-procedimento">
+                <h2 id="tituloVisaoEspecifica"></h2> </div>
+            <input type="search" id="barraProcuraEspecifica" class="barra-procura-procedimento" placeholder="Procurar em documentos...">
+            <div class="lista-documentos-procedimento" id="listaDocumentosEspecificos">
+                </div>
+        </div>
 
         <button id="abrirModalUpload" class="botao-flutuante-upload">
             <i class="fas fa-upload"></i>
         </button>
-    </div> <div id="modalUpload" class="modal-fundo">
+    </div>
+
+    <div id="modalUpload" class="modal-fundo">
         <div class="modal-conteudo">
             <div class="modal-cabecalho">
                 <h2>Enviar Documento</h2>
-                <button id="fecharModalUpload" class="botao-fechar-modal">
-                    <i class="fas fa-times"></i>
-                </button>
+                <button id="fecharModalUpload" class="botao-fechar-modal"><i class="fas fa-times"></i></button>
             </div>
             <form id="formularioUpload">
                 <div>
@@ -63,18 +64,22 @@
                     <input type="file" id="campoArquivo" name="campoArquivo" required>
                 </div>
                 <div>
-                    <label for="tipoProcedimento">Tipo de Procedimento:</label>
-                    <select id="tipoProcedimento" name="tipoProcedimento" required>
+                    <label for="tipoProcedimentoUpload">Tipo de Procedimento:</label> <select id="tipoProcedimentoUpload" name="tipoProcedimentoUpload" required>
                         <option value="" disabled selected>Selecione o tipo</option>
+                        <option value="Consulta Médica">Consulta Médica</option>
                         <option value="Exame Laboratorial">Exame Laboratorial</option>
-                        <option value="Imagem (Raio-X, RM, TC)">Imagem (Raio-X, RM, TC)</option>
+                        <option value="Exame de Imagem">Exame de Imagem</option>
                         <option value="Receita Médica">Receita Médica</option>
                         <option value="Atestado Médico">Atestado Médico</option>
                         <option value="Relatório de Consulta">Relatório de Consulta</option>
                         <option value="Laudo Médico">Laudo Médico</option>
-                        <option value="Cartão de Vacina">Cartão de Vacina</option>
+                        <option value="Carteira de Vacina">Carteira de Vacina</option>
                         <option value="Outro">Outro</option>
                     </select>
+                </div>
+                 <div>
+                    <label for="nomeEspecificoDocumento">Nome Específico do Documento/Exame:</label>
+                    <input type="text" id="nomeEspecificoDocumento" name="nomeEspecificoDocumento" placeholder="Ex: Hemograma Completo, Vacina COVID-19" required>
                 </div>
                 <div>
                     <label>Visibilidade:</label>
@@ -86,12 +91,8 @@
                     </div>
                 </div>
                 <div class="modal-acoes">
-                    <button type="button" id="botaoCancelarUpload" class="botao-cancelar">
-                        Cancelar
-                    </button>
-                    <button type="submit" class="botao-enviar">
-                        Enviar
-                    </button>
+                    <button type="button" id="botaoCancelarUpload" class="botao-cancelar">Cancelar</button>
+                    <button type="submit" class="botao-enviar">Enviar</button>
                 </div>
             </form>
         </div>
@@ -100,33 +101,28 @@
     <div id="modalDetalheExame" class="modal-fundo">
         <div class="modal-conteudo modal-grande">
             <div class="modal-cabecalho">
-                <h2 id="tituloDetalheExame">Detalhes do Exame</h2>
-                <button id="fecharModalDetalhe" class="botao-fechar-modal">
-                    <i class="fas fa-times"></i>
-                </button>
+                <h2 id="tituloDetalheExame">Detalhes do Documento</h2>
+                <button id="fecharModalDetalhe" class="botao-fechar-modal"><i class="fas fa-times"></i></button>
             </div>
             <div class="modal-corpo" id="corpoModalDetalhe">
                 <div id="infoExameDetalhado">
-                    <p><strong>Hospital:</strong> <span id="detalheHospital"></span></p>
+                    <p><strong>Documento:</strong> <span id="detalheNomeDocumento"></span></p>
+                    <p><strong>Hospital/Local:</strong> <span id="detalheHospital"></span></p>
                     <p><strong>Data:</strong> <span id="detalheData"></span></p>
-                    <p><strong>Prescrição/Tipo:</strong> <span id="detalhePrescricao"></span></p>
+                    <p><strong>Tipo Geral:</strong> <span id="detalhePrescricao"></span></p>
                     <p><strong>Visibilidade:</strong> <span id="detalheVisibilidade"></span></p>
                 </div>
                 <hr class="divisor-modal">
                 <h3>Conteúdo do Arquivo (Simulado):</h3>
-                <div id="conteudoArquivoFormatado" class="area-conteudo-arquivo">
-                    </div>
+                <div id="conteudoArquivoFormatado" class="area-conteudo-arquivo"></div>
             </div>
             <div class="modal-acoes">
-                <button id="botaoBaixarExame" class="botao-enviar">
-                    <i class="fas fa-download"></i> Baixar
-                </button>
+                <button id="botaoBaixarExame" class="botao-enviar"><i class="fas fa-download"></i> Baixar</button>
             </div>
         </div>
     </div>
 
     <script src="/src/pages/historico/doc.js"></script>
-
     <footer id="barra"></footer>
     <script>
         fetch('/src/componentes/barra_de_navegacao/index.html')

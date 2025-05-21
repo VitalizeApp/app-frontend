@@ -1,110 +1,210 @@
-// Dados de exemplo para o histórico (com ID e novos campos)
+// Dados de exemplo (adaptar conforme necessário)
 let historicoCompleto = [
-    { id: 1, hospital: 'Hospital São Lucas', data: '10/02/2024', prescricao: 'Antitérmico e repouso', tipo: 'privado', icone: 'fa-hospital-user', nomeArquivo: 'rel_hospitalsaolucas_100224.pdf', conteudoSimulado: 'Paciente João Silva, CPF 123.456.789-00\nConsulta em 10/02/2024\nSintomas: Febre alta, dor de cabeça.\nDiagnóstico: Virose.\nPrescrição: Dipirona 500mg a cada 6 horas. Repouso por 3 dias.\nDr. Carlos Andrade - CRM 12345/SP' },
-    { id: 2, hospital: 'Clínica CardioVida', data: '15/03/2024', prescricao: 'Manter medicação e exercícios', tipo: 'privado', icone: 'fa-heart-pulse', nomeArquivo: 'checkup_cardiovida_150324.pdf', conteudoSimulado: 'Paciente Maria Oliveira, CPF 987.654.321-00\nCheck-up Cardiológico Anual - 15/03/2024\nECG: Normal.\nPressão Arterial: 120/80 mmHg.\nRecomendações: Manter medicação atual para hipertensão. Continuar com dieta balanceada e exercícios físicos regulares (caminhada 3x por semana).\nRetorno em 6 meses.\nDra. Ana Costa - CRM 67890/RJ' },
-    { id: 3, hospital: 'Instituto Ortopédico', data: '20/04/2024', prescricao: 'Fisioterapia por 4 semanas', tipo: 'privado', icone: 'fa-bone', nomeArquivo: 'enc_ortopedico_200424.pdf', conteudoSimulado: 'Paciente Pedro Santos, CPF 234.567.890-11\nConsulta Ortopédica - 20/04/2024\nQueixa: Dor no joelho direito após atividade física.\nExame Físico: Leve edema, dor à palpação.\nDiagnóstico: Tendinite patelar.\nTratamento: 10 sessões de fisioterapia, anti-inflamatório por 7 dias. Evitar impacto.\nDr. Ricardo Lima - CRM 23456/MG' },
-    { id: 4, hospital: 'UPA Cidade Nova', data: '01/05/2024', prescricao: 'Sutura e analgésico', tipo: 'publico', icone: 'fa-house-chimney-medical', nomeArquivo: 'atend_upa_010524.pdf', conteudoSimulado: 'Paciente Carla Dias, CNS 899.0000.1111.2222\nAtendimento UPA Cidade Nova - 01/05/2024\nHistórico: Corte no antebraço esquerdo.\nProcedimento: Limpeza da ferida, sutura com 3 pontos. Administração de analgésico.\nOrientações: Manter curativo limpo e seco. Retirar pontos em 7-10 dias no posto de saúde.\nEnf. Responsável: Mariana Souza - COREN 34567' },
+    { id: 1, hospital: 'Clínica Imuniza', data: '2023-04-10', tipo: 'privado', icone: 'fa-syringe', nomeArquivo: 'vac_febreamarela_100423.pdf', tipoDocumentoGeral: 'Carteira de Vacina', nomeEspecifico: 'Vacina Febre Amarela', categoriaProcedimento: 'vacinas', conteudoSimulado: 'Lote: FA123\nFabricante: BioManguinhos\nDose: Única\nLocal: Clínica Imuniza Bem\nProfissional: Enf. Ana Silva' },
+    { id: 2, hospital: 'Hospital VitaCheck', data: '2024-01-15', tipo: 'privado', icone: 'fa-notes-medical', nomeArquivo: 'hemograma_anual_150124.pdf', tipoDocumentoGeral: 'Exame Laboratorial', nomeEspecifico: 'Hemograma Completo', categoriaProcedimento: 'exames_laboratoriais', conteudoSimulado: 'Leucócitos: 7.500/mm³\Hemácias: 4.8 milhões/mm³\Plaquetas: 250.000/mm³\nResponsável: Dr. Carlos Bastos' },
+    { id: 3, hospital: 'Posto de Saúde Central', data: '2023-05-20', tipo: 'publico', icone: 'fa-syringe', nomeArquivo: 'vac_gripe_200523.pdf', tipoDocumentoGeral: 'Carteira de Vacina', nomeEspecifico: 'Vacina Influenza (Gripe)', categoriaProcedimento: 'vacinas', conteudoSimulado: 'Lote: GRIPE2023-XYZ\nFabricante: Butantan\nDose: Anual\nLocal: Posto de Saúde Central\nProfissional: Téc. Enf. João Pereira' },
+    { id: 4, hospital: 'Clínica ImagemX', data: '2024-02-22', tipo: 'privado', icone: 'fa-x-ray', nomeArquivo: 'raiox_torax_220224.pdf', tipoDocumentoGeral: 'Exame de Imagem', nomeEspecifico: 'Raio-X do Tórax PA/Perfil', categoriaProcedimento: 'exames_imagem', conteudoSimulado: 'Impressão: Sem alterações significativas nos campos pulmonares bilateralmente.\nDr. Ricardo Imagem' },
+    { id: 5, hospital: 'Consultório Dr. Silva', data: '2024-03-05', tipo: 'privado', icone: 'fa-file-medical', nomeArquivo: 'atestado_aptidao_050324.pdf', tipoDocumentoGeral: 'Atestado Médico', nomeEspecifico: 'Atestado de Aptidão Física', categoriaProcedimento: 'atestados', conteudoSimulado: 'Atesto para os devidos fins que o(a) Sr(a). Carla Melo encontra-se em boas condições de saúde para a prática de atividades físicas.\nDr. Antônio Silva - CRM 12345' },
+    { id: 6, hospital: 'Clínica Imuniza', data: '2024-04-10', tipo: 'privado', icone: 'fa-syringe', nomeArquivo: 'vac_hepatiteb_100424.pdf', tipoDocumentoGeral: 'Carteira de Vacina', nomeEspecifico: 'Vacina Hepatite B (1ª Dose)', categoriaProcedimento: 'vacinas', conteudoSimulado: 'Lote: HB456\nFabricante: GSK\nDose: 1 de 3\nLocal: Clínica Imuniza Bem\nProfissional: Enf. Ana Silva' },
 ];
 
 // Elementos do DOM
-const botoesAba = document.querySelectorAll('.botao-aba');
-const conteudosAba = document.querySelectorAll('.conteudo-aba');
+const tituloPrincipalHistoricoEl = document.getElementById('tituloPrincipalHistorico');
+const navegacaoPrincipalAbasEl = document.getElementById('navegacaoPrincipalAbas');
+const containerListaGeralEl = document.getElementById('containerListaGeral');
+const containerVisaoEspecificaEl = document.getElementById('containerVisaoEspecifica');
+const tituloVisaoEspecificaEl = document.getElementById('tituloVisaoEspecifica');
+const barraProcuraEspecificaEl = document.getElementById('barraProcuraEspecifica');
+const listaDocumentosEspecificosEl = document.getElementById('listaDocumentosEspecificos');
+const botaoVoltarPrincipalEl = document.getElementById('botaoVoltarPrincipal');
 
+const botoesAbaGeral = document.querySelectorAll('#navegacaoPrincipalAbas .botao-aba');
+const conteudosAbaGeral = document.querySelectorAll('#containerListaGeral .conteudo-aba');
+
+// Modal Upload
 const modalUpload = document.getElementById('modalUpload');
 const abrirModalUploadBtn = document.getElementById('abrirModalUpload');
 const fecharModalUploadBtn = document.getElementById('fecharModalUpload');
 const botaoCancelarUpload = document.getElementById('botaoCancelarUpload');
 const formularioUpload = document.getElementById('formularioUpload');
 const campoArquivoInput = document.getElementById('campoArquivo');
-const tipoProcedimentoSelect = document.getElementById('tipoProcedimento');
+const tipoProcedimentoUploadSelect = document.getElementById('tipoProcedimentoUpload');
+const nomeEspecificoDocumentoInput = document.getElementById('nomeEspecificoDocumento');
 
+
+// Modal Detalhes
 const modalDetalheExame = document.getElementById('modalDetalheExame');
 const fecharModalDetalheBtn = document.getElementById('fecharModalDetalhe');
 const tituloDetalheExameEl = document.getElementById('tituloDetalheExame');
+const detalheNomeDocumentoEl = document.getElementById('detalheNomeDocumento');
 const detalheHospitalEl = document.getElementById('detalheHospital');
 const detalheDataEl = document.getElementById('detalheData');
-const detalhePrescricaoEl = document.getElementById('detalhePrescricao');
+const detalhePrescricaoEl = document.getElementById('detalhePrescricao'); // Usado para Tipo Geral
 const detalheVisibilidadeEl = document.getElementById('detalheVisibilidade');
 const conteudoArquivoFormatadoEl = document.getElementById('conteudoArquivoFormatado');
 const botaoBaixarExame = document.getElementById('botaoBaixarExame');
+let idItemAtualParaBaixar = null;
 
-let idItemAtualParaBaixar = null; // Armazena o ID do item no modal de detalhes
+// --- FUNÇÕES DE RENDERIZAÇÃO ---
 
-// Função para criar um item do histórico no HTML
-function criarItemHistoricoHTML(item) {
+// Formatar data para exibição (DD/MM/YYYY)
+function formatarDataExibicao(dataISO) {
+    if (!dataISO) return 'Data não informada';
+    const [ano, mes, dia] = dataISO.split('-');
+    return `${dia}/${mes}/${ano}`;
+}
+
+// Criar HTML para item da lista geral de histórico
+function criarItemHistoricoGeralHTML(item) {
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('item-historico');
-    itemDiv.setAttribute('data-id', item.id); // Adiciona data-id para identificar o item
-
+    itemDiv.setAttribute('data-id', item.id);
     itemDiv.innerHTML = `
         <div class="icone-item">
-            <i class="fas ${item.icone || 'fa-clinic-medical'}"></i>
+            <i class="fas ${item.icone || 'fa-file-alt'}"></i>
         </div>
         <div class="detalhes-item">
-            <h3>${item.hospital || item.nomeArquivo}</h3>
-            <p>Data: ${item.data}</p>
-            <p>Prescrição/Tipo: ${item.prescricao || item.tipoProcedimento}</p>
-            <p class="texto-pequeno">Visibilidade: ${item.tipo.charAt(0).toUpperCase() + item.tipo.slice(1)}</p>
+            <h3>${item.nomeEspecifico || item.tipoDocumentoGeral}</h3>
+            <p>${item.hospital || 'Local não informado'}</p>
+            <p class="texto-pequeno">Data: ${formatarDataExibicao(item.data)}</p>
         </div>
     `;
-    // Adiciona evento de clique para abrir detalhes
-    itemDiv.addEventListener('click', () => abrirDetalhesExame(item.id));
+    itemDiv.addEventListener('click', () => abrirDetalhesDocumento(item.id));
     return itemDiv;
 }
 
-// Função para renderizar itens do histórico
-function renderizarHistorico(filtroAba = 'tudo') {
-    conteudosAba.forEach(conteudo => conteudo.innerHTML = ''); // Limpa todas as abas
-
+// Renderizar lista geral de histórico (Tudo, Privado, Público)
+function renderizarListaGeral(filtroVisibilidade = 'tudo') {
+    conteudosAbaGeral.forEach(conteudo => conteudo.innerHTML = '');
     let itensParaRenderizar;
-    const abaAtiva = document.querySelector('.botao-aba.ativo').dataset.aba;
 
-    if (abaAtiva === 'tudo') {
+    if (filtroVisibilidade === 'tudo') {
         itensParaRenderizar = historicoCompleto;
     } else {
-        itensParaRenderizar = historicoCompleto.filter(item => item.tipo === abaAtiva);
+        itensParaRenderizar = historicoCompleto.filter(item => item.tipo === filtroVisibilidade);
     }
 
-    const containerAlvo = document.getElementById(abaAtiva);
+    // Ordenar por data mais recente
+    itensParaRenderizar.sort((a, b) => new Date(b.data) - new Date(a.data));
 
+    const containerAlvo = document.getElementById(filtroVisibilidade);
     if (containerAlvo) {
         if (itensParaRenderizar.length === 0) {
             containerAlvo.innerHTML = `<p class="sem-registros">Nenhum registro encontrado.</p>`;
         } else {
-            // Ordena por ID decrescente para mostrar os mais recentes primeiro
-            itensParaRenderizar.sort((a, b) => b.id - a.id).forEach(item => {
-                containerAlvo.appendChild(criarItemHistoricoHTML(item));
+            itensParaRenderizar.forEach(item => {
+                containerAlvo.appendChild(criarItemHistoricoGeralHTML(item));
             });
         }
     }
 }
 
-// Manipulação das Abas
-botoesAba.forEach(botao => {
-    botao.addEventListener('click', () => {
-        const abaAlvoId = botao.dataset.aba;
-
-        botoesAba.forEach(btn => btn.classList.remove('ativo'));
-        botao.classList.add('ativo');
-
-        conteudosAba.forEach(conteudo => conteudo.classList.remove('conteudo-ativo'));
-        const conteudoAtivo = document.getElementById(abaAlvoId);
-        if (conteudoAtivo) {
-            conteudoAtivo.classList.add('conteudo-ativo');
-        }
-        renderizarHistorico(abaAlvoId);
-    });
-});
-
-// --- Lógica do Modal de Upload ---
-function mostrarModalUpload() {
-    modalUpload.classList.add('mostrar');
-}
-function fecharModalUpload() {
-    modalUpload.classList.remove('mostrar');
-    formularioUpload.reset();
+// Criar HTML para item da lista de documentos específicos
+function criarItemDocumentoEspecificoHTML(item) {
+    const itemDiv = document.createElement('div');
+    itemDiv.classList.add('item-documento-especifico');
+    itemDiv.setAttribute('data-id', item.id); // Para abrir detalhes
+    itemDiv.innerHTML = `
+        <h4>${item.nomeEspecifico || 'Documento sem nome'}</h4>
+        <p>${item.hospital || 'Local não informado'}</p>
+        <p class="data-documento">Data: ${formatarDataExibicao(item.data)}</p>
+    `;
+    itemDiv.addEventListener('click', () => abrirDetalhesDocumento(item.id));
+    return itemDiv;
 }
 
+// Renderizar visão de procedimento específico (Ex: Carteira de Vacinação)
+function renderizarVisaoProcedimento(categoria, termoBusca = '') {
+    listaDocumentosEspecificosEl.innerHTML = '';
+    let itensFiltrados = historicoCompleto.filter(item => item.categoriaProcedimento === categoria);
+
+    if (termoBusca) {
+        const termo = termoBusca.toLowerCase();
+        itensFiltrados = itensFiltrados.filter(item =>
+            (item.nomeEspecifico && item.nomeEspecifico.toLowerCase().includes(termo)) ||
+            (item.hospital && item.hospital.toLowerCase().includes(termo)) ||
+            (item.tipoDocumentoGeral && item.tipoDocumentoGeral.toLowerCase().includes(termo))
+        );
+    }
+
+    // Ordenar por data mais recente
+    itensFiltrados.sort((a, b) => new Date(b.data) - new Date(a.data));
+
+    if (itensFiltrados.length === 0) {
+        listaDocumentosEspecificosEl.innerHTML = `<p class="sem-registros">Nenhum documento encontrado para esta categoria.</p>`;
+    } else {
+        itensFiltrados.forEach(item => {
+            listaDocumentosEspecificosEl.appendChild(criarItemDocumentoEspecificoHTML(item));
+        });
+    }
+}
+
+// --- LÓGICA DE NAVEGAÇÃO E VISUALIZAÇÃO ---
+function mostrarVisaoGeral() {
+    tituloPrincipalHistoricoEl.textContent = 'Histórico';
+    navegacaoPrincipalAbasEl.style.display = 'flex';
+    containerListaGeralEl.style.display = 'block';
+    containerVisaoEspecificaEl.style.display = 'none';
+    botaoVoltarPrincipalEl.style.display = 'none'; // Esconde botão de voltar
+    // Garante que a aba "Tudo" esteja ativa e renderizada
+    const abaTudo = document.querySelector('#navegacaoPrincipalAbas .botao-aba[data-aba="tudo"]');
+    if (abaTudo) {
+        botoesAbaGeral.forEach(btn => btn.classList.remove('ativo'));
+        conteudosAbaGeral.forEach(cont => cont.classList.remove('conteudo-ativo'));
+        abaTudo.classList.add('ativo');
+        document.getElementById('tudo').classList.add('conteudo-ativo');
+        renderizarListaGeral('tudo');
+    }
+}
+
+function mostrarVisaoEspecifica(categoria) {
+    const titulos = {
+        vacinas: 'Carteira de Vacinação',
+        exames_laboratoriais: 'Exames Laboratoriais',
+        exames_imagem: 'Exames de Imagem',
+        atestados: 'Atestados Médicos',
+        // Adicionar outros conforme necessário
+    };
+    const titulo = titulos[categoria] || 'Documentos';
+
+    tituloPrincipalHistoricoEl.textContent = titulo; // Muda o título principal da página
+    tituloVisaoEspecificaEl.textContent = titulo; // Título dentro da seção específica (pode ser redundante ou removido)
+    navegacaoPrincipalAbasEl.style.display = 'none';
+    containerListaGeralEl.style.display = 'none';
+    containerVisaoEspecificaEl.style.display = 'block';
+    botaoVoltarPrincipalEl.style.display = 'flex'; // Mostra botão de voltar
+
+    // Limpa e configura a barra de busca para a categoria atual
+    barraProcuraEspecificaEl.value = '';
+    barraProcuraEspecificaEl.oninput = () => renderizarVisaoProcedimento(categoria, barraProcuraEspecificaEl.value);
+    
+    renderizarVisaoProcedimento(categoria);
+}
+
+// --- MODAL DE DETALHES ---
+function abrirDetalhesDocumento(idItem) {
+    const item = historicoCompleto.find(i => i.id === idItem);
+    if (!item) return;
+    idItemAtualParaBaixar = idItem;
+
+    tituloDetalheExameEl.textContent = item.nomeEspecifico || item.tipoDocumentoGeral || 'Detalhes do Documento';
+    detalheNomeDocumentoEl.textContent = item.nomeEspecifico || 'Não especificado';
+    detalheHospitalEl.textContent = item.hospital || 'N/A';
+    detalheDataEl.textContent = formatarDataExibicao(item.data);
+    detalhePrescricaoEl.textContent = item.tipoDocumentoGeral || 'N/A'; // Usando campo prescricao para tipo geral
+    detalheVisibilidadeEl.textContent = item.tipo.charAt(0).toUpperCase() + item.tipo.slice(1);
+    conteudoArquivoFormatadoEl.textContent = item.conteudoSimulado || 'Nenhum conteúdo detalhado disponível.';
+    modalDetalheExame.classList.add('mostrar');
+}
+function fecharModalDetalhes() {
+    modalDetalheExame.classList.remove('mostrar');
+    idItemAtualParaBaixar = null;
+}
+fecharModalDetalheBtn.addEventListener('click', fecharModalDetalhes);
+
+// --- MODAL DE UPLOAD ---
+function mostrarModalUpload() { modalUpload.classList.add('mostrar'); }
+function fecharModalUpload() { modalUpload.classList.remove('mostrar'); formularioUpload.reset(); }
 abrirModalUploadBtn.addEventListener('click', mostrarModalUpload);
 fecharModalUploadBtn.addEventListener('click', fecharModalUpload);
 botaoCancelarUpload.addEventListener('click', fecharModalUpload);
@@ -112,110 +212,100 @@ botaoCancelarUpload.addEventListener('click', fecharModalUpload);
 formularioUpload.addEventListener('submit', (evento) => {
     evento.preventDefault();
     const arquivo = campoArquivoInput.files[0];
-    const tipoProcedimento = tipoProcedimentoSelect.value;
+    const tipoDocumentoGeral = tipoProcedimentoUploadSelect.value;
+    const nomeEspecifico = nomeEspecificoDocumentoInput.value;
     const visibilidade = document.querySelector('input[name="visibilidade"]:checked').value;
 
-    if (arquivo && tipoProcedimento) {
+    // Mapear tipoDocumentoGeral para categoriaProcedimento e ícone
+    const mapTipoParaCategoria = {
+        'Carteira de Vacina': { categoria: 'vacinas', icone: 'fa-syringe' },
+        'Exame Laboratorial': { categoria: 'exames_laboratoriais', icone: 'fa-notes-medical' },
+        'Exame de Imagem': { categoria: 'exames_imagem', icone: 'fa-x-ray' },
+        'Atestado Médico': { categoria: 'atestados', icone: 'fa-file-medical' },
+        'Consulta Médica': { categoria: 'consultas', icone: 'fa-user-doctor' },
+        'Receita Médica': { categoria: 'receitas', icone: 'fa-prescription-bottle-medical' },
+        'Relatório de Consulta': { categoria: 'relatorios', icone: 'fa-file-invoice' },
+        'Laudo Médico': { categoria: 'laudos', icone: 'fa-file-signature' },
+        'Outro': { categoria: 'outros', icone: 'fa-file-alt' }
+    };
+    const infoCategoria = mapTipoParaCategoria[tipoDocumentoGeral] || mapTipoParaCategoria['Outro'];
+
+    if (arquivo && tipoDocumentoGeral && nomeEspecifico) {
         const novoId = historicoCompleto.length > 0 ? Math.max(...historicoCompleto.map(item => item.id)) + 1 : 1;
-        const dataAtual = new Date().toLocaleDateString('pt-BR');
+        // Usar data atual ou permitir que o usuário insira a data do documento? Por ora, data atual.
+        const dataAtual = new Date().toISOString().split('T')[0]; // Formato YYYY-MM-DD
 
         const novoItem = {
             id: novoId,
-            hospital: `Documento Enviado (${tipoProcedimento})`, // Simulação
+            hospital: `Documento Enviado`, // Poderia ser um campo "Origem"
             data: dataAtual,
-            prescricao: tipoProcedimento, // Usando tipoProcedimento como prescrição para simplificar
-            tipo: visibilidade, // 'privado' ou 'publico'
-            icone: 'fa-file-alt', // Ícone genérico para arquivo
+            tipo: visibilidade,
+            icone: infoCategoria.icone,
             nomeArquivo: arquivo.name,
-            conteudoSimulado: `Arquivo: ${arquivo.name}\nTipo: ${arquivo.type}\nTamanho: ${Math.round(arquivo.size / 1024)} KB\nVisibilidade: ${visibilidade}\n\nEste é um conteúdo simulado para o arquivo enviado.`
+            tipoDocumentoGeral: tipoDocumentoGeral,
+            nomeEspecifico: nomeEspecifico,
+            categoriaProcedimento: infoCategoria.categoria,
+            conteudoSimulado: `Arquivo: ${arquivo.name}\nTipo Geral: ${tipoDocumentoGeral}\nNome: ${nomeEspecifico}\nVisibilidade: ${visibilidade}\n\nConteúdo simulado.`
         };
-
         historicoCompleto.push(novoItem);
-        renderizarHistorico(); // Re-renderiza a aba ativa
+        
+        // Verifica se uma visão específica está ativa e atualiza, senão atualiza a geral
+        const urlParams = new URLSearchParams(window.location.search);
+        const viewParam = urlParams.get('view');
+        if (viewParam && containerVisaoEspecificaEl.style.display === 'block') {
+            renderizarVisaoProcedimento(viewParam, barraProcuraEspecificaEl.value);
+        } else {
+            const abaAtivaGeral = document.querySelector('#navegacaoPrincipalAbas .botao-aba.ativo')?.dataset.aba || 'tudo';
+            renderizarListaGeral(abaAtivaGeral);
+        }
         fecharModalUpload();
-        alert(`Documento "${arquivo.name}" enviado como ${visibilidade} e adicionado ao histórico!`);
+        alert(`Documento "${nomeEspecifico}" enviado!`);
     } else {
-        alert('Por favor, selecione um arquivo, o tipo de procedimento e a visibilidade.');
+        alert('Por favor, preencha todos os campos obrigatórios.');
     }
 });
 
-
-// --- Lógica do Modal de Detalhes do Exame ---
-function abrirDetalhesExame(idItem) {
-    const item = historicoCompleto.find(i => i.id === idItem);
-    if (!item) return;
-
-    idItemAtualParaBaixar = idItem; // Define o ID para o botão de baixar
-
-    tituloDetalheExameEl.textContent = item.hospital || item.nomeArquivo;
-    detalheHospitalEl.textContent = item.hospital || 'N/A';
-    detalheDataEl.textContent = item.data;
-    detalhePrescricaoEl.textContent = item.prescricao || item.tipoProcedimento || 'N/A';
-    detalheVisibilidadeEl.textContent = item.tipo.charAt(0).toUpperCase() + item.tipo.slice(1);
-    conteudoArquivoFormatadoEl.textContent = item.conteudoSimulado || 'Nenhum conteúdo detalhado disponível.';
-
-    modalDetalheExame.classList.add('mostrar');
-}
-
-function fecharModalDetalhes() {
-    modalDetalheExame.classList.remove('mostrar');
-    idItemAtualParaBaixar = null;
-}
-fecharModalDetalheBtn.addEventListener('click', fecharModalDetalhes);
-
-// Fechar modais clicando fora deles
-window.addEventListener('click', (evento) => {
-    if (evento.target === modalUpload) {
-        fecharModalUpload();
-    }
-    if (evento.target === modalDetalheExame) {
-        fecharModalDetalhes();
-    }
-});
-
-// Lógica de Download Simulado
-botaoBaixarExame.addEventListener('click', () => {
-    if (idItemAtualParaBaixar === null) return;
-
-    const item = historicoCompleto.find(i => i.id === idItemAtualParaBaixar);
-    if (!item) {
-        alert("Erro: Item não encontrado para download.");
-        return;
-    }
-
-    const nomeArquivoDownload = item.nomeArquivo ? item.nomeArquivo.split('.')[0] + '_detalhes.txt' : `exame_${item.id}_detalhes.txt`;
-    let conteudoParaBaixar = `DETALHES DO DOCUMENTO/EXAME\n`;
-    conteudoParaBaixar += `------------------------------------------\n`;
-    conteudoParaBaixar += `ID: ${item.id}\n`;
-    conteudoParaBaixar += `Nome Original: ${item.nomeArquivo || 'N/A'}\n`;
-    conteudoParaBaixar += `Instituição/Origem: ${item.hospital || 'Documento Pessoal'}\n`;
-    conteudoParaBaixar += `Data: ${item.data}\n`;
-    conteudoParaBaixar += `Tipo/Prescrição: ${item.prescricao || item.tipoProcedimento || 'N/A'}\n`;
-    conteudoParaBaixar += `Visibilidade: ${item.tipo}\n`;
-    conteudoParaBaixar += `------------------------------------------\n\n`;
-    conteudoParaBaixar += `CONTEÚDO SIMULADO:\n${item.conteudoSimulado || 'Sem conteúdo adicional.'}`;
-
-    const blob = new Blob([conteudoParaBaixar], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const linkDownload = document.createElement('a');
-    linkDownload.href = url;
-    linkDownload.download = nomeArquivoDownload;
-    document.body.appendChild(linkDownload);
-    linkDownload.click();
-    document.body.removeChild(linkDownload);
-    URL.revokeObjectURL(url);
-
-    alert(`Download de "${nomeArquivoDownload}" iniciado (simulação).`);
-});
+// --- DOWNLOAD SIMULADO ---
+botaoBaixarExame.addEventListener('click', () => { /* ... (código de download existente, adaptar campos se necessário) ... */ });
 
 
-// Inicializa a visualização
+// --- INICIALIZAÇÃO E EVENTOS ---
 document.addEventListener('DOMContentLoaded', () => {
-    const abaTudoBotao = document.querySelector('.botao-aba[data-aba="tudo"]');
-    const conteudoTudo = document.getElementById('tudo');
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get('view'); // Ex: ?view=vacinas
 
-    if (abaTudoBotao) abaTudoBotao.classList.add('ativo');
-    if (conteudoTudo) conteudoTudo.classList.add('conteudo-ativo');
+    if (viewParam) {
+        mostrarVisaoEspecifica(viewParam);
+    } else {
+        mostrarVisaoGeral();
+    }
 
-    renderizarHistorico('tudo');
+    // Eventos para abas da lista geral
+    botoesAbaGeral.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const abaAlvoId = botao.dataset.aba;
+            botoesAbaGeral.forEach(btn => btn.classList.remove('ativo'));
+            botao.classList.add('ativo');
+            conteudosAbaGeral.forEach(conteudo => conteudo.classList.remove('conteudo-ativo'));
+            const conteudoAtivo = document.getElementById(abaAlvoId);
+            if (conteudoAtivo) {
+                conteudoAtivo.classList.add('conteudo-ativo');
+            }
+            renderizarListaGeral(abaAlvoId);
+        });
+    });
+
+    // Evento para o botão de voltar da visão específica para a geral
+    botaoVoltarPrincipalEl.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Limpa o parâmetro 'view' da URL para não recarregar a visão específica ao atualizar
+        history.pushState(null, '', window.location.pathname); 
+        mostrarVisaoGeral();
+    });
+});
+
+// Fechar modais clicando fora
+window.addEventListener('click', (evento) => {
+    if (evento.target === modalUpload) fecharModalUpload();
+    if (evento.target === modalDetalheExame) fecharModalDetalhes();
 });

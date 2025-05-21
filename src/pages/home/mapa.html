@@ -1,62 +1,75 @@
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buscar Hospitais</title>
-    <link rel="stylesheet" href="mapa.css" />
-  </head>
-  <body>
-    <header class="topbar">
-      <a class="voltar" href="/src/pages/home/home.html">
-        <img src="/src/pages/historico/imgsHistorico/voltar.png" alt="Voltar" />
-      </a>
-      <div class="search-container">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Procure hospitais por perto..."
-        />
-        <button id="search-button">
-          <img src="/src/pages/home/imgsHome/busca.png" alt="Buscar" />
-        </button>
-       
-      </div>
-    </header>
-    <main>
-      <section class="mapa">
-        <article id="banner">
-          <svg xmlns="http://www.w3.org/2000/svg" width="93" height="77" viewBox="0 0 93 77" fill="none">
-            <path d="M89.7931 70.5833H86.5862V38.5C86.5862 36.7982 85.9105 35.1661 84.7076 33.9627C83.5048 32.7594 81.8735 32.0833 80.1724 32.0833H57.7241V6.41667C57.7241 4.71486 57.0484 3.08276 55.8456 1.8794C54.6428 0.676039 53.0114 0 51.3103 0H12.8276C11.1265 0 9.49517 0.676039 8.29235 1.8794C7.08953 3.08276 6.41379 4.71486 6.41379 6.41667V70.5833H3.2069C2.35637 70.5833 1.54069 70.9213 0.939278 71.523C0.337868 72.1247 0 72.9408 0 73.7917C0 74.6426 0.337868 75.4586 0.939278 76.0603C1.54069 76.662 2.35637 77 3.2069 77H89.7931C90.6436 77 91.4593 76.662 92.0607 76.0603C92.6621 75.4586 93 74.6426 93 73.7917C93 72.9408 92.6621 72.1247 92.0607 71.523C91.4593 70.9213 90.6436 70.5833 89.7931 70.5833ZM80.1724 38.5V70.5833H57.7241V38.5H80.1724ZM12.8276 6.41667H51.3103V70.5833H44.8966V51.3333C44.8966 50.4824 44.5587 49.6664 43.9573 49.0647C43.3559 48.463 42.5402 48.125 41.6897 48.125H22.4483C21.5978 48.125 20.7821 48.463 20.1807 49.0647C19.5792 49.6664 19.2414 50.4824 19.2414 51.3333V70.5833H12.8276V6.41667ZM38.4828 70.5833H25.6552V54.5417H38.4828V70.5833ZM19.2414 25.6667C19.2414 24.8158 19.5792 23.9997 20.1807 23.398C20.7821 22.7964 21.5978 22.4583 22.4483 22.4583H28.8621V16.0417C28.8621 15.1908 29.1999 14.3747 29.8013 13.773C30.4028 13.1714 31.2184 12.8333 32.069 12.8333C32.9195 12.8333 33.7352 13.1714 34.3366 13.773C34.938 14.3747 35.2759 15.1908 35.2759 16.0417V22.4583H41.6897C42.5402 22.4583 43.3559 22.7964 43.9573 23.398C44.5587 23.9997 44.8966 24.8158 44.8966 25.6667C44.8966 26.5176 44.5587 27.3336 43.9573 27.9353C43.3559 28.537 42.5402 28.875 41.6897 28.875H35.2759V35.2917C35.2759 36.1426 34.938 36.9586 34.3366 37.5603C33.7352 38.162 32.9195 38.5 32.069 38.5C31.2184 38.5 30.4028 38.162 29.8013 37.5603C29.1999 36.9586 28.8621 36.1426 28.8621 35.2917V28.875H22.4483C21.5978 28.875 20.7821 28.537 20.1807 27.9353C19.5792 27.3336 19.2414 26.5176 19.2414 25.6667Z" fill="#395A71"/>
-          </svg>
-          <div class="text">
-            <p id="nomeHospital">Hospital Santa Izabel </p>
-            <p id="infoHospital">Salvador, BA  Aberto em 24 horas </p>
-            <div class="entrarContato">
-              <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46" fill="none">
-                <g filter="url(#filter0_d_1058_543)">
-                  <circle cx="23" cy="19" r="19" fill="#395A71" fill-opacity="0.85" shape-rendering="crispEdges"/>
-                </g>
-                <path d="M29.6699 11.3345C29.5261 11.1909 29.3467 11.0881 29.15 11.0369C28.9533 10.9857 28.7466 10.9878 28.551 11.043H28.5403L14.8266 15.203C14.604 15.2671 14.4061 15.3974 14.2592 15.5765C14.1123 15.7556 14.0233 15.9752 14.004 16.206C13.9847 16.4368 14.036 16.668 14.1511 16.8691C14.2663 17.0701 14.4398 17.2313 14.6487 17.3315L20.716 20.2858L23.6668 26.3478C23.7586 26.5437 23.9045 26.7091 24.0873 26.8247C24.2702 26.9402 24.4822 27.0011 24.6985 27C24.7314 27 24.7643 26.9986 24.7971 26.9957C25.0278 26.977 25.2473 26.8883 25.4261 26.7413C25.6049 26.5943 25.7345 26.3962 25.7974 26.1736L29.9557 12.4637C29.9557 12.4602 29.9557 12.4566 29.9557 12.453C30.0116 12.258 30.0147 12.0516 29.9644 11.855C29.9142 11.6584 29.8125 11.4788 29.6699 11.3345ZM24.705 25.8464L24.7014 25.8564V25.8514L21.8392 19.9729L25.2687 16.5444C25.3714 16.4364 25.4277 16.2925 25.4258 16.1435C25.4239 15.9945 25.3639 15.8521 25.2585 15.7468C25.1531 15.6414 25.0107 15.5814 24.8616 15.5795C24.7126 15.5775 24.5687 15.6339 24.4606 15.7366L21.0311 19.1651L15.1488 16.3037H15.1438H15.1538L28.8611 12.143L24.705 25.8464Z" fill="white"/>
-                <defs>
-                  <filter id="filter0_d_1058_543" x="0" y="0" width="46" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                    <feOffset dy="4"/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feComposite in2="hardAlpha" operator="out"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1058_543"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1058_543" result="shape"/>
-                  </filter>
-                </defs>
-              </svg>
-              <a href="consulta.html" id="contato">Entrar em contato</a>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Navegador de Saúde - Mapa</title>
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="mapScreen" class="screen active-screen">
+        <header class="site-header">
+            <div class="container header-content">
+                <a id="resetMapButton" class="back-button" aria-label="Resetar Visualização" href="home.html">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+                <div class="header-title">
+                    <h1>Navegador de Saúde</h1>
+                    <p>Encontre locais e procedimentos.</p>
+                </div>
+                <div class="header-spacer"></div>
             </div>
-        
-          </div>
-        </article>
-      </section>
-    </main>
-    
-  </body>
+        </header>
+
+        <div id="locationRequestPrompt" class="location-prompt">
+            <div class="container">
+                <p><strong>Permita sua Localização:</strong> Para encontrar serviços próximos, habilite o acesso à sua localização.</p>
+                <button id="dismissLocationPrompt" class="button-dismiss-prompt">Entendido</button>
+            </div>
+        </div>
+
+        <main class="container main-content">
+            <div class="layout-grid">
+                <div class="search-column">
+                    <div class="card">
+                        <div class="form-group">
+                            <label for="mapSearchType">Buscar por:</label>
+                            <select id="mapSearchType" class="search-type-select">
+                                <option value="facility">Local de Saúde</option>
+                                <option value="procedure">Procedimento</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mapSearchTerm" id="mapSearchTermLabel">Nome do Local:</label>
+                            <div class="search-input-wrapper">
+                                <input type="text" id="mapSearchTerm" placeholder="Hospital, clínica..."/>
+                                <button id="mapSearchButton" class="search-icon-button" aria-label="Buscar">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="mapSearchResults" class="search-results-container">
+                            </div>
+                    </div>
+                    <div class="card navigation-card">
+                        <a href="agendamento.html" class="button button-navigation">
+                            <i class="fas fa-calendar-check"></i> Agendar Consulta ou Exame
+                        </a>
+                    </div>
+                </div>
+                <div class="map-details-column">
+                    <div class="card map-container-wrapper">
+                        <div id="mapFrameContainer" class="map-container">
+                             <p class="map-placeholder">Carregando mapa...</p>
+                        </div>
+                    </div>
+                    <div id="mapFacilityDetails" class="card facility-details-container hidden">
+                        </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="mapa.js"></script>
+</body>
 </html>

@@ -1,97 +1,355 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-body{
+html {
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+body {
     font-family: "Poppins", sans-serif;
     color: #395A71;
-    overflow: hidden;
-    width: 100vdw;
-    height: 100vh;
-    background: url(imgsHome/backgroundHome.png);
-}
-
-.telaPrincipal{
-    padding: 10px;
-    max-width: 700px;
-    width: 100%;
-    max-height: calc(100% - 70px);
-    height: 100%;
-}
-
-header{
-    display: flex;
-    gap: 10px;
-    height: auto;
-    padding: 10px;
-    font-size: 1.2em;
-}
-header img{
-    width: 50px;
-    height: 50px;
-}
-section{
+    width: 100vw;
+    min-height: 100vh;
+    background: url(imgsHome/backgroundHome.png) no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 10px;
-    gap: 8px;
-    font-weight: 100;
+    overflow-x: hidden;
 }
 
-section h3{
-    font-weight: 500;
-}
-.ed .banner{
-    max-width: 320px;
+.telaPrincipal {
+    padding: 20px 15px;
+    max-width: 700px;
     width: 100%;
-    height: 130px;
-    border-radius: 8px;
-    background-color: rgb(125, 141, 163);
-    padding: 10px;
+    margin: 0 auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 22px; /* Levemente ajustado */
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* Ajuste este padding-bottom para a altura da sua barra de navegação + respiro */
+    padding-bottom: calc(70px + 20px); /* Exemplo: barra de 70px + 20px respiro */
 }
 
-.recomendacoes{
+header {
     display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
 }
 
-.mapa{
+header .perfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+header .texto p {
+    font-size: 0.875rem;
+    margin-bottom: 1px; /* Ajuste fino */
+    color: #5A788F;
+}
+
+header .texto h4 {
+    font-size: 1.1rem; /* Ligeiramente maior */
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+section {
     display: flex;
+    flex-direction: column;
     gap: 12px;
-    
 }
 
-.mapa-quadro{
-    width: 140px;
-    height: 130px;
+section h3 {
+    font-weight: 600;
+    font-size: 1.05rem; /* Ligeiramente maior */
+    padding-bottom: 6px; /* Ajustado */
+    border-bottom: 1px solid #D1D5DB;
+}
+
+.ed .banner {
+    width: 100%;
+    height: 135px; /* Ligeiramente maior */
     border-radius: 10px;
-    font-size: 1.1em;
-    background: url(imgsHome/mapa.png) center;
+    background-color: #A0B4C8;
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+}
+.ed .banner:hover {
+    transform: scale(1.02);
 }
 
-p{
-    font-weight: 300;
-    font-size: 0.8em;
-}
-
-.recentes{
+.recomendacoes .mapa {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.mapa-quadro {
+    width: 85px; /* Ligeiramente maior */
+    height: 85px; /* Ligeiramente maior */
+    min-width: 85px;
+    border-radius: 8px;
+    background: url(imgsHome/mapa.png) no-repeat center center;
+    background-size: cover;
+    display: block;
+}
+
+.mapa .texto-mapa {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex-grow: 1;
+}
+
+.mapa .texto-mapa h4 {
+    font-size: 0.98rem; /* Ligeiramente maior */
+    font-weight: 600;
+}
+.mapa .texto-mapa h5 {
+    font-size: 0.85rem; /* Ligeiramente maior */
+    font-weight: 400;
+    color: #5A788F;
+}
+
+.mapa .texto-mapa p.tempo {
+    font-size: 0.78rem; /* Ligeiramente maior */
+    font-weight: 500;
+    color: #D35400;
+    margin-top: 2px;
+}
+
+/* Docs mais acessados */
+.doc .recentes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px; /* Espaçamento entre os ícones */
+    justify-content: flex-start;
+}
+
+.doc .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 7px; /* Ajustado */
+    flex-grow: 1;
+    flex-basis: 85px; /* Base um pouco maior */
+    min-width: 80px; /* Mínimo um pouco maior */
+    max-width: 110px; /* Máximo um pouco maior */
+    padding: 10px 6px; /* Ajustado */
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease-in-out;
+}
+.doc .icon:hover {
+    transform: translateY(-2px);
+}
+
+.doc .icon .img {
+    width: 42px; /* Aumentado */
+    height: 42px; /* Aumentado */
+    background-color: #E0E7EF;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
-    margin-top: 7px;
+    align-items: center;
+    overflow: hidden;
 }
 
-.icon{
-    width: 230px;
+.doc .icon .img img {
+    width: 22px; /* Aumentado */
+    height: 22px; /* Aumentado */
+    object-fit: contain;
 }
 
+.doc .icon p {
+    font-size: 0.72rem; /* Aumentado (aprox 11.5px) */
+    font-weight: 500;
+    line-height: 1.25; /* Ajustado */
+    color: #395A71;
+}
 
-.doc img{
-    width: 45px;
-    height: 45px;
+/* Ajustes para telas menores - Media Queries */
+@media (max-width: 600px) {
+    .telaPrincipal {
+        gap: 18px;
+        padding-bottom: calc(70px + 18px); /* Ajuste o 70px para altura da sua barra */
+    }
+    header .texto h4 {
+        font-size: 1.02rem;
+    }
+    section h3 {
+        font-size: 1rem;
+    }
+    .ed .banner {
+        height: 128px;
+    }
+    .mapa-quadro {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+    .mapa .texto-mapa h4 {
+        font-size: 0.92rem;
+    }
+    .mapa .texto-mapa h5 {
+        font-size: 0.78rem;
+    }
+    .doc .icon {
+        flex-basis: 80px;
+        min-width: 75px;
+        max-width: 100px; /* Ajustado */
+    }
+    .doc .icon .img {
+        width: 40px;
+        height: 40px;
+    }
+    .doc .icon .img img {
+        width: 20px;
+        height: 20px;
+    }
+    .doc .icon p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .telaPrincipal {
+        padding: 15px 12px; /* Aumentado padding lateral */
+        gap: 15px;
+        padding-bottom: calc(60px + 15px); /* Ajuste o 60px para altura da sua barra */
+    }
+
+    header {
+        gap: 12px;
+        font-size: 0.95rem;
+    }
+    header .perfil img {
+        width: 45px;
+        height: 45px;
+    }
+    header .texto h4 {
+        font-size: 1rem;
+    }
+    header .texto p {
+        font-size: 0.82rem; /* Ligeiramente maior */
+    }
+
+    section h3 {
+        font-size: 0.95rem; /* Ligeiramente maior */
+    }
+
+    .ed .banner {
+        height: 120px;
+        border-radius: 10px;
+    }
+
+    .recomendacoes .mapa {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        gap: 10px;
+    }
+    .mapa-quadro {
+        width: 100%;
+        height: 110px;
+    }
+    .mapa .texto-mapa {
+        text-align: center;
+    }
+    .mapa .texto-mapa p.tempo {
+        margin: 4px auto 0 auto;
+    }
+
+    .doc .recentes {
+        gap: 10px; /* Mantido */
+        justify-content: space-around;
+    }
+    .doc .icon {
+        flex-basis: calc(33.333% - 8px); /* Tenta 3 por linha, ajustando o gap */
+        min-width: 75px; /* Aumentado um pouco */
+        max-width: 90px; /* Aumentado um pouco */
+        padding: 10px 5px;
+        gap: 5px; /* Reduzido */
+    }
+    .doc .icon .img {
+        width: 38px; /* Aumentado */
+        height: 38px; /* Aumentado */
+    }
+    .doc .icon .img img {
+        width: 20px; /* Aumentado */
+        height: 20px; /* Aumentado */
+    }
+    .doc .icon p {
+        font-size: 0.68rem; /* Ligeiramente maior */
+    }
+}
+
+@media (max-width: 375px) { /* Ajuste específico para iPhone X e similares */
+    .telaPrincipal {
+        padding: 12px 10px;
+        gap: 12px;
+        padding-bottom: calc(55px + 12px); /* Ajuste o 55px para altura da sua barra */
+    }
+    header {
+        gap: 10px;
+    }
+    header .perfil img {
+        width: 40px;
+        height: 40px;
+    }
+    header .texto p {
+        font-size: 0.78rem;
+    }
+    header .texto h4 {
+        font-size: 0.92rem;
+    }
+    section h3 {
+        font-size: 0.9rem;
+    }
+    .ed .banner {
+        height: 105px; /* Reduzido */
+    }
+    .mapa-quadro {
+        height: 95px; /* Reduzido */
+    }
+    .doc .recentes {
+        gap: 8px; /* Menor gap para caber mais */
+    }
+    .doc .icon {
+        flex-basis: calc(33.333% - 6px); /* Tenta manter 3, mais apertado */
+        min-width: 70px; /* Menor */
+        padding: 8px 4px;
+        gap: 4px;
+    }
+    .doc .icon .img {
+        width: 35px; /* Menor */
+        height: 35px; /* Menor */
+    }
+    .doc .icon .img img {
+        width: 18px; /* Menor */
+        height: 18px; /* Menor */
+    }
+    .doc .icon p {
+        font-size: 0.65rem; /* Menor */
+    }
 }

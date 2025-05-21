@@ -1,97 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="consulta.css">
-  <title>Marcar consulta</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegador de Saúde - Agendamento</title>
+    <link rel="stylesheet" href="mapa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <main>
-    <header class="topbar">
-      <a class="voltar" href="/src/pages/home/mapa.html">
-        <img src="/src/pages/historico/imgsHistorico/voltar.png" alt="Voltar" />
-      </a>
-      <h2 id="titulo">Encontre o procedimento desejado</h2>
-      <h5 id="subtitulo">Agora mesmo!</h5>
-      <div class="search-container">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Procurar"
-        />
-        <button id="search-button">
-          <img src="/src/pages/home/imgsHome/busca.png" alt="Buscar" />
-        </button>
-       
-      </div>
-    </header>
-    <section class="agendamento">
-      
-      <section class="carrosel especialidades">
-        <h3 class="h3">Especialidades</h3>
-        <article class="carroselContainer">
-          <div class="processo">
-            <div class="dentroCrd">
-              <div class="imgContainer">
-                <img src="imgsHome/heart.png" alt="imagem de coração">
-              </div>
-              <p>Cardiologia</p>
+    <div id="appointmentScreen" class="screen active-screen">
+        <header class="site-header">
+            <div class="container header-content">
+                 <a href="mapa.html" id="backToMapButton" class="back-button" aria-label="Voltar">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <div class="header-title">
+                    <h1>Agendar Consulta</h1>
+                    <p>Encontre especialistas e exames.</p>
+                </div>
+                 <div style="width: 40px;"></div> </div>
+        </header>
+        <main class="container main-content">
+            <div class="card">
+                <div class="form-group">
+                    <label for="appointmentSearchTerm">Encontre o doutor, especialidade ou exame:</label>
+                    <div class="search-input-wrapper">
+                         <input type="text" id="appointmentSearchTerm" placeholder="Cardiologia, Dr. Silva, Raio-X..."/>
+                         <button id="appointmentSearchButton" class="search-icon-button" aria-label="Buscar">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="processo">
-            <div class="dentroCrd">
-              <div class="imgContainer">
-                <img src="/src/pages/home/imgsHome/brain.png" alt="imagem de cérebro">
-              </div>
-              <p>Neurologia</p>
+
+            <div class="card">
+                <h2>Especialidades</h2>
+                <div id="specialtiesContainer" class="grid-container">
+                    </div>
+                <button class="button-view-all">Ver todas</button>
             </div>
-          </div>
-          <div class="processo">
-            <div class="dentroCrd">
-              <div class="imgContainer">
-                <img src="imgsHome/heart.png" alt="imagem de dente">
-              </div>
-              <p>Odontologia</p>
+
+            <div class="card">
+                <h2>Agendamento de Exames</h2>
+                <div id="examsContainer" class="list-container">
+                    </div>
+                 <button class="button-view-all">Ver todos</button>
             </div>
-          </div>
-        </article>
-      </section>
-      
-      
-      
-      <section class="agendamentoOn">
-        <h3 class="h3">Agendamento de exames </h3>
-        <div class="exame">
-          <div class="bola">
-            <img src="imgsHome/prancheta.png" alt="prancheta">
-          </div>
-          <div class="textExame">
-            <p>Glicemia em jejum</p>
-          </div>
-          <a href="agendar.html" id="agendar">Agendar</a>
-        </div>
-        <div class="exame">
-          <div class="bola">
-            <img src="imgsHome/prancheta.png" alt="prancheta">
-          </div>
-          <div class="textExame">
-            <p>Perfil lipídico</p>
-          </div>
-          <a href="agendar.html" id="agendar">Agendar</a>
-        </div>
-        <div class="exame">
-          <div class="bola">
-            <img src="imgsHome/prancheta.png" alt="prancheta">
-          </div>
-          <div class="textExame">
-            <p> Urina tipo I</p>
-          </div>
-          <a href="agendar.html" id="agendar">Agendar</a>
-        </div>
-      </section>
-    </section>
-  </main>
-  
+        </main>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="mapa.html" id="navMapButton" class="nav-button" aria-label="Mapa e Locais">
+            <i class="fas fa-home"></i>
+            <span>Início</span>
+        </a>
+        <a href="agendamento.html" id="navAppointmentButton" class="nav-button active" aria-label="Agendar Consulta">
+            <i class="fas fa-calendar-check"></i>
+            <span>Agendar</span>
+        </a>
+        <a href="#" id="navRemindersButton" class="nav-button" aria-label="Lembretes">
+            <i class="fas fa-bell"></i>
+            <span>Lembretes</span>
+        </a>
+        <a href="#" id="navSettingsButton" class="nav-button" aria-label="Configurações">
+            <i class="fas fa-cog"></i>
+            <span>Ajustes</span>
+        </a>
+    </nav>
+    <script src="consulta.js"></script>
 </body>
 </html>
