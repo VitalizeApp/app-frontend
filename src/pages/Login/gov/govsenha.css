@@ -141,6 +141,8 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn-cancel {
@@ -203,12 +205,17 @@ body {
         font-size: 0.95em;
     }
 
-    .password-input-wrapper input,
-    .btn {
+    .password-input-wrapper {
+        text-decoration: none;
+        
+    }
+    
+    input.btn {
         padding: 10px;
         font-size: 1em;
         text-decoration: none;
         text-align: center;
+
     }
 
     .buttons-group {
