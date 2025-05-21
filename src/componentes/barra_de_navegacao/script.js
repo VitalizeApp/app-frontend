@@ -33,7 +33,7 @@ function inicializarMenu() {
 
       // posicionar o círculo na inicialização
       const left = item.offsetLeft + item.offsetWidth / 2 - 20;
-      if (indicador) indicador.style.left = `${left}px`;
+      if (indicador) indicador.style.left = `${left}vh`;
     }
   });
 }

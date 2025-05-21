@@ -1,3 +1,6 @@
+/*
+Evite o máximo possivel o uso de "px", não apenas aqui mas em qualquer tela, para conseguir atingir uma responsibilidade em telas maiores (n necessariamente monitores, mas tablets)
+*/
 * {
     margin: 0;
     padding: 0;
@@ -9,41 +12,31 @@
 footer {
     position: fixed;
     bottom: 0;
-    padding: 6px;
+    padding: 3vh;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 10vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, rgb(0, 108, 180), #4180AB, #8AB3CF);
     border-radius: 10px;
 }
 
-.navegacao {
+.navegacao{
     display: flex;
-    width: 87.5%;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 .navegacao .list {
-    list-style: none;
     text-decoration: none;
-    position: relative;
-    width: 60px;
-    height: 60px;
+    width: 8vh;
+    height: 8vh;
     list-style: none;
     z-index: 1;
 }
 
 .list a {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     width: 100%;
     text-align: center;
     text-decoration: none;
@@ -54,18 +47,18 @@ footer {
 }
 
 .navegacao img {
-    width: 20px;
-    height: 20px;
+    width: 4vh;
+    height: 4vh;
 }
 
 footer ul li a .circulo {
     position: absolute;
-    display: block;
-    width: 40px;
-    height: 40px;
+    width: 8vh;
+    height: 8vh;
     border-radius: 50%;
-    border: 2px solid #ffffff;
+    border: 0.5vh solid #ffffff;
     transform: translateY(-35px) scale(0);
+    bottom: 0vh;
 }
 
 footer ul li.active a .circulo {
@@ -78,7 +71,7 @@ footer ul li.active a .circulo {
 footer ul li a .icons {
     position: relative;
     display: block;
-    line-height: 65px;
+    line-height: 10vh;
     font-size: 1.2rem;
     text-align: center;
     color: #fff;
