@@ -27,10 +27,11 @@ body{
     display: flex;
     flex-direction: column;
 }
-#criar{
+.criar{
     position: fixed;
     bottom: 12vh;
     right: 0vh;
+    transition: all 0.3s ease;
 
     background-color: rgb(135, 187, 222);
     height: 10vh;
@@ -41,20 +42,69 @@ body{
     align-items: center;
     margin-right: 2vh;
     box-shadow: 0vh 0.5vh 1vh rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+.criaralt{
+    position: fixed;
+    bottom: 12vh;
+    align-self: center;
+    transition: all 0.3s ease;
+
+    background-color: #1D3442;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0vh 0.5vh 1vh rgba(0, 0, 0, 0.25);
     z-index: 10;
     cursor: pointer;
 }
+
+
 #editar{
 height: 7vh;
 filter: invert(1);
 }
 .texto{
     height: 12vh;
+    margin-left: 2vh;
 }
 #addrem,#addcon {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.add {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.add.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#addrem, #addcon {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+#addrem.expandido, #addcon.expandido {
+  max-height: 10vh;
+  opacity: 1;
+}
+#barra {
+  transition: opacity 0.1s ease;
+}
+#barra.invisivel {
+  opacity: 0;
+  visibility: hidden;
 }
 
 h1{
