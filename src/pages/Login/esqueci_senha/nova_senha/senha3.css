@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(/src/pages/Login/img/fundosenha.png) center center/cover no-repeat;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  color: #395a71;
+}
+
+main {
+  width: 100%;
+  max-width: 360px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+}
+
+h1 {
+  color: #395a71;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid rgba(65, 128, 171, 0.48);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #233947;
+  padding: 0 10px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px 0 45px;
+  border: 2px solid #c6d9e6;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #657a89;
+  outline: none;
+  background: #ffffff;
+  box-shadow: 0 4px 7.5px rgba(21, 40, 53, 0.1);
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #4180ab;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.requirements {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 10px 30px;
+  font-size: 13px;
+  color: #233947;
+}
+
+.requirements label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.requirements input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #c6d9e6;
+  border-radius: 4px;
+  position: relative;
+  cursor: default;
+}
+
+.requirements input:checked {
+  background-color: #4180ab;
+  border-color: #4180ab;
+}
+
+.requirements input:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.button-container,
+.button-container a  {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.conclude-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbfbfb url("/src/pages/Login/img/CheckIcon.png") no-repeat right 35px center;
+  background-size: 28px;
+  border: 2px solid #4180ab;
+  border-radius: 20px;
+  height: 45px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #435e6e;
+  padding-right: 40px;
+  padding-left: 20px;
+  width: 200px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  outline: none;
+}
+
+.conclude-button:hover {
+  background-color: #4180ab;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  body {
+    padding-top: 60px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .input-group input {
+    height: 45px;
+    font-size: 13px;
+  }
+
+  .input-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .requirements {
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .conclude-button {
+    height: 40px;
+    font-size: 16px;
+  }
+}

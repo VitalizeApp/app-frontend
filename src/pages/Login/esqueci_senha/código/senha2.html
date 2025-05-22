@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=".css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="senha2.css" />
+    <script defer src="senha2.js"></script>
     <title>Vitalize - Esqueci a senha</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Verifique o código</h1>
+        <hr class="divider" />
+        <p>Enviamos um código de verificação para o e-mail</p>
+        <p class="email-destino">userXXXXXX@gmail.com</p>
+
+        <div class="input-container">
+          <input type="text" class="number-group" maxlength="1" />
+          <input type="text" class="number-group" maxlength="1" />
+          <input type="text" class="number-group" maxlength="1" />
+          <input type="text" class="number-group" maxlength="1" />
+          <input type="text" class="number-group" maxlength="1" />
+          <input type="text" class="number-group" maxlength="1" />
+        </div>
+
+        <div class="re-send">
+          <a href="#" class="reenviar">Reenviar código</a>
+          <span class="timer">5:00</span>
+        </div>
+
+        <p class="instrucoes">
+          Verifique sua caixa de entrada ou spam e digite o código para
+          continuar
+        </p>
+
+        <div class="button-container">
+          <a href="/src/pages/Login/esqueci_senha/nova_senha/senha3.html">
+            <button class="continue-button">Verificar</button>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

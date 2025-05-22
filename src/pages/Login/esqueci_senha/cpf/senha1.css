@@ -7,7 +7,8 @@
 }
 
 body {
-  background: url(/src/pages/Login/img/fundocpf.png) center center/cover no-repeat;
+  background: url(/src/pages/Login/img/fundocpf.png) center center/cover
+    no-repeat;
   font-family: "Poppins", "Segoe UI", sans-serif;
   min-height: 100vh;
   display: flex;
@@ -44,7 +45,7 @@ h1 {
 }
 
 p {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: #233947;
@@ -61,15 +62,15 @@ p {
   width: 100%;
   height: 40px;
   max-width: 300px;
-  background: #F9F9F9;
+  background: #f9f9f9;
   border: 0.5px solid #4f90bb;
-  box-shadow: 0px 4px 7.5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 7.5px rgba(21, 40, 53, 0.25);
   border-radius: 5px;
   transition: border-color 0.3s;
 }
 
 .input-group:focus-within {
-  border: 2px solid #1c58a4;
+  border: 2px solid #4f90bb;
 }
 
 .input-icon {
@@ -91,7 +92,7 @@ p {
 }
 
 .input-group input::placeholder {
-  color: #657A89;
+  color: #657a89;
 }
 
 .continue-link,
@@ -121,23 +122,23 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FBFBFB;
-  border: 2px solid #4180AB;
+  background: #fbfbfb;
+  border: 2px solid #4180ab;
   border-radius: 20px;
   height: 45px;
   gap: 2px;
   font-weight: 600;
   font-size: 18px;
-  color: #1B4663;
+  color: #1b4663;
   width: 100%;
   margin: auto;
   transition: background-color 0.3s, color 0.3s, transform 0.2s;
 }
 
 .continue-button:hover {
-  background-color: #4180AB;
-  border-color: #1B4663;
-  color: #FFFFFF;
+  background-color: #4180ab;
+  border-color: #1b4663;
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(65, 128, 171, 0.4);
   transform: scale(1.02);
 }
@@ -151,22 +152,22 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #D1E3F3;
-  border: 2px solid #4180AB;
+  background: #d1e3f3;
+  border: 2px solid #4180ab;
   border-radius: 20px;
   height: 45px;
   font-weight: 600;
   font-size: 18px;
-  color: #1B4663;
+  color: #1b4663;
   width: 100%;
   margin-top: 15px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .back-button:hover {
-  background-color: #4180AB;
-  border-color: #1B4663;
-  color: #FFFFFF;
+  background-color: #4180ab;
+  border-color: #1b4663;
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(65, 128, 171, 0.4);
 }
 
