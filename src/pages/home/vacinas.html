@@ -9,24 +9,28 @@
 </head>
 <body>
     <main class="telaPrincipal telaDocumento">
-        <header class="document-header">
-            <a href="home.html" class="back-button-doc" aria-label="Voltar para Home">
-                <i class="fas fa-arrow-left"></i>
+        <header class="document-page-header">
+            <a href="home.html" class="document-back-button" aria-label="Voltar">
+                <i class="fas fa-chevron-left"></i>
             </a>
-            <h1>Carteira de Vacinação</h1>
-            <div class="header-spacer-doc"></div>
+            <div class="document-search-wrapper">
+                <input type="text" id="searchDocumentInput" class="document-search-input" placeholder="Procurar vacinas...">
+                <button class="document-search-button" aria-label="Buscar"><i class="fas fa-search"></i></button>
+            </div>
         </header>
 
+        <h2 class="document-page-title">Carteira de Vacinação</h2>
+
         <section class="filtro-section">
-            <label for="filtroVacinas">Ordenar por:</label>
-            <select id="filtroVacinas" class="filtro-select">
+            <label for="filtroDocumento">Ordenar por:</label>
+            <select id="filtroDocumento" class="filtro-select">
                 <option value="recentes">Mais Recentes</option>
                 <option value="antigas">Mais Antigas</option>
                 <option value="nomeAZ">Nome (A-Z)</option>
             </select>
         </section>
 
-        <section id="listaVacinas" class="lista-documentos">
+        <section id="listaDocumentos" class="lista-documentos-detalhada">
             <p class="loading-data">Carregando vacinas...</p>
         </section>
     </main>

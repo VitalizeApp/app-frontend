@@ -32,10 +32,10 @@ body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 22px; /* Levemente ajustado */
+    gap: 22px; 
     overflow-y: auto;
     overflow-x: hidden;
-    /* Ajuste este padding-bottom para a altura da sua barra de navegação + respiro */
+    
     padding-bottom: calc(70px + 20px); /* Exemplo: barra de 70px + 20px respiro */
 }
 
@@ -56,12 +56,12 @@ header .perfil img {
 
 header .texto p {
     font-size: 0.875rem;
-    margin-bottom: 1px; /* Ajuste fino */
+    margin-bottom: 1px; 
     color: #5A788F;
 }
 
 header .texto h4 {
-    font-size: 1.1rem; /* Ligeiramente maior */
+    font-size: 1.1rem; 
     font-weight: 600;
     line-height: 1.2;
 }
@@ -149,16 +149,17 @@ section h3 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 7px; /* Ajustado */
+    gap: 7px; 
     flex-grow: 1;
-    flex-basis: 85px; /* Base um pouco maior */
-    min-width: 80px; /* Mínimo um pouco maior */
-    max-width: 110px; /* Máximo um pouco maior */
-    padding: 10px 6px; /* Ajustado */
+    flex-basis: 85px; 
+    min-width: 80px;
+    max-width: 110px; 
+    padding: 10px 6px;
     background-color: #FFFFFF;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     transition: transform 0.2s ease-in-out;
+    text-decoration: none;
 }
 .doc .icon:hover {
     transform: translateY(-2px);
