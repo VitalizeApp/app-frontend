@@ -37,7 +37,7 @@ function ativar() {
 
   // Cria botão para Remédios
   const linkRem = document.createElement("a");
-  linkRem.href = "remedios.html";
+  linkRem.href = "RemECon/Remedios/remedio.html";
 
   const novoElementoRem = document.createElement("div");
   novoElementoRem.className = "add";
@@ -60,7 +60,7 @@ addCon.classList.add("expandido");
 
   // Cria botão para Consultas
   const linkCon = document.createElement("a");
-  linkCon.href = "consultas.html";
+  linkCon.href = "RemECon/Consultas/consultas.html";
 
   const novoElementoCon = document.createElement("div");
   novoElementoCon.className = "add";

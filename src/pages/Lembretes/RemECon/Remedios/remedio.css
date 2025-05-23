@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+body{
+    font-family: "Poppins", "Segoe UI", sans-serif;
+    color: rgba(57, 90, 113, 1);
+}
+
+*{
+    font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.tela{
+    background: url(/src/pages/Lembretes/background/telalembretes2.png);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+#voltar{
+    height: 6vh;
+    width: 5.5vh;
+    margin: 2vh; 
+}
+.icon{
+    width: 100%;
+    height: 100%;
+}
+
+.resize{
+    height: 6vh;
+    width: 5.5vh;
+    margin-left: 2vh;
+}
+
+h1{
+    align-self: center;
+}
+
+#container{
+    height: 35vh;
+    width: 80%;
+    background-color: transparent;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#container2{
+    height: 25vh;
+    width: 80%;
+    background-color: transparent;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.caixa{
+    border: 0.5vh solid rgb(136, 187, 220);
+    background-color: transparent;
+    height: 8vh;
+    width: 100%;
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    font-size: 2.5vh;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: #4183AD;
+    font-weight: bold;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+  border: none; 
+}
+
+input::placeholder {
+    color: #4183AD;
+}
+
+.area{
+    display: flex;
+    align-items: center;
+    gap: 2vh;
+}
+p{
+    font-weight: bold;
+    color: #26475C;
+    font-size: 3vh;
+}
+.areanexar{
+    background-color: aliceblue;
+    height: 7vh;
+    width: 7vh;
+    border-radius: 3vh;
+    box-shadow: 0vh 1vh 2vh #9ba4aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.anexara{
+    height: 6vh;
+    width: 5.5vh;
+}
+
+
+
+.anexaraativo2{
+    filter: invert(1);
+}
+
+.anexarativo{
+    background-color: #26475C;
+}
+
+
+  .toggle-switch {
+    width: 60px;
+    height: 30px;
+    background-color: white;
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: inset 0 0 0 2px #ccc;
+  }
+
+  .toggle-circle {
+    width: 26px;
+    height: 26px;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s ease;
+  }
+
+  .ativo {
+    background-color: #26475C; /* azul escuro */
+    box-shadow: none;
+  }
+
+  .ativo .toggle-circle {
+    left: 32px;
+  }
+
+  #pronto{
+    align-self: center;
+    height: 10vh;
+    width: 50%;
+    background-color: #26475C;
+    border-radius: 3vh;
+    color: aliceblue;
+    border: 0.5vh solid rgb(136, 187, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #salvar{
+    color: aliceblue;
+  }
+
+  a{
+    text-decoration: none;
+  }

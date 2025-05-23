@@ -3,16 +3,15 @@ document.getElementById("criar").addEventListener("click", function() {
   
     novaDiv.style.width = "30vh";
     novaDiv.style.height = "10vh";
-    novaDiv.style.backgroundColor = "aliceblue"; 
     novaDiv.style.marginBottom = "2vh";
     novaDiv.style.borderRadius = "2vh";
     novaDiv.style.alignSelf = "center"
     novaDiv.style.flexShrink = "0"
-    novaDiv.style.border = "1px solid black";
-    novaDiv.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.1)";
+    novaDiv.style.border = "0.3vh solid aliceblue";
+    novaDiv.style.boxShadow = "0 1vh 2vh rgba(0, 0, 0, 0.1)";
     novaDiv.style.transition = "background-color 0.3s ease";
 
-    const cores = ["aliceblue", "rgb(19, 149, 255)"];
+    const cores = ["rgb(136, 187, 220)", "rgb(29, 52, 66)"];
     const indiceCor = document.querySelectorAll("#depsection > div").length % 2;
     novaDiv.style.backgroundColor = cores[indiceCor];
   
