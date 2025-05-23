@@ -1,25 +1,25 @@
 #tour1{
-    background: url(/app-frontend/src/pages/Login/img/fundotour1.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour1.png) center center/cover no-repeat;
     height: 100vh;
     overflow: hidden;
   }
 #tour2{
-    background: url(/app-frontend/src/pages/Login/img/fundotour2.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour2.png) center center/cover no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 #tour3{
-    background: url(/app-frontend/src/pages/Login/img/fundotour3.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour3.png) center center/cover no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 #tour4{
-    background: url(/app-frontend/src/pages/Login/img/fundotour4.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour4.png) center center/cover no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 #tour5{
-    background: url(/app-frontend/src/pages/Login/img/fundotour5.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour5.png) center center/cover no-repeat;
     height: 100vh;
     overflow: hidden;
 }
