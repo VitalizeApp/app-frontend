@@ -5,32 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="stylesheet" href="acessados.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Atestados Médicos</title>
+    <title>Histórico de Exames</title>
 </head>
 <body>
     <main class="telaPrincipal telaDocumento">
-        <header class="document-page-header">
+         <header class="document-page-header">
             <a href="home.html" class="document-back-button" aria-label="Voltar">
                 <i class="fas fa-chevron-left"></i>
             </a>
             <div class="document-search-wrapper">
-                <input type="text" id="searchDocumentInput" class="document-search-input" placeholder="Procurar atestados...">
+                <input type="text" id="searchDocumentInput" class="document-search-input" placeholder="Procurar exames...">
                 <button class="document-search-button" aria-label="Buscar"><i class="fas fa-search"></i></button>
             </div>
         </header>
 
-        <h2 class="document-page-title">Atestados</h2>
+        <h2 class="document-page-title">Exames</h2>
 
         <section class="filtro-section">
             <label for="filtroDocumento">Ordenar por:</label>
             <select id="filtroDocumento" class="filtro-select">
-                <option value="recentes">Mais Recentes (Emissão)</option>
-                <option value="antigas">Mais Antigas (Emissão)</option>
+                <option value="recentes">Mais Recentes</option>
+                <option value="antigas">Mais Antigas</option>
+                <option value="nomeAZ">Nome (A-Z)</option>
             </select>
         </section>
 
         <section id="listaDocumentos" class="lista-documentos-detalhada">
-            <p class="loading-data">Carregando atestados...</p>
+             <p class="loading-data">Carregando exames...</p>
         </section>
     </main>
     <script src="acessados.js"></script>

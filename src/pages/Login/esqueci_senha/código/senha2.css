@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url(/src/pages/Login/img/fundocodigo.png) center center/cover
+    no-repeat;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  color: #395a71;
+}
+
+main {
+  width: 100%;
+  max-width: 360px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 120px;
+}
+
+h1 {
+  color: #395a71;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.divider {
+  border: none;
+  border-top: 2px solid rgba(65, 128, 171, 0.48);
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+p {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #233947;
+  padding: 0 10px;
+  line-height: 1.5;
+}
+
+.email-destino {
+  font-weight: bold;
+  margin: 5px 0 30px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.number-group {
+  width: 40px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid #c6d9e6;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  box-shadow: 0px 4px 7.5px rgba(21, 40, 53, 0.1);
+  outline: none;
+  color: #3c5f75;
+}
+
+.re-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.reenviar {
+  font-size: 14px;
+  color: #4180ab;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.reenviar:hover {
+  color: #233947;
+}
+
+.timer {
+  font-size: 14px;
+  color: #233947;
+  font-weight: 500;
+}
+
+.instrucoes {
+  font-size: 13px;
+  margin-bottom: 50px;
+  padding: 0 10px;
+}
+
+.button-container a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.continue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fbfbfb url("/src/pages/Login/img/NextIcon.png") no-repeat right
+    30px center;
+  background-size: 35px;
+  border: 2px solid #4180ab;
+  border-radius: 20px;
+  height: 45px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #435e6e;
+  padding-right: 40px;
+  padding-left: 20px;
+  width: 200px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+  outline: none;
+}
+
+.continue-button:hover {
+  background-color: #4180ab;
+  color: #ffffff;
+  transform: scale(1.02);
+}
