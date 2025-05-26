@@ -49,12 +49,11 @@ section{
     transition:  0.3s, color 0.3s;
 }
 
-.dark-mode {
-    background: url(../imgsApp/backgroundEscuro.png);
-    color: #fff;
-}
-.dark-mode .imgsC{
+html[data-theme="dark"] .imgsC{
     filter: invert(1);
 }
-
-
+html[data-theme="dark"] .body_config{
+    background: url(../imgsApp/backgroundEscuro.png);
+    color: #fff;
+    transition:  0.3s, color 0.3s;
+}

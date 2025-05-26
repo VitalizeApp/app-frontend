@@ -354,3 +354,22 @@ section h3 {
         font-size: 0.65rem; /* Menor */
     }
 }
+
+/*Modo escuro
+*/
+html[data-theme="dark"] body{
+    color: aliceblue;
+    background: url(/src/pages/imgsApp/backgroundEscuro.png);
+}
+html[data-theme="dark"] .mapa{
+    background-color: #395A71;
+}
+html[data-theme="dark"] .doc1{
+    background-color: #A0B4C8;
+}
+html[data-theme="dark"] .doc2{
+    background-color: #A0B4C8;
+}
+html[data-theme="dark"] .doc3{
+    background-color: #A0B4C8;
+}

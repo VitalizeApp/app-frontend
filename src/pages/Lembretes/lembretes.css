@@ -122,3 +122,24 @@ p{
 button{
     border: none;
 }
+
+/*modo escuro
+*/
+html[data-theme="dark"] body{
+    color: aliceblue;
+}
+html[data-theme="dark"] .tela{
+  background: url(/src/pages/imgsApp/backgroundEscuro.png);
+}
+html[data-theme="dark"] .caixa{
+  background-color: #315269;
+}
+html[data-theme="dark"] .criar{
+  background-color:#1D3442;
+}
+html[data-theme="dark"] .criaralt{
+  background-color: rgb(135, 187, 222);
+}
+html[data-theme="dark"] .add{
+  filter: invert(1);
+}
