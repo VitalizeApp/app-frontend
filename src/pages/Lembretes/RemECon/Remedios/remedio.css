@@ -110,14 +110,11 @@ p{
     width: 5.5vh;
 }
 
-
-
-.anexaraativo2{
-    filter: invert(1);
-}
-
 .anexarativo{
     background-color: #26475C;
+}
+.anexarativo2{
+    filter: invert(1);
 }
 
 
