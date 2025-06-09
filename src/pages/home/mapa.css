@@ -364,3 +364,18 @@ body, html {
   .conteiner-mapa { height: 200px; }
   .conteiner-resultados-busca { max-height: 160px; }
 }
+
+
+
+/* Modo escuro */
+
+html[data-theme="dark"] .cabecalho-site{
+    background-color:  #395A71;;
+}
+html[data-theme="dark"] body{
+    background-color:#5381A0;
+}
+html[data-theme="dark"] .cartao{
+    background-color:#87B9DC;
+    border-color: #233947;
+}
