@@ -134,3 +134,17 @@ h3 {
   height: 6vh;
 width: 5.5vh;
 }
+
+/* Modo escuro */
+html[data-theme="dark"] *{
+    color: aliceblue;
+}
+html[data-theme="dark"] .artigo{
+    border-color:#233947;
+}
+html[data-theme="dark"] .container{
+    background-color: #586470;
+}
+html[data-theme="dark"] header{
+    background-color:  #395A71;;
+}
