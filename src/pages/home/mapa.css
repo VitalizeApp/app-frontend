@@ -42,10 +42,10 @@ body, html {
 
 .container { /* Mantido por ser um termo comum e para simplicidade */
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
+
 
 .cabecalho-site {
   background-color: var(--azul-claro-principal);
@@ -367,15 +367,4 @@ body, html {
 
 
 
-/* Modo escuro */
-
-html[data-theme="dark"] .cabecalho-site{
-    background-color:  #395A71;;
-}
-html[data-theme="dark"] body{
-    background-color:#5381A0;
-}
-html[data-theme="dark"] .cartao{
-    background-color:#87B9DC;
-    border-color: #233947;
-}
+/* Modo escuro
