@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cadastro2.css" />
+    <script defer src="cadastro2.js"></script>
     <title>Vitalize - Cadastro</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Agora o email...</h1>
+        <hr class="divider" />
+        <p>Já estamos quase lá, digite o seu endereço de email que será atrelado a conta</p>
+
+        <div class="input-group">
+          <img
+            src="/src/pages/Login/img/EmailIcon.png"
+            alt="Email Icon"
+            class="input-icon"
+          />
+          <input
+            type="email"
+            id="email"
+            placeholder="Insira seu email"
+          />
+        </div>
+
+        <div class="button-container">
+          <a
+            href="/src/pages/Login/novo_cadastro/email/cadastro2.html"
+            class="continue-link disabled"
+            tabindex="-1"
+            aria-disabled="true"
+          >
+            <button type="button" class="continue-button" disabled>
+              Prosseguir
+              <img
+                src="/src/pages/Login/img/NextIcon.png"
+                alt="Prosseguir"
+                class="button-arrow"
+              />
+            </button>
+          </a>
+
+          <a href="/src/pages/Login/principal/LoginMain.html" class="back-link">
+            <button type="button" class="back-button">Voltar</button>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
