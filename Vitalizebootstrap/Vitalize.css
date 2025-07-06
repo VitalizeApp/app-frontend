@@ -43,6 +43,9 @@
 .gray-white-text{
     color: var(--sec-text);
 }
+.gray-white-border{
+    border: var(--back-white) solid;
+}
 html[data-theme="dark"] .gray-white{
     background-color: var(--back-dark);
     color: var(--main-text-dark);
@@ -53,6 +56,9 @@ html[data-theme="dark"] .gray-white:focus{
 }
 html[data-theme="dark"] .gray-white-text{
     color: var(--sec-text-dark);
+}
+html[data-theme="dark"] .gray-white-border{
+    color: var(--dark) solid;
 }
 
 .white{

@@ -96,7 +96,7 @@ h3 {
     width: 70%;
     max-width: 100px;
     height: 150px;
-    border: 2px solid white;
+    border: 2px solid;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     display: flex;
@@ -136,15 +136,4 @@ width: 5.5vh;
 }
 
 /* Modo escuro */
-html[data-theme="dark"] *{
-    color: aliceblue;
-}
-html[data-theme="dark"] .artigo{
-    border-color:#233947;
-}
-html[data-theme="dark"] .container{
-    background-color: #586470;
-}
-html[data-theme="dark"] header{
-    background-color:  #395A71;;
-}
+
