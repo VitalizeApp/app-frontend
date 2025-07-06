@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createVacinaItem(vacina) {
         const itemEl = document.createElement('div');
-        itemEl.className = 'item-documento-card';
+        itemEl.className = 'item-documento-card white';
         itemEl.innerHTML = `
-            <div class="item-icon"><i class="fas fa-syringe"></i></div>
+            <div class="item-icon gray-white"><i class="fas fa-syringe"></i></div>
             <div class="item-conteudo">
-                <h4>${vacina.nomeEspecifico}</h4>
-                <p><strong>Local:</strong> ${vacina.hospital}</p>
-                <p><strong>Data:</strong> ${formatarDataParaExibicao(vacina.data)}</p>
+                <h4 class="white-text">${vacina.nomeEspecifico}</h4>
+                <p class="gray-white-text"> <p1 class="white" style="font-weight: bold;">Local:</p1> ${vacina.hospital}</p>
+                <p class="gray-white-text"> <p1 class="white" style="font-weight: bold;">Data:</p1> ${formatarDataParaExibicao(vacina.data)}</p>
             </div>
         `;
         return itemEl;
@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createExameItem(exame) {
         const itemEl = document.createElement('div');
-        itemEl.className = 'item-documento-card';
+        itemEl.className = 'item-documento-card white';
         const iconClass = exame.iconeFa || 'fa-vial';
         itemEl.innerHTML = `
-            <div class="item-icon"><i class="fas ${iconClass}"></i></div>
+            <div class="item-icon gray-white"><i class="fas ${iconClass}"></i></div>
             <div class="item-conteudo">
-                <h4>${exame.nomeEspecifico}</h4>
-                <p><strong>Local:</strong> ${exame.hospital}</p>
-                <p><strong>Data:</strong> ${formatarDataParaExibicao(exame.data)}</p>
+                <h4 class="white-text">${exame.nomeEspecifico}</h4>
+                <p class="white-text" style="font-weight: bold;">Local:</p> <p class="gray-white-text"> ${exame.hospital}</p>
+                <p class="white-text" style="font-weight: bold;">Data:</p> <p class="gray-white-text"> ${formatarDataParaExibicao(exame.data)}</p>
             </div>
         `;
         return itemEl;
@@ -65,15 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function createAtestadoItem(atestado) {
         const itemEl = document.createElement('div');
-        itemEl.className = 'item-documento-card';
+        itemEl.className = 'item-documento-card white';
         itemEl.innerHTML = `
             <div class="item-conteudo">
-                <h4>${atestado.hospital}</h4>
-                <p><strong>Atestado:</strong> ${atestado.nomeEspecifico}</p>
-                <p><strong>Data:</strong> ${formatarDataParaExibicao(atestado.data)}</p>
-                ${atestado.turno ? `<p><strong>Turno:</strong> ${atestado.turno}</p>` : ''}
+                <h4 class="white-text">${atestado.hospital}</h4>
+                <p class="white-text" style="font-weight: bold;">Atestado:</p> <p class="gray-white-text"> ${atestado.nomeEspecifico} </p>
+                <p class="white-text" style="font-weight: bold;">Data:</p> <p class="gray-white-text"> ${formatarDataParaExibicao(atestado.data)}</p>
+                ${atestado.turno ? `<p class="white-text" style="font-weight: bold;">Turno:</p> <p class="gray-white-text">${atestado.turno}</p>` : ''}
             </div>
-            <button class="item-download-button" aria-label="Baixar atestado" data-filename="${atestado.nomeArquivo}" data-content="${encodeURIComponent(atestado.conteudoSimulado)}">
+            <button class="item-download-button gray-white" aria-label="Baixar atestado" data-filename="${atestado.nomeArquivo}" data-content="${encodeURIComponent(atestado.conteudoSimulado)}">
                 <i class="fas fa-download"></i>
             </button>
         `;

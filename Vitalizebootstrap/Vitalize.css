@@ -17,7 +17,7 @@
     --back-dark: #284151;
     --head-dark: #192b34;
     --main-text-dark: #eaf4ff;
-    --sec-text-dark: #5b86a3;
+    --sec-text-dark: #a8cbe2;
     --plac-text-dark: #a1b5c5;
     --dark: #15171a;
     --dark-border: #303235;
@@ -31,6 +31,7 @@
     --safe-area-bottom: env(safe-area-inset-bottom, 15px); /* Padding inferior geral */
 }
 
+
 .gray-white{
     background-color: var(--back-white);
     color: var(--main-text);
@@ -38,6 +39,9 @@
 }
 .gray-white:focus{
     background-color: var(--white);
+}
+.gray-white-text{
+    color: var(--sec-text);
 }
 html[data-theme="dark"] .gray-white{
     background-color: var(--back-dark);
@@ -47,17 +51,28 @@ html[data-theme="dark"] .gray-white{
 html[data-theme="dark"] .gray-white:focus{
     background-color: var(--dark);
 }
+html[data-theme="dark"] .gray-white-text{
+    color: var(--sec-text-dark);
+}
 
 .white{
     background-color: var(--head-white);
     color: var(--main-text);
     border: var(--border);
 }
+.white-text{
+    color: var(--main-text);
+}
+
 html[data-theme="dark"] .white{
     background-color: var(--head-dark);
     color: var(--main-text-dark);
     border: var(--dark-border);
 }
+html[data-theme="dark"] .white-text{
+    color: var(--main-text-dark);
+}
+
 
 .blue{
     background-color: var(--main-text);
