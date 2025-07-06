@@ -412,23 +412,3 @@ body {
     .cabecalho-visao-procedimento h2 { font-size: 1.3em; }
     .barra-procura-procedimento { font-size: 0.9em; }
 }
-
-/*Modo Escuro
-*/
-
-html[data-theme="dark"] body{
-    background-color: #4b4b4b ;
-}
-html[data-theme="dark"] .container-principal{
-    background-color: #25324d;
-}
-html[data-theme="dark"] .item-historico{
-    background-color: #272727;
-    color: aliceblue;
-}
-html[data-theme="dark"] .detalhes-item h3{
-    color: aliceblue;
-}
-html[data-theme="dark"] .navegacao-abas{
-    background-color: #272727;
-}

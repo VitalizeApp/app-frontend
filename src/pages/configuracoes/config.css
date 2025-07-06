@@ -45,15 +45,5 @@ section{
 
 .body_config{
     color: #364C5B;
-    background: url(../imgsApp/backgroundClarof.png) no-repeat;
-    transition:  0.3s, color 0.3s;
-}
-
-html[data-theme="dark"] .imgsC{
-    filter: invert(1);
-}
-html[data-theme="dark"] .body_config{
-    background: url(../imgsApp/backgroundEscuro.png);
-    color: #fff;
     transition:  0.3s, color 0.3s;
 }

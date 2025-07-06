@@ -66,14 +66,15 @@ function formatarDataExibicao(dataISO) {
 function criarItemHistoricoGeralHTML(item) {
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('item-historico');
+    itemDiv.classList.add('white');
     itemDiv.setAttribute('data-id', item.id);
     itemDiv.innerHTML = `
-        <div class="icone-item">
+        <div class="icone-item gray-white">
             <i class="fas ${item.icone || 'fa-file-alt'}"></i>
         </div>
         <div class="detalhes-item">
-            <h3>${item.nomeEspecifico || item.tipoDocumentoGeral}</h3>
-            <p>${item.hospital || 'Local não informado'}</p>
+            <h3 class="white-text">${item.nomeEspecifico || item.tipoDocumentoGeral}</h3>
+            <p class="gray-white-text">${item.hospital || 'Local não informado'}</p>
             <p class="texto-pequeno">Data: ${formatarDataExibicao(item.data)}</p>
         </div>
     `;

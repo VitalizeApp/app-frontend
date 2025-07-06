@@ -30,7 +30,12 @@
     --safe-area-top: env(safe-area-inset-top, 20px);
     --safe-area-bottom: env(safe-area-inset-bottom, 15px); /* Padding inferior geral */
 }
-
+.reverse-icon{
+    filter: inherit;
+}
+html[data-theme="dark"] .reverse-icon{
+    filter: invert(1);
+}
 
 .gray-white{
     background-color: var(--back-white);
@@ -100,6 +105,13 @@ html[data-theme="dark"] .light-blue{
     background-color: var(--head-dark);
     color: var(--back-white);
     border: var(--dark);
+}
+
+.full-white{
+    background-color: var(--head-white);
+}
+html[data-theme="dark"] .full-white{
+    background-color: var(--dark);
 }
 
 .seta-voltar{font-family:"Font Awesome 6 Free";
