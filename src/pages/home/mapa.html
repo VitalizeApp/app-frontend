@@ -35,18 +35,18 @@
         <main class="container conteudo-principal">
             <div class="grade-layout">
                 <div class="coluna-busca">
-                    <div class="cartao">
+                    <div class="cartao white">
                         <div class="grupo-formulario">
-                            <label for="mapSearchType">Buscar por:</label>
-                            <select id="mapSearchType" class="seletor-tipo-busca">
+                            <label for="mapSearchType" class="white-text">Buscar por:</label>
+                            <select id="mapSearchType" class="gray-white seletor-tipo-busca">
                                 <option value="facility">Local de Saúde</option>
                                 <option value="procedure">Procedimento</option>
                             </select>
                         </div>
                         <div class="grupo-formulario">
-                            <label for="mapSearchTerm" id="mapSearchTermLabel">Nome do Local:</label>
+                            <label for="mapSearchTerm" id="mapSearchTermLabel" class="white-text">Nome do Local:</label>
                             <div class="involucro-input-busca">
-                                <input type="text" id="mapSearchTerm" placeholder="Hospital, clínica..."/>
+                                <input type="text" id="mapSearchTerm" class="gray-white" placeholder="Hospital, clínica..."/>
                                 <button id="mapSearchButton" class="botao-icone-busca" aria-label="Buscar">
                                     <i class="fas fa-search"></i>
                                 </button>
@@ -57,7 +57,7 @@
                     </div>
                     </div>
                 <div class="coluna-mapa-detalhes">
-                    <div class="cartao involucro-conteiner-mapa">
+                    <div class="cartao involucro-conteiner-mapa white">
                         <div id="mapFrameContainer" class="conteiner-mapa">
                              <p class="marcador-mapa">Carregando mapa...</p>
                         </div>

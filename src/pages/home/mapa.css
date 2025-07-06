@@ -45,7 +45,9 @@ body, html {
   margin: 0 auto;
   padding: 0 15px;
 }
-
+#mapSearchTerm::placeholder{
+  color: #eaf4ff;
+}
 
 .cabecalho-site {
   background-color: var(--azul-claro-principal);
