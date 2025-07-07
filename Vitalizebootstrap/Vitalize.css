@@ -29,6 +29,8 @@
 
     --safe-area-top: env(safe-area-inset-top, 20px);
     --safe-area-bottom: env(safe-area-inset-bottom, 15px); /* Padding inferior geral */
+
+
 }
 .reverse-icon{
     filter: inherit;
@@ -60,6 +62,9 @@ html[data-theme="dark"] .gray-white:focus{
     background-color: var(--dark);
 }
 html[data-theme="dark"] .gray-white-text{
+    color: var(--sec-text-dark);
+}
+html[data-theme="dark"] .gray-white-text::placeholder{
     color: var(--sec-text-dark);
 }
 html[data-theme="dark"] .gray-white-border{
@@ -110,8 +115,14 @@ html[data-theme="dark"] .light-blue{
 .full-white{
     background-color: var(--head-white);
 }
+.full-white-text{
+    color: var(--dark);
+}
 html[data-theme="dark"] .full-white{
     background-color: var(--dark);
+}
+html[data-theme="dark"] .full-white-text{
+    color: var(--head-white);
 }
 
 .seta-voltar{font-family:"Font Awesome 6 Free";
@@ -165,3 +176,13 @@ html[data-theme="dark"] .full-white{
     line-height:1;
     text-rendering:auto;
 }
+.voltar-botao {
+    border: 1px solid var(--cor-borda);
+    width: 7vh; height: 7vh; border-radius: 10px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    box-shadow: none;
+    text-decoration: none; flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+.voltar-botao:hover { background-color: #DDE4ED; }
+.voltar-botao i { font-size: 1.1rem; }
