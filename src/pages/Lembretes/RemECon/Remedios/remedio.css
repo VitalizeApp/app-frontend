@@ -11,7 +11,6 @@ body{
 }
 
 .tela{
-    background: url(/src/pages/Lembretes/background/telalembretes2.png);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -100,7 +99,6 @@ p{
     height: 7vh;
     width: 7vh;
     border-radius: 3vh;
-    box-shadow: 0vh 1vh 2vh #9ba4aa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,10 +151,8 @@ p{
     align-self: center;
     height: 10vh;
     width: 50%;
-    background-color: #26475C;
     border-radius: 3vh;
     color: aliceblue;
-    border: 0.5vh solid rgb(136, 187, 220);
     display: flex;
     justify-content: center;
     align-items: center;

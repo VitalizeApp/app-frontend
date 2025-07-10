@@ -11,7 +11,6 @@ Evite o máximo possivel o uso de "px", não apenas aqui mas em qualquer tela, p
 
 footer {
     position: fixed;
-    bottom: 0;
     padding: 3vh;
     bottom: 0;
     width: 100%;

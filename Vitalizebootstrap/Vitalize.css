@@ -177,8 +177,7 @@ html[data-theme="dark"] .full-white-text{
     text-rendering:auto;
 }
 .voltar-botao {
-    border: 1px solid var(--cor-borda);
-    width: 7vh; height: 7vh; border-radius: 10px;
+    width: 6.5vh; height: 6.5vh; border-radius: 10px;
     cursor: pointer; display: flex; align-items: center; justify-content: center;
     box-shadow: none;
     text-decoration: none; flex-shrink: 0;

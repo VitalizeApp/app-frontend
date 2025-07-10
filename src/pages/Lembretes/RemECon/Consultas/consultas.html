@@ -4,31 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="consultas.css">
+     <link rel="stylesheet" href="/Vitalizebootstrap/Vitalize.css">
+    <script src="/src/pages/configuracoes/tema.js"></script>
     <title>Document</title>
 </head>
-<body class="tela">
-    <a class="icon" href="/src/pages/Lembretes/lembretes.html">
-      <img id="voltar" src="/src/pages/pfamiliar/imgsPfamiliar/voltar.png" alt="voltar"/>
-    </a>
+<body class="tela gray-white">
+    <a href="../../lembretes.html" class="voltar-botao white" aria-label="Voltar">
+                <i class="seta-voltar fa-chevron-left"></i>
+            </a>
 
     <h1>Consultas</h1>
 
     <section id="container">
 
       <div class="caixa">
-        <img class="icon resize" src="conicon/especialidade.svg" draggable="false">
+        <img class="icon resize gray-white-text" src="conicon/especialidade.svg" draggable="false">
         <input type="text" placeholder="Especialidade">
       </div>
       <div class="caixa">
-        <img class="icon resize" src="conicon/nome.svg" draggable="false"> 
+        <img class="icon resize gray-white-text" src="conicon/nome.svg" draggable="false"> 
         <input type="text" placeholder="Profissional">
       </div>
       <div class="caixa">
-        <img class="icon resize" src="conicon/local.svg" draggable="false"> 
+        <img class="icon resize gray-white-text" src="conicon/local.svg" draggable="false"> 
         <input type="text" placeholder="Local">
       </div>
       <div class="caixa">
-        <img class="icon resize" src="conicon/data.svg" draggable="false"> 
+        <img class="icon resize gray-white-text" src="conicon/data.svg" draggable="false"> 
         <input type="date" placeholder="Data">
       </div>
     
@@ -39,14 +41,14 @@
         <div id="interruptor" class="toggle-switch" onclick="toggleInterruptor()">
          <div class="toggle-circle"></div>
         </div>
-        <p>Notificar</p>
+        <p class="white-text">Notificar</p>
       </section>
 
       <section class="area">
         <div id="anexararea" class="areanexar" onclick="toggleAnexar()">
           <img id="anexar" class="icon anexara" src="conicon/anexar.svg" draggable="false">
         </div>
-        <p>Anexar</p>
+        <p class="white-text">Anexar</p>
       </section>
 
       <script>
@@ -60,11 +62,12 @@
           const toggle2 = document.getElementById("anexar")
           toggle.classList.toggle("anexarativo")
           toggle2.classList.toggle("anexarativo2")
+          toggle.classList.toggle("blue")
         }
       </script>
     </section>
 
-    <a id="pronto" href="/src/pages/Lembretes/lembretes.html">
+    <a id="pronto" class="blue" href="/src/pages/Lembretes/lembretes.html">
       <p id="salvar">Salvar</p>
       <img class="icon resize" src="conicon/salvar.svg">
     </a>

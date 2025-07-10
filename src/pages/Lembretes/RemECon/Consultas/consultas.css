@@ -11,7 +11,6 @@ body{
 }
 
 .tela{
-    background: url(/src/pages/Lembretes/background/telalembretes2.png);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -42,6 +41,7 @@ h1{
     background-color: transparent;
     align-self: center;
     display: flex;
+    gap: 2vh;
     justify-content: space-between;
     flex-direction: column;
 }
@@ -60,6 +60,7 @@ h1{
     background-color: transparent;
     height: 8vh;
     width: 100%;
+    padding: 0.5vh;
     border-radius: 2vh;
     display: flex;
     align-items: center;
@@ -96,11 +97,10 @@ p{
     font-size: 3vh;
 }
 .areanexar{
-    background-color: aliceblue;
     height: 7vh;
+    background-color: aliceblue;
     width: 7vh;
     border-radius: 3vh;
-    box-shadow: 0vh 1vh 2vh #9ba4aa;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +112,7 @@ p{
 
 
 
-.anexaraativo2{
+.anexarativo2{
     filter: invert(1);
 }
 
@@ -156,10 +156,7 @@ p{
     align-self: center;
     height: 10vh;
     width: 50%;
-    background-color: #26475C;
     border-radius: 3vh;
-    color: aliceblue;
-    border: 0.5vh solid rgb(136, 187, 220);
     display: flex;
     justify-content: center;
     align-items: center;
