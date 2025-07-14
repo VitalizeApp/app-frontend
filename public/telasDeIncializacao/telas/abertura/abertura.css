@@ -20,9 +20,8 @@
   width: 100%;
   height: 100vh;
   background: url(../../imagens/sua-imagem.png);
-  background-size: cover; /* Ajusta a imagem para cobrir toda a tela */
-  background-position: center; /* Centraliza a imagem */
-  background-repeat: no-repeat; /* Impede a repetição da imagem */
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .created-by {
@@ -32,6 +31,7 @@
   color: #333;
   bottom: 10px;
   width: 100%;
+  margin-top: 5vh;
   text-align: center;
   position: absolute;
   top: 128px;
