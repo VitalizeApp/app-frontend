@@ -1,25 +1,25 @@
 #tour1{
-    background: url(/src/pages/Login/img/fundotour1.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour1.png) center no-repeat;
     height: 100vh;
     overflow: hidden;
   }
 #tour2{
-    background: url(/src/pages/Login/img/fundotour2.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour2.png) center no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 #tour3{
-    background: url(/src/pages/Login/img/fundotour3.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour3.png) center no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 #tour4{
-    background: url(/src/pages/Login/img/fundotour4.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour4.png) center no-repeat;
     height: 100vh;
     overflow: hidden;
 }
 #tour5{
-    background: url(/src/pages/Login/img/fundotour5.png) center center/cover no-repeat;
+    background: url(/src/pages/Login/img/fundotour5.png) center no-repeat;
     height: 100vh;
     overflow: hidden;
 }
@@ -39,7 +39,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 1vh;
+    gap: 0vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease-in-out;
     text-shadow: 0vh 0.5vh 1vh rgb(141, 141, 141);
@@ -52,6 +52,6 @@
   }
   
   .botao-proximo .seta {
-    font-size: 3vh;
+    font-size: 5vh;
     transition: color 0.2s ease-in-out;
   }
