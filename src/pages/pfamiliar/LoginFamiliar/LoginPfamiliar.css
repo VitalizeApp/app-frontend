@@ -8,10 +8,8 @@
 }
 
 
-.voltar{
-height: 6vh;
-width: 5.5vh;
-align-self: flex-start;
+.voltar-botao{
+align-self: self-start;
 }
 .icon{
   height: 100%;
@@ -19,7 +17,7 @@ align-self: flex-start;
 }
 
 body {
-  background: url(/src/pages/Login/img/fundo.png) center center/cover no-repeat;
+  background-color: #F0F4F8;
   font-family: "Poppins", "Segoe UI", sans-serif;
   text-align: center;
   min-height: 100vh;

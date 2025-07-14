@@ -7,7 +7,7 @@
 }
 
 body {
-  background: url(/src/pages/Login/img/fundo.png) center center/cover no-repeat;
+  background-color: #F0F4F8;
   font-family: "Poppins", "Segoe UI", sans-serif;
   text-align: center;
   min-height: 100vh;

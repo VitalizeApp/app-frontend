@@ -223,8 +223,8 @@ body {
     right: 20px;
     background-color: #69A6D0; /* Azul principal */
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 8vh;
+    height: 8vh;
     border-radius: 50%;
     border: none;
     box-shadow: 0 4px 12px rgba(35, 57, 71, 0.4); /* Sombra com tom do azul escuro */
@@ -401,7 +401,7 @@ body {
     html { font-size: 15px; }
     body { padding-bottom: 75px; } /* Ajustar se a barra de navegação for menor */
     .container-principal { min-height: calc(100vh - 20px - 75px); }
-    .botao-flutuante-upload { bottom: 80px; width: 48px; height: 48px; font-size: 1.2em; }
+    .botao-flutuante-upload { bottom: 80px; width: 7vh; height: 7vh; font-size: 1.2em; }
     .cabecalho-app h1 { font-size: 1.5em; }
     .botao-aba .rotulo-aba { font-size: 0.65em; }
     .botao-aba i { font-size: 1.2em; }

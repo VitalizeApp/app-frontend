@@ -10,17 +10,19 @@
     <script src="/src/pages/configuracoes/tema.js"></script>
     <title>Perfil Familiar</title>
   </head>
-  <body class="tela gray-white">
+  <body class=" gray-white">
      <header class="document-page-header white">
             <h2>Perfil Familiar</h2>
         </header>
     <div id="semdep">
       <img class="icon" src="imgsPfamiliar/semdependentes.png" alt="sem dependentes"/>
     </div>
-    <a href="LoginFamiliar/LoginPfamiliar.html" id="criar"
-      ><img class="icon" src="imgsPfamiliar/add.png" alt="criar"
-    /></a>
+    <a href="LoginFamiliar/LoginPfamiliar.html" id="criar">
+      <p id="plus">+</p>
+    </a>
+    <div id="ahn">
     <footer id="barra"></footer>
+  </div>
     <script>
         fetch('/src/componentes/barra_de_navegacao/index.html')
           .then(response => response.text())
