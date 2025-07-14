@@ -12,13 +12,12 @@
 
 .htmlTermos .background {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 20vh;
   width: 100%;
   height: 100%;
   background: url(/public/telasDeIncializacao/imagens/Termos.png); /* Verifique se este caminho está correto em relação à estrutura do seu projeto */
-  background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   z-index: -1;
 }
 
@@ -48,7 +47,7 @@
   gap: 3vh;
   font-family: "Segoe UI", sans-serif;
   color: #364c5b;
-  font-size: 1.7vh;
+  font-size: 1.9vh;
 }
 
 .custom-checkbox {
