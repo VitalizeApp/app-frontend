@@ -1,37 +1,75 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const cpfInput = document.getElementById("cpf");
-    const continueLink = document.querySelector(".continue-link");
-    const continueBtn = continueLink.querySelector(".continue-button");
-  
-    cpfInput.addEventListener("input", () => {
-      let v = cpfInput.value.replace(/\D/g, "").slice(0, 11);
-      let formatado = "";
-      if (v.length > 0) formatado = v.slice(0, 3);
-      if (v.length >= 4) formatado += "." + v.slice(3, 6);
-      if (v.length >= 7) formatado += "." + v.slice(6, 9);
-      if (v.length >= 10) formatado += "-" + v.slice(9, 11);
-      cpfInput.value = formatado;
-  
-      if (v.length === 11) {
-        continueLink.classList.remove("disabled");
-        continueLink.removeAttribute("tabindex");
-        continueLink.setAttribute("aria-disabled", "false");
-        continueBtn.disabled = false;
+  const cpfInput = document.getElementById("cpf");
+  const cpfError = document.getElementById("cpf-error");
+  const continueLink = document.querySelector(".continue-link");
+  const continueBtn = continueLink.querySelector(".continue-button");
+
+  function formatCPF(value) {
+    let v = value.replace(/\D/g, "").slice(0, 11);
+    let formatado = "";
+    if (v.length > 0) formatado = v.slice(0, 3);
+    if (v.length >= 4) formatado += "." + v.slice(3, 6);
+    if (v.length >= 7) formatado += "." + v.slice(6, 9);
+    if (v.length >= 10) formatado += "-" + v.slice(9, 11);
+    return formatado;
+  }
+
+  function validarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, "");
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+
+    const calcularDigito = (base, pesoInicial) => {
+      let soma = 0;
+      for (let i = 0; i < base.length; i++) {
+        soma += parseInt(base[i]) * (pesoInicial - i);
+      }
+      const resto = soma % 11;
+      return resto < 2 ? 0 : 11 - resto;
+    };
+
+    const digito1 = calcularDigito(cpf.slice(0, 9), 10);
+    const digito2 = calcularDigito(cpf.slice(0, 9) + digito1, 11);
+
+    return cpf[9] == digito1 && cpf[10] == digito2;
+  }
+
+  cpfInput.addEventListener("input", () => {
+    const cpfNumerico = cpfInput.value.replace(/\D/g, "").slice(0, 11);
+    cpfInput.value = formatCPF(cpfNumerico);
+
+    const cpfValido = cpfNumerico.length === 11 && validarCPF(cpfNumerico);
+
+    if (cpfValido) {
+      continueLink.classList.remove("disabled");
+      continueLink.removeAttribute("tabindex");
+      continueLink.setAttribute("aria-disabled", "false");
+      continueBtn.disabled = false;
+
+      cpfError.style.display = "none"; // oculta erro
+      cpfError.textContent = "";
+    } else {
+      continueLink.classList.add("disabled");
+      continueLink.setAttribute("tabindex", "-1");
+      continueLink.setAttribute("aria-disabled", "true");
+      continueBtn.disabled = true;
+
+      if (cpfNumerico.length === 11) {
+        cpfError.textContent = "CPF inválido. Verifique os números digitados.";
+        cpfError.style.display = "block";
       } else {
-        continueLink.classList.add("disabled");
-        continueLink.setAttribute("tabindex", "-1");
-        continueLink.setAttribute("aria-disabled", "true");
-        continueBtn.disabled = true;
+        cpfError.textContent = "";
+        cpfError.style.display = "none";
       }
-    });
-  
-    cpfInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        if (!continueBtn.disabled) {
-          continueLink.click();
-        }
-      }
-    });
+    }
   });
+
+  cpfInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      if (!continueBtn.disabled) {
+        continueLink.click();
+      }
+    }
+  });
+});
   
