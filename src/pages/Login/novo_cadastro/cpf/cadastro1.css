@@ -7,8 +7,7 @@
 }
 
 body {
-  background: url(/src/pages/Login/img/fundocadastro1.png) center center/cover
-    no-repeat;
+  background: url(/src/pages/Login/img/fundocadastro1.png) center center/cover no-repeat;
   font-family: "Poppins", "Segoe UI", sans-serif;
   min-height: 100vh;
   display: flex;
@@ -201,3 +200,26 @@ p {
     width: calc(100% - 40px);
   }
 }
+
+/* ✅ Sticky de erro CPF */
+#cpf-error {
+  background-color: #ffe0e0;
+  color: #b00020;
+  padding: 8px 12px;
+  margin-top: -80px;
+  margin-bottom: 70px;
+  border: 1px solid #b00020;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(176, 0, 32, 0.1);
+  transition: opacity 0.3s ease;
+  display: none;
+  z-index: 10;
+  position: relative;
+  text-align: left;
+}
+
