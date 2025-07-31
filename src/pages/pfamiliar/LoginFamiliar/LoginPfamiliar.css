@@ -7,17 +7,17 @@
   overflow: hidden;
 }
 
-
-.voltar-botao{
-align-self: self-start;
+.voltar-botao {
+  align-self: self-start;
 }
-.icon{
+
+.icon {
   height: 100%;
   width: 100%;
 }
 
 body {
-  background-color: #F0F4F8;
+  background-color: #f0f4f8;
   font-family: "Poppins", "Segoe UI", sans-serif;
   text-align: center;
   min-height: 100vh;
@@ -193,5 +193,32 @@ body {
   .footer-group span,
   .footer-group a {
     font-size: 13px;
+  }
+}
+
+#cpf-error {
+  margin-top: 5px;
+  padding: 6px 12px;
+  background-color: rgba(255, 87, 87, 0.9);
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
