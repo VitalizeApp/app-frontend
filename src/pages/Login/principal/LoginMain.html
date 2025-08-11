@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="LoginMain.css" />
-    <script src="LoginMain.js"></script>
+    <script src="LoginMain.js" defer></script>
     <title>Vitalize - Login</title>
   </head>
   <body>
@@ -13,6 +13,7 @@
     </div>
     <div id="containerLogin">
       <h1>Login</h1>
+
       <div class="campoLogin">
         <img src="/src/pages/Login/img/user.svg" alt="Ícone de usuário" />
         <input
@@ -22,6 +23,8 @@
           maxlength="14"
         />
       </div>
+      <div id="cpf-error" class="sticky-error"></div>
+
       <div class="campoLogin">
         <img src="/src/pages/Login/img/key.svg" alt="Ícone de senha" />
         <input id="senha" type="password" placeholder="Digite sua senha" />
@@ -31,9 +34,11 @@
           alt="Mostrar senha"
         />
       </div>
+
       <div class="campoBotao">
         <a>Entrar</a>
       </div>
+
       <div class="footerLogin">
         <div class="senha-group">
           <span>Recupere sua conta!</span>

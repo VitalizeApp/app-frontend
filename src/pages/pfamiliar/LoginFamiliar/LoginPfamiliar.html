@@ -4,21 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="LoginPfamiliar.css" />
-    <link rel="stylesheet" href="/Vitalizebootstrap/Vitalize.css">
-    <script src="LoginPfamiliar.js"></script>
+    <link rel="stylesheet" href="/Vitalizebootstrap/Vitalize.css" />
+    <script src="LoginPfamiliar.js" defer></script>
     <title>Vitalize - Login</title>
   </head>
-  <a href="../pfamiliar.html" class="voltar-botao blue" aria-label="Voltar">
-    <i class="seta-voltar fa-chevron-left"></i>
-  </a>
-  <body>
 
-    
+  <body>
+    <a href="../pfamiliar.html" class="voltar-botao blue" aria-label="Voltar">
+      <i class="seta-voltar fa-chevron-left"></i>
+    </a>
+
     <div class="titulo">
       <h1 id="titulo">Dependentes</h1>
     </div>
+
     <div id="containerLogin">
       <h1>Login</h1>
+
       <div class="campoLogin">
         <img src="/src/pages/Login/img/user.svg" alt="Ícone de usuário" />
         <input
@@ -30,6 +32,9 @@
           required
         />
       </div>
+
+      <div id="cpf-error"></div>
+
       <div class="campoLogin">
         <img src="/src/pages/Login/img/key.svg" alt="Ícone de senha" />
         <input id="senha" type="password" placeholder="Digite a senha" required />
@@ -39,21 +44,19 @@
           alt="Mostrar senha"
         />
       </div>
+
       <a href="/src/pages/pfamiliar/pfamiliardep.html" class="campoBotao">
         <p>Entrar</p>
       </a>
+
       <div class="footerLogin">
         <div class="senha-group">
           <span>Recupere a conta!</span>
-          <a href="/src/pages/Login/telas/senha/cpf/senha1.html"
-            >Esqueci a senha</a
-          >
+          <a href="/src/pages/Login/telas/senha/cpf/senha1.html">Esqueci a senha</a>
         </div>
         <div class="cadastro-group">
           <span>Ele é novo por aqui?</span>
-          <a href="/src/pages/Login/telas/cadastro/cpf/cadastro1.html"
-            >Crie a conta</a
-          >
+          <a href="/src/pages/Login/telas/cadastro/cpf/cadastro1.html">Crie a conta</a>
         </div>
       </div>
     </div>

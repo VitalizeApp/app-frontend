@@ -175,7 +175,34 @@ h1 {
   transform: scale(1.02);
 }
 
-/* Responsivo */
+.sticky-alert {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #fbfbfb;
+  color: #233947;
+  border: 2px solid #4180ab;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(57, 90, 113, 0.15);
+  display: none;
+}
+
+.sticky-alert.show {
+  display: block;
+}
+
+.sticky-alert.success {
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.sticky-alert.error {
+  border-color: #f44336;
+  color: #c62828;
+}
+
 @media (max-width: 480px) {
   body {
     padding-top: 60px;
