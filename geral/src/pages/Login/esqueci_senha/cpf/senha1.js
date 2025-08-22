@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const continueLink = document.querySelector(".continue-link");
   const cpfInput = document.getElementById("cpf");
   const cpfError = document.getElementById("cpf-error");
+  const btn = document.getElementById("disabledd")
 
  function formatCPF(value) {
     let v = value.replace(/\D/g, "").slice(0, 11);
@@ -42,13 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cpfValido) {
         cpfError.style.display = "none";
         cpfError.textContent = "";
+        btn.classList.remove("disabled");
       } else {
         if (cpfNumerico.length === 11) {
           cpfError.textContent = "CPF inválido. Verifique os números digitados.";
           cpfError.style.display = "block";
+          btn.classList.add("disabled");
         } else {
           cpfError.textContent = "";
           cpfError.style.display = "none";
+          btn.classList.add("disabled");
         }
       }
     }
@@ -57,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
   cpfInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      senhaInput.focus();
     }
   });
 
