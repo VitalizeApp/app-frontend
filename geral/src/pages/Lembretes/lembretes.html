@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="lembretes.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/componentes/barra_de_navegacao/menu.css">
+    <link rel="stylesheet" href="/Vitalizebootstrap/Vitalize.css">
+    <script src="/src/pages/configuracoes/tema.js">
+    </script>
+    <title>Document</title>
+</head>
+<body class="gray-white">
+<header class="white">
+    <h2>Lembretes</h2>
+</header>
+    <section class="container">
+
+        <div id="remedios" class="caixa white">
+            <p>Remédios</p>
+            <div class="texto">
+              Não há nada aqui.
+            </div>
+            <div id="addrem" class="reverse-icon"></div>
+        </div>
+
+        <div id="consultas" class="caixa white">
+            <p>Consultas</p>
+            <div class="texto">
+              Não há nada aqui.
+            </div>
+            <div id="addcon" class="reverse-icon"></div>
+        </div>
+
+    </section>
+    
+    <button onclick="ativar()" id="toggle" class="criar light-blue">
+        <img id="editar" src="imgsLembrete/editar.svg" alt="editar" draggable="false">
+        <script src="lembretes.js"></script>
+    </button>
+
+
+    <footer id="barra"></footer>
+    <script>
+        fetch('/src/componentes/barra_de_navegacao/index.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('barra').innerHTML = data;
+      
+            // Agora sim, carrega o JS do menu após inserir o HTML
+            const script = document.createElement('script');
+            script.src = '/src/componentes/barra_de_navegacao/script.js';
+            script.onload = () => {
+              // Inicializa quando o script estiver carregado
+              if (typeof inicializarMenu === 'function') {
+                inicializarMenu();
+              }
+            };
+            document.body.appendChild(script);
+          })
+          .catch(err => console.error('Erro ao carregar o menu:', err));
+      </script>
+
+      
+</body>
+</html>

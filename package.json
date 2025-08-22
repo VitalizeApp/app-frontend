@@ -1,0 +1,27 @@
+{
+  "name": "app-frontend",
+  "version": "1.0.0",
+  "description": "**Objetivo:**  \r Auxiliar usuários no armazenamento e administração de informações pessoais de saúde, promovendo o autocuidado, organização médica e acesso facilitado a serviços de saúde.",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitalizeApp/app-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitalizeApp/app-frontend/issues"
+  },
+  "homepage": "https://github.com/VitalizeApp/app-frontend#readme",
+  "dependencies": {
+    "mysql2": "^3.14.3"
+  }
+}
