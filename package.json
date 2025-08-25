@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/VitalizeApp/app-frontend#readme",
   "dependencies": {
+    "express": "^5.1.0",
     "mysql2": "^3.14.3"
   }
 }

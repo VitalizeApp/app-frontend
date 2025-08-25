@@ -14,20 +14,26 @@
     <div id="containerLogin">
       <h1>Login</h1>
 
-      <div class="campoLogin">
+      <div action="/login" class="campoLogin">
         <img src="../img/user.svg" alt="Ícone de usuário" />
         <input
           id="cpf"
           type="text"
           placeholder="Digite seu CPF"
           maxlength="14"
-        />
+          required
+          />
       </div>
       <div id="cpf-error" class="sticky-error"></div>
 
       <div class="campoLogin">
         <img src="../img/key.svg" alt="Ícone de senha" />
-        <input id="senha" type="password" placeholder="Digite sua senha" />
+        <input
+        id="senha"
+        type="password"
+        placeholder="Digite sua senha"
+        required
+        />
         <img
           id="toggleSenha"
           src="../img/visibility_off.svg"

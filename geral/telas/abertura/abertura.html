@@ -1,24 +1,48 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR" class="htmlAbertura">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="abertura.css">
+    <link rel="stylesheet" href="/telas/abertura/abertura.css">
     <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap" rel="stylesheet">
     <title>Vitalize - Tela de Abertura</title>
 </head>
 <body class="bodyAbertura">
     <div class="background"></div>
-    <p class="created-by">Created by <strong>DELTA<strong></p>
+    <p class="created-by">Created by <strong>DELTA</strong></p>
     <div class="slide-up"></div>
 
-
     <script>
+        console.log('🚀 Script da abertura iniciado');
+        
         setTimeout(() => {
+            console.log('⏰ Primeira etapa do timeout (2s)');
             document.querySelector(".slide-up").classList.add("active");
+            
             setTimeout(() => {
-                window.location.href = "../bemvindo/bemvindo.html";
+                console.log('🔄 Redirecionando para bemvindo...');
+                // Tente diferentes caminhos se um não funcionar
+                window.location.href = "/bemvindo/bemvindo.html";
             }, 1000);
         }, 2000);
+
+        // Debug adicional
+        window.addEventListener('load', () => {
+            console.log('📄 Página abertura carregada completamente');
+            
+            // Verificar se o CSS foi carregado
+            const link = document.querySelector('link[rel="stylesheet"]');
+            if (link) {
+                console.log('🎨 CSS link encontrado:', link.href);
+            } else {
+                console.log('❌ CSS link não encontrado');
+            }
+        });
+
+        // Capturar erros
+        window.addEventListener('error', (e) => {
+            console.error('❌ Erro na página:', e.error);
+        });
     </script>
 </html>

@@ -1,9 +1,9 @@
 
-CREATE DATABASE vitalize;
+CREATE DATABASE IF NOT EXISTS vitalize;
 
 USE vitalize;
 
-CREATE TABLE usuario(
+CREATE TABLE IF NOT EXISTS usuario(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(70) NOT NULL,
 cpf CHAR(11) NOT NULL UNIQUE,
@@ -15,7 +15,7 @@ tipo_usuario ENUM ('Cidadão', 'Admin'),
 criado_em DATE
 );
 
-CREATE TABLE lembretes(
+CREATE TABLE IF NOT EXISTS lembretes(
 id INT AUTO_INCREMENT PRIMARY KEY,
 id_usuario INT NOT NULL,
 titulo VARCHAR(40) NOT NULL,
@@ -27,7 +27,7 @@ CONSTRAINT fk_do_usuario
 FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE documentos(
+CREATE TABLE IF NOT EXISTS documentos(
 id INT AUTO_INCREMENT PRIMARY KEY,
 id_usuario INT NOT NULL,
 tipo ENUM ('Exame', 'Vacina', 'Atestado'),
@@ -35,24 +35,11 @@ titulo VARCHAR(40),
 url TEXT,
 criado_em DATE,
 atualizado_em DATE,
-CONSTRAINT fk_do_usuario
 FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
 
-CREATE TABLE historico(
-id INT AUTO_INCREMENT PRIMARY KEY,
-id_usuario INT NOT NULL,
-id_hospital INT NOT NULL,
-titulo VARCHAR(40),
-data_proced DATE,
-url_documento TEXT,
-CONSTRAINT fk_do_usuario
-FOREIGN KEY (id_usuario) REFERENCES usuario(id),
-CONSTRAINT fk_do_hospital
-FOREIGN KEY (id_hospital) REFERENCES hospital(id)
-);
 
-CREATE TABLE hospital(
+CREATE TABLE IF NOT EXISTS hospital(
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(70),
 endereco VARCHAR(150),
@@ -60,7 +47,19 @@ tipo ENUM ('Clínica', 'Hospital', 'Consultório'),
 publico BOOLEAN
 );
 
-CREATE TABLE configuracoes(
+CREATE TABLE IF NOT EXISTS historico(
+id INT AUTO_INCREMENT PRIMARY KEY,
+id_usuario INT NOT NULL,
+id_hospital INT NOT NULL,
+titulo VARCHAR(40),
+data_proced DATE,
+url_documento TEXT,
+FOREIGN KEY (id_usuario) REFERENCES usuario(id),
+CONSTRAINT fk_do_hospital
+FOREIGN KEY (id_hospital) REFERENCES hospital(id)
+);
+
+CREATE TABLE IF NOT EXISTS configuracoes(
 id INT (1),
 id_usuario INT NOT NULL,
 notif ENUM ('Tudo', 'Sistema', 'Lembretes', 'Urgente'),
@@ -70,7 +69,7 @@ PRIMARY KEY (id_usuario, id),
 FOREIGN KEY (id_usuario) REFERENCES usuario(id) 
 );
 
-CREATE TABLE dependente(
+CREATE TABLE IF NOT EXISTS dependente(
 id_usuario INT NOT NULL,
 id_dependente INT NOT NULL,
 PRIMARY KEY (id_usuario, id_dependente),
