@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import mysql from 'mysql2';
 import bodyParser from 'body-parser';
 import fs from 'fs';
+import bcrypt from 'bcrypt';
 
 const app = express();
 const PORT = 3230;
@@ -53,6 +54,7 @@ app.use('/abertura', express.static(path.join(__dirname, 'geral/telas/abertura')
 app.use('/bemvindo', express.static(path.join(__dirname, 'geral/telas/bemvindo')));
 app.use('/termos', express.static(path.join(__dirname, 'geral/telas/termos')));
 app.use('/geral', express.static(path.join(__dirname, 'geral/')));
+app.use('/Vitalizebootstrap', express.static(path.join(__dirname, 'Vitalizebootstrap/')));
 
 // MIDDLEWARE PARA CAPTURAR ARQUIVOS NÃO ENCONTRADOS
 app.use((req, res, next) => {
@@ -106,21 +108,48 @@ app.get('/geral/telas/bemvindo/bemvindo.html', function (req, res){
     }
 });
 
-//Função para LOGIN
 app.post('/login', (req, res) => {
-  const { cpf, senha } = req.body
+  const { cpf, senha } = req.body;
 
-  const query = "SELECT * FROM usuario WHERE cpf = ? LIMIT 1"
-  db.query(query, [cpf], (err, results) =>{
+  if (!cpf || !senha) {
+    return res.status(400).send('CPF e senha são obrigatórios');
+  }
+
+  // Opcional: normalizar CPF (só números)
+  const cpfLimpo = String(cpf).replace(/\D/g, '');
+
+  const sql = 'SELECT id, nome, senha_hash FROM usuario WHERE cpf = ? LIMIT 1';
+  db.query(sql, [cpfLimpo], async (err, results) => {
     if (err) {
       console.error(err);
       return res.status(500).send('Erro no servidor');
     }
+
     if (results.length === 0) {
-      return res.status(401).send('Usuário ou senha invalidos')
+      // mesma mensagem para não vazar existência de usuário
+      return res.status(401).send('Usuário ou senha inválidos');
     }
 
-    const usuarios = results[0];
+    const usuario = results[0];
+
+    try {
+      const ok = await bcrypt.compare(senha, usuario.senha_hash);
+      if (!ok) {
+        return res.status(401).send('Usuário ou senha inválidos');
+      }
+
+      // (Opcional) criar sessão ou JWT aqui
+      // req.session.userId = usuario.id;  // se usar express-session
+      // ou gerar um token JWT e enviar no response
+
+      return res.status(200).json({
+        message: 'Login realizado',
+        user: { id: usuario.id, nome: usuario.nome }
+      });
+    } catch (e) {
+      console.error(e);
+      return res.status(500).send('Erro ao validar senha');
+    }
   });
 });
 

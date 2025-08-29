@@ -79,7 +79,27 @@ document.addEventListener("DOMContentLoaded", () => {
       cpfError.textContent = "CPF inválido. Corrija para continuar.";
       cpfError.style.display = "block";
     } else {
-      window.location.href = "/src/pages/home/home.html";
+      
     }
   });
+});
+
+document.getElementById('loginform').addEventListener('submit', async (e) => {
+  e.preventDefault(); // impede o envio automático
+
+  const formData = new FormData(e.target);
+  const data = Object.fromEntries(formData);
+
+  const response = await fetch('/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (response.ok) {
+    // se login deu certo → vai para a próxima página
+    window.location.href = "/dashboard";
+  } else {
+    alert("Usuário ou senha inválidos!");
+  }
 });
