@@ -98,7 +98,7 @@ document.getElementById('loginform').addEventListener('submit', async (e) => {
 
   if (response.ok) {
     // se login deu certo → vai para a próxima página
-    window.location.href = "/dashboard";
+    window.location.href = "/geral/pages/home/home.html";
   } else {
     alert("Usuário ou senha inválidos!");
   }

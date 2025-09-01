@@ -154,6 +154,20 @@ app.post('/login', (req, res) => {
 });
 
 
+
+//CADASTRO
+app.post ('/cadastro', async (req, res) =>{
+const { cpf, email, senha} = req.body;
+
+  const senha_hash = await bcrypt.hash (senha, 10)
+
+  const sql = "INSERT INTO usuarios (cpf, email, senha) VALUES ?, ?, ?"
+  db.query (sql, [cpf, email, senha_hash], (err) => {
+    if (err) return res.status(500).send('Falha no cadastro');
+    res.status(201).send('Usuário cadastrado.')
+  });
+});
+
 // CAPTURA ERROS 404
 app.use((req, res) => {
     console.log(`❌ 404 - Rota não encontrada: ${req.url}`);

@@ -5,14 +5,14 @@ USE vitalize;
 
 CREATE TABLE IF NOT EXISTS usuario(
 id INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(70) NOT NULL,
+nome VARCHAR(70),
 cpf CHAR(11) NOT NULL UNIQUE,
-email VARCHAR(100),
+email VARCHAR(100) NOT NULL UNIQUE,
 telefone VARCHAR(20),
 nascimento DATE,
-senha_hash VARCHAR(255),
-tipo_usuario ENUM ('Cidadão', 'Admin'),
-criado_em DATE
+senha_hash VARCHAR(255) NOT NULL,
+tipo_usuario ENUM ('Cidadão', 'Admin') DEFAULT 'Cidadão',
+criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS lembretes(
